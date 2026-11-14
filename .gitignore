@@ -1,0 +1,5 @@
+.DS_Store
+.taste-skill/
+_t.html
+*.before*.html
+node_modules/
