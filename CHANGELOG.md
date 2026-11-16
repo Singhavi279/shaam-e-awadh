@@ -66,3 +66,39 @@ SEO/AEO (title, meta description, Open Graph, JSON-LD) is re-checked on every co
 - Removed unused images (old Rumi hero set, 1280w duplicates, photo-strip images not on the page), dead CSS (`.split.rev`, the `--ld` delay plumbing) and an internal design comment.
 - Hero poster (new Rumi Darwaza night shot) re-encoded 256 KB -> 112 KB at 1280w (960w 76 KB, 480w 24 KB); its width/height attributes corrected to 1280x714.
 - Added `.gitignore`. SEO block unchanged; check passes.
+
+## 0.7.0 — Editorial copy pass (EN + HI)
+- Hero, About, "Multiple Expressions, One City" (8 experiences with taglines), Voices of Awadh (profile fields + 6 category filters), Taste/Craft of Awadh, Lucknow Ratna Samman (tiers, fields, "How the honours are decided"), ticket booking flow + essentials, 26-question FAQ in 4 groups, and a new Contact & Help Centre now follow the editorial copy. Every new string has a Hindi (Devanagari, no Urdu script) twin behind the EN/हिन्दी toggle.
+- Hero Hindi aligned to the English (no full stop / exclamation); "Shaam Ho Toh Aisi" retired everywhere including og:title and JSON-LD alternateName.
+- SEO refreshed: title, description, og/twitter, Event name/description, FAQPage now lists only the questions that have a confirmed answer, and `tools/seo-check.mjs` now also fails if a JSON-LD FAQ answer differs from the visible answer. Check passes.
+- Not published: internal notes ("check with Shagun", build instructions such as "Create a grid...") and back-office ticketing items (admin dashboard, staff/vendor accreditation, attendance reporting). FAQ answers the editorial copy did not supply show "These details have not been confirmed yet" rather than invented answers.
+
+## 0.7.1 — Layout
+- Ratna Samman moved directly below Artists (header nav reordered to match); its label and heading swapped (EN + HI).
+- Removed the "Partners and sponsors / The people behind the evening" section and its now-unused CSS/JS hooks. The organiser credit stays in the footer and the Event JSON-LD. SEO check passes.
+
+## 0.7.2 — Contact team
+- Contact & Help Centre now ends with a "Contact / Reach the right team for your query" block: five named contacts (General query, Partnership, Award nomination, Sponsorships, Participation opportunities) with tap-to-call and tap-to-email links, EN + HI labels. Replaces the "details soon" note; FAQ answers and the footer "Sponsorship enquiries" link updated to point at it. SEO block unchanged (check passes).
+
+## 0.7.3 — Taste / Craft split + Partner CTA
+- "The Taste and Craft of Awadh" is now two sections: **The Taste of Awadh** (#taste, image left) and **The Craft of Awadh** (#craft, image right), each with its own eyebrow, tagline, description, stall count (EN + HI).
+- New maroon "Partner with Grand Shaam-e-Awadh" band below both with a **Partner Now** button that opens an email to the Partnership contact. SEO block unchanged (check passes).
+
+## 0.7.4 — Stall counts removed from Taste/Craft
+- Replaced the "About 20 food stalls / About 55 craft stalls" lines and their "Stall counts are approximate…" notes with "Interested in partnering with us?" + ENQUIRE NOW (emails the Partnership contact), EN + HI. The "about 20 food stalls" figure is still inside one FAQ answer (and its JSON-LD twin). SEO check passes.
+
+## 0.8.0 — Early bird pricing, one pass only
+- Single ticket: **Two-day pass, early bird ₹499 (was ₹999), limited passes only.** One-day pass (₹799) removed everywhere: pass cards, booking step 1, FAQ ("ticket categories and prices", "Can I attend on one day only?" now answers No), Event offers JSON-LD (one Offer, price 499), meta description, og/twitter descriptions.
+- `tools/seo-check.mjs` now reads the entry price from the JSON-LD offers instead of a hard-coded ₹799. Check passes.
+
+## 0.8.1 — Voices of Awadh placeholders
+- Voices of Awadh now shows six placeholder profile cards (one per category) with the full structure: photo slot, full name, profession/area of work, one-line contribution, programme/session, date and time (to be confirmed), EN + HI. The six category filters work on them; replacing a placeholder with a real profile only needs the "ghost" class removed and the data-cat kept (template comment in the source). No names are published. SEO check passes.
+
+## 0.8.2 — Contact section trimmed
+- Removed the five "Help Centre" category blocks (ticketing, programme, Open Mic, sponsorship, media) from Contact & Help Centre; the heading, intro line and the five named-contact cards stay. FAQ answers that pointed at those categories now point at the named teams. SEO check passes.
+
+## 0.8.3
+- Removed the redundant "Contact / Reach the right team for your query" sub-heading above the contact cards. SEO check passes.
+
+## 0.8.4
+- FAQ moved out of the Visit section into its own section at the bottom, below Contact & Help Centre (page order: … Visit, Contact, FAQ, Footer). Same 26 questions; SEO check passes.

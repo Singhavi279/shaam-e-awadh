@@ -24,9 +24,12 @@ else {
   if (!text.includes('16–17 January 2027') || !ev.startDate.startsWith('2027-01-16') || !ev.endDate.startsWith('2027-01-17')) errs.push('dates on page and in Event JSON-LD disagree');
   for (const o of ev.offers) if (!text.includes('₹' + o.price)) errs.push(`price ₹${o.price} in JSON-LD not visible on page`);
   if (!text.includes(ev.location.address.addressLocality)) errs.push('location not on page');
-  if (!/₹799/.test(desc)) errs.push('meta description should carry the entry price (₹799)');
+  const low = Math.min(...ev.offers.map((o) => +o.price));
+  if (!desc.includes('₹' + low)) errs.push(`meta description should carry the entry price (₹${low})`);
   if (!title.includes('2027') || !title.includes('Jan')) errs.push('title lost the event date');
 }
 for (const q of faq?.mainEntity ?? []) if (!text.includes(q.name)) errs.push(`FAQ question not visible on page: ${q.name}`);
+for (const q of faq?.mainEntity ?? []) if (!text.includes(q.acceptedAnswer.text)) errs.push(`FAQ answer in JSON-LD differs from the visible answer: ${q.name}`);
+if (ev && !text.includes(ev.name.replace(' 2027', ''))) errs.push('event name not on page');
 if (errs.length) { console.error('SEO CHECK FAILED\n- ' + errs.join('\n- ')); process.exit(1); }
 console.log('SEO CHECK OK: title, description, OG, Event + FAQ JSON-LD match the page.');
