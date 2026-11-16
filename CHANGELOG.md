@@ -102,3 +102,18 @@ SEO/AEO (title, meta description, Open Graph, JSON-LD) is re-checked on every co
 
 ## 0.8.4
 - FAQ moved out of the Visit section into its own section at the bottom, below Contact & Help Centre (page order: … Visit, Contact, FAQ, Footer). Same 26 questions; SEO check passes.
+
+## 0.8.5
+- Removed the footer line "Cinematic AI-generated visuals celebrating Lucknow's heritage…" and its unused style.
+
+## 0.8.6
+- Removed from the Visit section: "How booking works" (6 steps), "Ticketing essentials", and the Dates and timings / Venue / Parking and accessibility blocks, plus their now-unused styles. Visit now has the heading, the three "coming soon" buttons and the early bird pass. SEO check passes.
+
+## 0.9.0 — Modal forms, OTP, no stall counts
+- Removed the last stall-count mention (FAQ "food and beverages" answer, EN + HI + JSON-LD). No numbers of stalls/booths anywhere on the site.
+- Three modal forms (native `<dialog>`, EN + HI, keyboard/Esc/backdrop close, scroll lock, full-screen on phones):
+  - **Registration** (header Register, hero Book Tickets, Visit "Register Now"): 2-step stepper. Step 1 details; step 2 **Pay now / Pay later**. Pay later saves the record and shows "form submitted, payment pending, details saved, team will contact you shortly". Pay now shows the early bird pass with a 1–10 quantity stepper and total (₹499 each), then Proceed to checkout.
+  - **Award nomination** (new "Nominate now" button in Ratna Samman): same 2-step flow; the nomination fee is not set yet so the total shows "To be confirmed".
+  - **Partnership** (both Enquire Now buttons and Partner Now): single step, no stepper, no payment. The mailto links stay as the no-JS fallback.
+- **OTP on all three forms**: mobile number must be verified (Send OTP, 4 digits, 30 s resend). Dummy code is **1234** until a real OTP service is configured.
+- Wiring is in the `SEA_CONFIG` block of the page script: `endpoint` (store submissions), `checkoutUrl` (payment page), `otpEndpoint` (real OTP), `dummyOtp`. While `endpoint` is empty the forms run in a labelled preview mode and keep records only in the visitor's browser (`SEA.leads()` in the console). Honeypot field for bots. SEO check passes.
