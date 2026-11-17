@@ -134,3 +134,6 @@ SEO/AEO (title, meta description, Open Graph, JSON-LD) is re-checked on every co
   "Only 9 passes can be bought at a time. For more than 9 passes, please make a separate purchase." (EN and HI).
 - Full responsive audit, widths 320–2560 incl. breakpoint edges: no horizontal overflow, no undersized tap targets.
 - SEO/AEO unchanged; `node tools/seo-check.mjs` passes.
+
+## 0.9.3 – 2026-11-17 – city section hidden
+- "Lucknow: Beyond the Postcards" (#city) is commented out in index.html, not deleted. SEO/AEO unchanged; seo-check passes.
