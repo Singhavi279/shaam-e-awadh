@@ -4,7 +4,7 @@ import { readFileSync } from 'node:fs';
 const html = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
 const errs = [];
 const get = (re) => (html.match(re) || [])[1];
-const meta = (k, attr = 'name') => get(new RegExp(`<meta ${attr}="${k}" content="([^"]*)"`));
+const meta = (k, attr = 'name') => get(new RegExp(`<meta\\s+${attr}="${k}"\\s+content="([^"]*)"`));
 const body = html.replace(/<script[\s\S]*?<\/script>/g, '').replace(/<style[\s\S]*?<\/style>/g, '');
 const text = body.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
 

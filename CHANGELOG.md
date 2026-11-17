@@ -117,3 +117,14 @@ SEO/AEO (title, meta description, Open Graph, JSON-LD) is re-checked on every co
   - **Partnership** (both Enquire Now buttons and Partner Now): single step, no stepper, no payment. The mailto links stay as the no-JS fallback.
 - **OTP on all three forms**: mobile number must be verified (Send OTP, 4 digits, 30 s resend). Dummy code is **1234** until a real OTP service is configured.
 - Wiring is in the `SEA_CONFIG` block of the page script: `endpoint` (store submissions), `checkoutUrl` (payment page), `otpEndpoint` (real OTP), `dummyOtp`. While `endpoint` is empty the forms run in a labelled preview mode and keep records only in the visitor's browser (`SEA.leads()` in the console). Honeypot field for bots. SEO check passes.
+
+## 0.9.1 – 2026-11-17 – ticket quantity, CTA sync, responsive pass
+- Ticket cards now have a quantity stepper (1–3 at ₹599, 4–10 at ₹499) with a live total; the card's Buy Tickets
+  button opens the registration form with that quantity pre-set. Navbar, hero and sticky-bar Buy Tickets open the same
+  form at quantity 1 and the modal's quantity step applies the same tier pricing.
+- CTA labels: Buy Tickets / Register for Nomination; navbar and mobile sticky bar carry Buy Tickets and Partner Now.
+- OTP auto-verifies while no OTP service is configured; records no longer claim `mobileVerified` in that case.
+- Responsive: hero height accounts for the sticky bar, hero title no longer breaks at the hyphen, sticky-bar subtitle
+  hidden at 360px and below.
+- **SEO/AEO changed:** meta description carries "Passes from ₹499"; Event JSON-LD has two offers (₹599, ₹499); FAQ
+  answer (EN and HI, JSON-LD and visible) states both tiers. `tools/seo-check.mjs` now parses multi-line meta tags.

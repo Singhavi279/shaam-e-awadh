@@ -5,7 +5,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Grand Shaam-e-Awadh 2027: Lucknow Festival, 16–17 Jan</title>
-  <meta name="description" content="Two days of Lucknow's music, stories, food, craft and ideas on 16–17 January 2027: qawwali, ghazal, chikankari and the Ratna Samman. Early bird pass ₹499.">
+  <meta name="description"
+    content="Two days of Lucknow's music, stories, food, craft and ideas on 16–17 January 2027: qawwali, ghazal, chikankari and the Ratna Samman. Passes from ₹499.">
   <meta name="page-type" content="place">
   <meta name="site-kind" content="other">
   <meta name="page-kind" content="place">
@@ -17,7 +18,8 @@
   <meta property="og:locale" content="en_IN">
   <meta property="og:locale:alternate" content="hi_IN">
   <meta property="og:title" content="Grand Shaam-e-Awadh 2027: Ek Shaam, Awadh ke Naam. Lucknow, 16–17 January">
-  <meta property="og:description" content="A two-day festival of music, stories, food, craft and ideas in Lucknow, 16–17 January 2027. Early bird two-day pass ₹499.">
+  <meta property="og:description"
+    content="A two-day festival of music, stories, food, craft and ideas in Lucknow, 16–17 January 2027. Early bird two-day pass ₹499.">
   <meta property="og:url" content="https://timeslanguages.in/shaam-e-awadh/">
   <meta property="og:image" content="https://timeslanguages.in/shaam-e-awadh/share.jpg">
   <meta property="og:image:width" content="1200">
@@ -25,7 +27,8 @@
   <meta property="og:image:alt" content="The Rumi Darwaza in Lucknow lit gold against the night sky">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Grand Shaam-e-Awadh 2027: Ek Shaam, Awadh ke Naam. Lucknow, 16–17 January">
-  <meta name="twitter:description" content="Music, stories, food, craft and ideas across two days in Lucknow. Early bird two-day pass ₹499.">
+  <meta name="twitter:description"
+    content="Music, stories, food, craft and ideas across two days in Lucknow. Early bird two-day pass ₹499.">
   <meta name="twitter:image" content="https://timeslanguages.in/shaam-e-awadh/share.jpg">
   <link rel="icon"
     href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%236b1a2a'/%3E%3Cpath d='M8 26V15a8 8 0 0 1 16 0v11' fill='none' stroke='%23c9a24e' stroke-width='2.4'/%3E%3Ccircle cx='16' cy='15' r='2.6' fill='%23c9a24e'/%3E%3C/svg%3E">
@@ -76,7 +79,15 @@
       "offers": [
         {
           "@type": "Offer",
-          "name": "Two-day pass, early bird",
+          "name": "Two-day pass, 1 to 3 passes",
+          "price": "599",
+          "priceCurrency": "INR",
+          "availability": "https://schema.org/PreOrder",
+          "url": "https://timeslanguages.in/shaam-e-awadh/#visit"
+        },
+        {
+          "@type": "Offer",
+          "name": "Two-day group pass, 4 or more passes",
           "price": "499",
           "priceCurrency": "INR",
           "availability": "https://schema.org/PreOrder",
@@ -136,7 +147,7 @@
           "name": "What are the ticket categories and prices?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "There is one ticket category: the two-day pass, at an early bird price of ₹499 instead of ₹999, for a limited number of passes. Every visitor needs a ticket, including Open Mic performers."
+            "text": "There is one ticket category: the two-day pass, at ₹599 per pass for 1 to 3 passes and ₹499 per pass for groups of 4 or more, instead of ₹999, for a limited number of passes. Every visitor needs a ticket, including Open Mic performers."
           }
         },
         {
@@ -517,7 +528,7 @@
     /* hero */
     .hero {
       position: relative;
-      min-height: calc(100svh - var(--hdr));
+      min-height: calc(100svh - var(--hdr) - var(--sbar-h, 69px));
       display: grid;
       align-items: end;
       color: #fff;
@@ -1257,31 +1268,106 @@
     .passes {
       margin-top: 34px;
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 20px;
-      max-width: 520px
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      max-width: 880px
     }
 
     .pass {
       background: var(--ivory);
-      border: 2px solid var(--ink);
+      border: 2px solid var(--line);
       border-radius: 14px;
-      padding: 26px 24px
+      padding: 26px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between
     }
 
     .pass.best {
       background: var(--emerald);
       border-color: var(--emerald);
-      color: #f2ecdc
+      color: #f2ecdc;
+      box-shadow: 0 12px 28px -10px rgba(31, 92, 74, 0.4)
+    }
+
+    .pass .eb {
+      font: 600 .8rem var(--sans);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 6px
     }
 
     .pass h3 {
-      font-size: 1.3rem
+      font-size: 1.35rem
     }
 
     .pass .price {
       font: 700 3rem/1.1 var(--serif);
       margin-top: 6px
+    }
+
+    .pass .price .unit {
+      font-size: .95rem;
+      font-weight: 500;
+      font-family: var(--sans);
+      opacity: .85;
+      margin-left: 2px
+    }
+
+    .pass .pass-act {
+      margin-top: 24px
+    }
+
+    .pass .pass-act .btn {
+      width: 100%;
+      min-height: 50px;
+      font-size: 1.05rem;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25)
+    }
+
+    .nb {
+      white-space: nowrap
+    }
+
+    @media (max-width:600px) {
+      :root {
+        --sbar-h: 92px
+      }
+    }
+
+    @media (max-width:360px) {
+      .sbar-info span {
+        display: none
+      }
+    }
+
+    .pq {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 14px
+    }
+
+    .pq .qty button {
+      color: inherit;
+      border-color: currentColor
+    }
+
+    .pq .qty button:hover {
+      background: #ffffff22
+    }
+
+    .pq .qty button:disabled {
+      opacity: .35;
+      cursor: not-allowed
+    }
+
+    .pq-t {
+      font: 600 1.05rem var(--sans);
+      margin: 0
     }
 
     .pass p:last-child {
@@ -1401,6 +1487,52 @@
       color: #a79f8d
     }
 
+    .ftr-disc {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      margin-top: 40px;
+      padding-top: 24px;
+      width: var(--wrap);
+      margin-inline: auto
+    }
+
+    .ftr .ftr-disc p {
+      font-size: .8125rem;
+      line-height: 1.6;
+      color: #9c9382;
+      max-width: 100%;
+      margin: 0
+    }
+
+    /* Small asterisk indicator for illustrative images */
+    .arch::after,
+    .tile .vis::after,
+    .card .ph::after {
+      content: "*";
+      position: absolute;
+      top: 8px;
+      right: 12px;
+      font-family: var(--sans);
+      font-size: .85rem;
+      font-weight: 700;
+      line-height: 1;
+      color: rgba(255, 255, 255, 0.85);
+      background: rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      width: 18px;
+      height: 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 2
+    }
+
+    .card .ph {
+      position: relative
+    }
+
 
     @media (max-width:1020px) {
       .nav a.l {
@@ -1408,7 +1540,7 @@
       }
 
       .tiles,
-      .voices{
+      .voices {
         grid-template-columns: repeat(2, 1fr)
       }
 
@@ -1448,7 +1580,7 @@
 
       .edit,
       .tiles,
-      .voices{
+      .voices {
         grid-template-columns: 1fr
       }
 
@@ -2349,6 +2481,7 @@
         grid-template-columns: 1fr
       }
     }
+
     .split.rev {
       grid-template-columns: .9fr 1.1fr
     }
@@ -2403,6 +2536,7 @@
         width: 100%
       }
     }
+
     .pass .eb {
       display: inline-block;
       background: var(--gold);
@@ -3018,7 +3152,6 @@
         padding-bottom: calc(110px + env(safe-area-inset-bottom))
       }
     }
-
   </style>
 </head>
 
@@ -3171,18 +3304,18 @@
           alt="Times Internet Languages Live" decoding="async">
       </a>
       <nav class="nav" aria-label="Main">
-        <a class="l" href="#about" data-hi="उत्सव">Festival</a>
-        <a class="l" href="#voices" data-hi="कलाकार">Artists</a>
-        <a class="l" href="#samman" data-hi="रत्न सम्मान">Ratna Samman</a>
-        <a class="l" href="#programme" data-hi="कार्यक्रम">Programme</a>
-        <a class="l" href="#city" data-hi="शहर">The City</a>
-        <a class="l" href="#visit" data-hi="आइए">Visit</a>
+        <a class="l" href="#about" data-hi="परिचय">About</a>
+        <a class="l" href="#visit" data-hi="टिकट">Tickets</a>
+        <a class="l" href="#samman" data-hi="सम्मान">Awards</a>
+        <a class="l" href="#partner" data-hi="साझेदार">Partner</a>
+        <a class="l" href="#contact" data-hi="संपर्क">Contact Us</a>
+        <a class="l" href="#faqs" data-hi="सामान्य प्रश्न">FAQ</a>
         <div class="lang" role="group" aria-label="Language">
           <button type="button" data-lang="en" aria-pressed="true" lang="en">EN</button>
           <button type="button" data-lang="hi" aria-pressed="false" lang="hi">हिन्दी</button>
         </div>
-        <a class="btn" href="#visit" data-modal="register" data-hi="टिकट खरीदें">Buy Tickets</a>
         <a class="btn ghost" href="#partner" data-modal="partner" data-hi="अभी साझेदार बनें">Partner Now</a>
+        <a class="btn" href="#visit" data-modal="register" data-hi="टिकट खरीदें">Buy Tickets</a>
       </nav>
     </div>
   </header>
@@ -3198,9 +3331,11 @@
       <video id="hv" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1" width="1280" height="612"
         disablepictureinpicture disableremoteplayback></video>
       <div class="wrap" data-enter>
-        <h1 id="h1" data-hi="ग्रैंड शाम-ए-अवध">Grand Shaam-e-Awadh</h1>
+        <h1 id="h1" data-hi="ग्रैंड शाम-ए-अवध">Grand <span class="nb">Shaam-e-Awadh</span></h1>
         <p class="ek" data-hi="एक शाम, अवध के नाम">Ek Shaam, Awadh ke Naam</p>
-        <p class="lede" data-hi="दो दिनों का एक उत्सव, जो लखनऊ को लखनऊ बनाने वाले लोगों, विचारों, कला, संगीत, खान-पान, दस्तकारी और महत्वाकांक्षा को एक मंच पर लाता है।">A two-day festival bringing together the people, ideas, art, music, food, craftsmanship and ambition that make Lucknow what it is.</p>
+        <p class="lede"
+          data-hi="दो दिनों का एक उत्सव, जो लखनऊ को लखनऊ बनाने वाले लोगों, विचारों, कला, संगीत, खान-पान, दस्तकारी और महत्वाकांक्षा को एक मंच पर लाता है।">
+          A two day festival celebrating Lucknow's people, ideas, art, music, food, craftsmanship and ambition.</p>
         <p class="fact"><span data-hi="16–17 जनवरी 2027 | लखनऊ">16–17 January 2027 | Lucknow</span></p>
         <div class="cta">
           <a class="btn gold" href="#visit" data-modal="register" data-hi="टिकट खरीदें">Buy Tickets</a>
@@ -3216,13 +3351,25 @@
       <div class="wrap split">
         <div>
           <p class="eyebrow" data-hi="उत्सव के बारे में">About the festival</p>
-          <h2 id="about-h" class="about-split-h"><span class="about-prefix" data-hi="एक शहर">A city</span><span class="about-lines"><span class="ln" data-hi="जिसके पास अतीत है">with a past</span><span class="ln" data-hi="जिसकी अपनी धड़कन है">with a pulse</span><span class="ln" data-hi="जो आगे बढ़ रहा है">moving forward</span></span></h2>
+          <h2 id="about-h" class="about-split-h"><span class="about-prefix" data-hi="एक शहर">A city</span><span
+              class="about-lines"><span class="ln" data-hi="जिसके पास अतीत है">with a past</span><span class="ln"
+                data-hi="जिसकी अपनी धड़कन है">with a pulse</span><span class="ln" data-hi="जो आगे बढ़ रहा है">moving
+                forward</span></span></h2>
           <div class="body">
-            <p data-hi="लखनऊ अपनी इमारतों से कहीं बढ़कर है। यह एक जीता-जागता सांस्कृतिक परिदृश्य है, जिसे इसकी ज़बान, साहित्य, संगीत, खान-पान, दस्तकारी और लोगों ने गढ़ा है।">Lucknow is more than its monuments. It is a living cultural landscape shaped by its language, literature, music, food, craftsmanship and people.</p>
-            <p data-hi="ग्रैंड शाम-ए-अवध इन सभी अभिव्यक्तियों को एक छत के नीचे लाता है।">Grand Shaam-e-Awadh brings these expressions together under one roof.</p>
-            <p data-hi="दो दिनों में यह उत्सव उन परंपराओं का जश्न मनाएगा जो शहर की पहचान हैं, उन लोगों का जो उन्हें ज़िंदा रखे हैं, और उन नई आवाज़ों का जो आगे की राह गढ़ रही हैं।">Over two days, the festival will celebrate the traditions that define the city, the people who keep them alive and the new voices shaping what comes next.</p>
-            <p data-hi="शायरी और क़व्वाली से लेकर समकालीन संगीत तक, और चिकनकारी व अवधी खान-पान से लेकर शहर की बदलती पहचान पर संवाद तक, यह लखनऊ की पूरी विविधता का उत्सव है।">From poetry and qawwali to contemporary music, and from chikankari and Awadhi cuisine to conversations on the city's changing identity, this is a celebration of Lucknow in all its diversity.</p>
-            <p data-hi="शहर को सिर्फ़ पीछे मुड़कर देखना नहीं, बल्कि यह महसूस करने का मौक़ा कि वह किस ओर जा रहा है।">Not just a look back at the city. A chance to experience where it is going.</p>
+            <p
+              data-hi="लखनऊ अपनी इमारतों से कहीं बढ़कर है। यह एक जीता-जागता सांस्कृतिक परिदृश्य है, जिसे इसकी ज़बान, साहित्य, संगीत, खान-पान, दस्तकारी और लोगों ने गढ़ा है।">
+              Lucknow is more than its monuments. It is a living cultural landscape shaped by its language, literature,
+              music, food, craftsmanship and people.</p>
+            <p data-hi="ग्रैंड शाम-ए-अवध इन सभी अभिव्यक्तियों को एक छत के नीचे लाता है।">Grand Shaam-e-Awadh brings
+              these expressions together under one roof.</p>
+            <p
+              data-hi="दो दिनों में यह उत्सव उन परंपराओं का जश्न मनाएगा जो शहर की पहचान हैं, उन लोगों का जो उन्हें ज़िंदा रखे हैं, और उन नई आवाज़ों का जो आगे की राह गढ़ रही हैं।">
+              Over two days, the festival will celebrate the traditions that define the city, the people who keep them
+              alive and the new voices shaping what comes next.</p>
+            <p
+              data-hi="शायरी और क़व्वाली से लेकर समकालीन संगीत तक, और चिकनकारी व अवधी खान-पान से लेकर शहर की बदलती पहचान पर संवाद तक, यह लखनऊ की पूरी विविधता का उत्सव है।">
+              From poetry and qawwali to contemporary music, and from chikankari and Awadhi cuisine to conversations on
+              the city's changing identity, this is a celebration of Lucknow in all its diversity.</p>
           </div>
         </div>
         <div class="arch">
@@ -3247,32 +3394,10 @@
                 decoding="async"><span class="n">01</span></div>
             <div class="tx">
               <h3 data-hi="महफ़िल-ए-शाम">Mehfil-e-Shaam</h3>
-              <p class="tg" data-hi="वह संगीत जो अवध का है… और उससे आगे भी।">Music that belongs to Awadh ...and beyond.</p>
-              <p data-hi="ग़ज़ल, क़व्वाली, सूफ़ी, हिंदुस्तानी शास्त्रीय, अवधी लोक और समकालीन संगीत की प्रस्तुतियाँ।">Ghazal, qawwali, Sufi, Hindustani classical, Awadhi folk and contemporary musical performances.</p>
-            </div>
-          </article>
-          <article class="tile">
-            <div class="vis v-maroon"><img src="img/qissa-500.jpg"
-                srcset="img/qissa-500.jpg 500w, img/qissa-960.jpg 960w" sizes="(max-width:820px) 100vw, 270px"
-                width="960" height="716"
-                alt="Historic architecture of Lucknow framed through an ornate Awadhi arch at dusk" loading="lazy"
-                decoding="async"><span class="n">02</span></div>
-            <div class="tx">
-              <h3 data-hi="क़िस्सा लखनऊ का">Qissa Lucknow Ka</h3>
-              <p class="tg" data-hi="शहर, अपने क़िस्सों की ज़ुबानी।">The city, told through its stories.</p>
-              <p data-hi="लखनऊ के मोहल्लों, स्थापत्य, इतिहास, लोगों और बदलती पहचान पर बातचीत और क़िस्से।">Conversations and stories about Lucknow's neighbourhoods, architecture, history, people and changing identity.</p>
-            </div>
-          </article>
-          <article class="tile">
-            <div class="vis v-em"><img src="img/biryani-500.jpg"
-                srcset="img/biryani-500.jpg 500w, img/biryani-960.jpg 960w" sizes="(max-width:820px) 100vw, 270px"
-                width="960" height="717"
-                alt="Royal Awadhi Dum Mutton Biryani garnished with saffron, birista and silver foil in a copper handi"
-                loading="lazy" decoding="async"><span class="n">03</span></div>
-            <div class="tx">
-              <h3 data-hi="ज़ायक़ा-ए-अवध">Zaika-e-Awadh</h3>
-              <p class="tg" data-hi="अपने अलग ज़ायक़े वाला शहर।">A city with a distinctive taste.</p>
-              <p data-hi="अवधी खान-पान, पारंपरिक नुस्ख़ों, स्थानीय खान-पान कारोबारों और लखनऊ की पाक परंपराओं के पीछे के लोगों को जानिए।">Discover Awadhi cuisine, traditional recipes, local food businesses and the people behind Lucknow's culinary traditions.</p>
+              <p class="tg" data-hi="वह संगीत जो अवध का है… और उससे आगे भी।">Music that belongs to Awadh ...and beyond.
+              </p>
+              <p data-hi="ग़ज़ल, क़व्वाली, सूफ़ी, हिंदुस्तानी शास्त्रीय, अवधी लोक और समकालीन संगीत की प्रस्तुतियाँ।">
+                Ghazal, qawwali, Sufi, Hindustani classical, Awadhi folk and contemporary musical performances.</p>
             </div>
           </article>
           <article class="tile">
@@ -3280,11 +3405,41 @@
                 srcset="img/chikan-500.jpg 500w, img/chikan-960.jpg 960w" sizes="(max-width:820px) 100vw, 270px"
                 width="960" height="717"
                 alt="Artisan hand-crafting fine Lucknow Chikankari embroidery on a round wooden hoop" loading="lazy"
-                decoding="async"><span class="n">04</span></div>
+                decoding="async"><span class="n">02</span></div>
             <div class="tx">
-              <h3 data-hi="हुनर-ए-अवध">Hunar-e-Awadh</h3>
-              <p class="tg" data-hi="हाथों से गढ़ी परंपरा। बेहद रचनात्मकता।">Tradition made by hand. Creativity without limits.</p>
-              <p data-hi="चिकनकारी, ज़रदोज़ी, वस्त्र, हस्तशिल्प, और अवधी दस्तकारी को आगे बढ़ाते कारीगर व डिज़ाइनर।">Chikankari, zardozi, textiles, handicrafts and the artisans and designers taking Awadhi craftsmanship forward.</p>
+              <h3 data-hi="अवध का हुनर">Awadh ka Hunar</h3>
+              <p class="tg" data-hi="हाथों से गढ़ी परंपरा। बेहद रचनात्मकता।">Tradition made by hand. Creativity without
+                limits.</p>
+              <p data-hi="चिकनकारी, ज़रदोज़ी, वस्त्र, हस्तशिल्प, और अवधी दस्तकारी को आगे बढ़ाते कारीगर व डिज़ाइनर।">
+                Chikankari, zardozi, textiles, handicrafts and the artisans and designers taking Awadhi craftsmanship
+                forward.</p>
+            </div>
+          </article>
+          <article class="tile">
+            <div class="vis v-maroon"><img src="img/qissa-500.jpg"
+                srcset="img/qissa-500.jpg 500w, img/qissa-960.jpg 960w" sizes="(max-width:820px) 100vw, 270px"
+                width="960" height="716"
+                alt="Historic architecture of Lucknow framed through an ornate Awadhi arch at dusk" loading="lazy"
+                decoding="async"><span class="n">03</span></div>
+            <div class="tx">
+              <h3 data-hi="क़िस्सा-ए-लखनऊ">Qissa-e-Lucknow</h3>
+              <p class="tg" data-hi="शहर, अपने क़िस्सों की ज़ुबानी।">The city, told through its stories.</p>
+              <p data-hi="लखनऊ के मोहल्लों, स्थापत्य, इतिहास, लोगों और बदलती पहचान पर बातचीत और क़िस्से।">Conversations
+                and stories about Lucknow's neighbourhoods, architecture, history, people and changing identity.</p>
+            </div>
+          </article>
+          <article class="tile">
+            <div class="vis v-mid"><img src="img/samman-500.jpg"
+                srcset="img/samman-500.jpg 500w, img/samman-960.jpg 960w" sizes="(max-width:820px) 100vw, 270px"
+                width="960" height="716"
+                alt="An ornate golden brass Lucknow Ratna cultural award medallion resting on royal blue velvet"
+                loading="lazy" decoding="async"><span class="n">04</span></div>
+            <div class="tx">
+              <h3 data-hi="लखनऊ रत्न सम्मान">Lucknow Ratna Samman</h3>
+              <p class="tg" data-hi="शहर को गढ़ने वालों की पहचान।">Recognising those who shape the city.</p>
+              <p data-hi="उन व्यक्तियों, संस्थाओं और उद्यमों का सम्मान जिनके काम ने लखनऊ में सार्थक योगदान दिया है।">
+                Honouring individuals, institutions and enterprises whose work has made a meaningful contribution to
+                Lucknow.</p>
             </div>
           </article>
           <article class="tile">
@@ -3294,20 +3449,27 @@
                 alt="A diverse community gathering in an open-air cultural courtyard engaged in heartfelt dialogue"
                 loading="lazy" decoding="async"><span class="n">05</span></div>
             <div class="tx">
-              <h3 data-hi="बियॉन्ड लेबल्स">Beyond Labels</h3>
+              <h3 data-hi="सब की बैठक">Sab ki Baithak</h3>
               <p class="tg" data-hi="पहचान। गरिमा। अपनापन।">Identity. Dignity. Belonging.</p>
-              <p data-hi="लोगों और समुदायों के साथ पहचान, प्रतिनिधित्व, समावेश और लेबलों से परे देखे जाने की आज़ादी पर संवाद।">Conversations with people and communities on identity, representation, inclusion and the freedom to be seen beyond labels.</p>
+              <p
+                data-hi="लोगों और समुदायों के साथ पहचान, प्रतिनिधित्व, समावेश और लेबलों से परे देखे जाने की आज़ादी पर संवाद।">
+                Conversations with people and communities on identity, representation, inclusion and the freedom to be
+                seen beyond labels.</p>
             </div>
           </article>
           <article class="tile">
-            <div class="vis v-maroon"><img src="img/adda-500.jpg" srcset="img/adda-500.jpg 500w, img/adda-960.jpg 960w"
-                sizes="(max-width:820px) 100vw, 270px" width="960" height="716"
-                alt="An intimate literary reading table with poetry books, vintage volumes, and a glass of chai in a heritage library setting"
+            <div class="vis v-em"><img src="img/biryani-500.jpg"
+                srcset="img/biryani-500.jpg 500w, img/biryani-960.jpg 960w" sizes="(max-width:820px) 100vw, 270px"
+                width="960" height="717"
+                alt="Royal Awadhi Dum Mutton Biryani garnished with saffron, birista and silver foil in a copper handi"
                 loading="lazy" decoding="async"><span class="n">06</span></div>
             <div class="tx">
-              <h3 data-hi="द अड्डा: किताब, ख़याल और गुफ़्तगू">The Adda: Kitaab, Khayaal aur Guftagu</h3>
-              <p class="tg" data-hi="जहाँ विचारों को आवाज़ मिलती है।">Where ideas find a voice.</p>
-              <p data-hi="लेखक, कवि, शिक्षाविद और पाठक साहित्य, भाषा, किताबों, समाज और विचारों पर चर्चा के लिए जुटते हैं।">Writers, poets, academics and readers come together to discuss literature, language, books, society and ideas.</p>
+              <h3 data-hi="ज़ायक़ा-ए-अवध">Zaika-e-Awadh</h3>
+              <p class="tg" data-hi="अपने अलग ज़ायक़े वाला शहर।">A city with a distinctive taste.</p>
+              <p
+                data-hi="अवधी खान-पान, पारंपरिक नुस्ख़ों, स्थानीय खान-पान कारोबारों और लखनऊ की पाक परंपराओं के पीछे के लोगों को जानिए।">
+                Discover Awadhi cuisine, traditional recipes, local food businesses and the people behind Lucknow's
+                culinary traditions.</p>
             </div>
           </article>
           <article class="tile">
@@ -3318,19 +3480,23 @@
             <div class="tx">
               <h3 data-hi="नयी पीढ़ी, नयी आवाज़">Nayi Peedhi, Nayi Awaaz</h3>
               <p class="tg" data-hi="नयी आवाज़ें। नये नज़रिए।">New voices. New perspectives.</p>
-              <p data-hi="लखनऊ और उससे बाहर के उभरते संगीतकारों, कवियों, कलाकारों, क़िस्सागो और रचनाकारों का मंच।">A platform for emerging musicians, poets, performers, storytellers and creators from Lucknow and beyond.</p>
+              <p data-hi="लखनऊ और उससे बाहर के उभरते संगीतकारों, कवियों, कलाकारों, क़िस्सागो और रचनाकारों का मंच।">A
+                platform for emerging musicians, poets, performers, storytellers and creators from Lucknow and beyond.
+              </p>
             </div>
           </article>
           <article class="tile">
-            <div class="vis v-mid"><img src="img/samman-500.jpg"
-                srcset="img/samman-500.jpg 500w, img/samman-960.jpg 960w" sizes="(max-width:820px) 100vw, 270px"
-                width="960" height="716"
-                alt="An ornate golden brass Lucknow Ratna cultural award medallion resting on royal blue velvet"
+            <div class="vis v-maroon"><img src="img/adda-500.jpg" srcset="img/adda-500.jpg 500w, img/adda-960.jpg 960w"
+                sizes="(max-width:820px) 100vw, 270px" width="960" height="716"
+                alt="An intimate literary reading table with poetry books, vintage volumes, and a glass of chai in a heritage library setting"
                 loading="lazy" decoding="async"><span class="n">08</span></div>
             <div class="tx">
-              <h3 data-hi="लखनऊ रत्न सम्मान">Lucknow Ratna Samman</h3>
-              <p class="tg" data-hi="शहर को गढ़ने वालों की पहचान।">Recognising those who shape the city.</p>
-              <p data-hi="उन व्यक्तियों, संस्थाओं और उद्यमों का सम्मान जिनके काम ने लखनऊ में सार्थक योगदान दिया है।">Honouring individuals, institutions and enterprises whose work has made a meaningful contribution to Lucknow.</p>
+              <h3 data-hi="किताबों वाली बैठक">Kitaabo Wali Baithak</h3>
+              <p class="tg" data-hi="जहाँ विचारों को आवाज़ मिलती है।">Where ideas find a voice.</p>
+              <p
+                data-hi="लेखक, कवि, शिक्षाविद और पाठक साहित्य, भाषा, किताबों, समाज और विचारों पर चर्चा के लिए जुटते हैं।">
+                Writers, poets, academics and readers come together to discuss literature, language, books, society and
+                ideas.</p>
             </div>
           </article>
         </div>
@@ -3342,16 +3508,24 @@
     <section id="voices" class="cv dark" aria-labelledby="voi-h">
       <div class="wrap">
         <p class="eyebrow" data-hi="कलाकार और वक्ता">Artists and speakers</p>
-        <h2 id="voi-h" data-hi="अवध की आवाज़ें">The Voices of Awadh</h2>
-        <p class="lede" data-hi="कलाकार, प्रस्तुतकर्ता, लेखक और विचारक, जो लखनऊ की अनेक अभिव्यक्तियों को जीवंत करते हैं।">Artists, performers, writers and thinkers bringing the many expressions of Lucknow to life.</p>
+        <h2 id="voi-h" data-hi="अवध के सितारे">Awadh Ke Sitare</h2>
+        <p class="lede"
+          data-hi="कलाकार, प्रस्तुतकर्ता, लेखक और विचारक, जो लखनऊ की अनेक अभिव्यक्तियों को जीवंत करते हैं।">Artists,
+          performers, writers and thinkers bringing the many expressions of Lucknow to life.</p>
         <div class="chips" role="group" aria-label="Filter artists by category">
           <button class="chip" type="button" data-cat="all" aria-pressed="true" data-hi="सभी">All</button>
-          <button class="chip" type="button" data-cat="music" aria-pressed="false" data-hi="संगीत और प्रस्तुति">Music and performance</button>
-          <button class="chip" type="button" data-cat="poetry" aria-pressed="false" data-hi="शायरी और साहित्य">Poetry and literature</button>
-          <button class="chip" type="button" data-cat="theatre" aria-pressed="false" data-hi="रंगमंच और नृत्य">Theatre and dance</button>
-          <button class="chip" type="button" data-cat="food" aria-pressed="false" data-hi="खान-पान और पाक कला">Food and culinary arts</button>
-          <button class="chip" type="button" data-cat="conversations" aria-pressed="false" data-hi="संवाद और विचार">Conversations and ideas</button>
-          <button class="chip" type="button" data-cat="emerging" aria-pressed="false" data-hi="उभरते कलाकार">Emerging artists</button>
+          <button class="chip" type="button" data-cat="music" aria-pressed="false" data-hi="संगीत और प्रस्तुति">Music
+            and performance</button>
+          <button class="chip" type="button" data-cat="poetry" aria-pressed="false" data-hi="शायरी और साहित्य">Poetry
+            and literature</button>
+          <button class="chip" type="button" data-cat="theatre" aria-pressed="false" data-hi="रंगमंच और नृत्य">Theatre
+            and dance</button>
+          <button class="chip" type="button" data-cat="food" aria-pressed="false" data-hi="खान-पान और पाक कला">Food and
+            culinary arts</button>
+          <button class="chip" type="button" data-cat="conversations" aria-pressed="false"
+            data-hi="संवाद और विचार">Conversations and ideas</button>
+          <button class="chip" type="button" data-cat="emerging" aria-pressed="false" data-hi="उभरते कलाकार">Emerging
+            artists</button>
         </div>
         <!-- Card system: replace a placeholder <li class="voice ghost"> with a real one (drop "ghost"); keep data-cat = music|poetry|theatre|food|conversations|emerging so the filters keep working. The grid reflows, no redesign needed.
          <li class="voice" data-cat="music"><div class="ph"><img src="img/NAME.jpg" width="480" height="600" alt="Full name" loading="lazy" decoding="async"></div>
@@ -3364,7 +3538,8 @@
               </svg></div>
             <h3 data-hi="कलाकार का नाम">Artist name</h3>
             <p class="role" data-hi="संगीत और प्रस्तुति">Music and performance</p>
-            <p class="desc" data-hi="उनके योगदान का एक पंक्ति में परिचय।">One-line description of their contribution.</p>
+            <p class="desc" data-hi="उनके योगदान का एक पंक्ति में परिचय।">One-line description of their contribution.
+            </p>
             <p class="sess" data-hi="कार्यक्रम या सत्र का नाम">Programme or session name</p>
             <p class="when" data-hi="तारीख़ और समय की पुष्टि होनी बाक़ी है">Date and time to be confirmed</p>
           </li>
@@ -3374,7 +3549,8 @@
               </svg></div>
             <h3 data-hi="कलाकार का नाम">Artist name</h3>
             <p class="role" data-hi="शायरी और साहित्य">Poetry and literature</p>
-            <p class="desc" data-hi="उनके योगदान का एक पंक्ति में परिचय।">One-line description of their contribution.</p>
+            <p class="desc" data-hi="उनके योगदान का एक पंक्ति में परिचय।">One-line description of their contribution.
+            </p>
             <p class="sess" data-hi="कार्यक्रम या सत्र का नाम">Programme or session name</p>
             <p class="when" data-hi="तारीख़ और समय की पुष्टि होनी बाक़ी है">Date and time to be confirmed</p>
           </li>
@@ -3384,7 +3560,8 @@
               </svg></div>
             <h3 data-hi="कलाकार का नाम">Artist name</h3>
             <p class="role" data-hi="रंगमंच और नृत्य">Theatre and dance</p>
-            <p class="desc" data-hi="उनके योगदान का एक पंक्ति में परिचय।">One-line description of their contribution.</p>
+            <p class="desc" data-hi="उनके योगदान का एक पंक्ति में परिचय।">One-line description of their contribution.
+            </p>
             <p class="sess" data-hi="कार्यक्रम या सत्र का नाम">Programme or session name</p>
             <p class="when" data-hi="तारीख़ और समय की पुष्टि होनी बाक़ी है">Date and time to be confirmed</p>
           </li>
@@ -3394,7 +3571,8 @@
               </svg></div>
             <h3 data-hi="कलाकार का नाम">Artist name</h3>
             <p class="role" data-hi="खान-पान और पाक कला">Food and culinary arts</p>
-            <p class="desc" data-hi="उनके योगदान का एक पंक्ति में परिचय।">One-line description of their contribution.</p>
+            <p class="desc" data-hi="उनके योगदान का एक पंक्ति में परिचय।">One-line description of their contribution.
+            </p>
             <p class="sess" data-hi="कार्यक्रम या सत्र का नाम">Programme or session name</p>
             <p class="when" data-hi="तारीख़ और समय की पुष्टि होनी बाक़ी है">Date and time to be confirmed</p>
           </li>
@@ -3404,7 +3582,8 @@
               </svg></div>
             <h3 data-hi="कलाकार का नाम">Artist name</h3>
             <p class="role" data-hi="संवाद और विचार">Conversations and ideas</p>
-            <p class="desc" data-hi="उनके योगदान का एक पंक्ति में परिचय।">One-line description of their contribution.</p>
+            <p class="desc" data-hi="उनके योगदान का एक पंक्ति में परिचय।">One-line description of their contribution.
+            </p>
             <p class="sess" data-hi="कार्यक्रम या सत्र का नाम">Programme or session name</p>
             <p class="when" data-hi="तारीख़ और समय की पुष्टि होनी बाक़ी है">Date and time to be confirmed</p>
           </li>
@@ -3414,13 +3593,16 @@
               </svg></div>
             <h3 data-hi="कलाकार का नाम">Artist name</h3>
             <p class="role" data-hi="उभरते कलाकार">Emerging artists</p>
-            <p class="desc" data-hi="उनके योगदान का एक पंक्ति में परिचय।">One-line description of their contribution.</p>
+            <p class="desc" data-hi="उनके योगदान का एक पंक्ति में परिचय।">One-line description of their contribution.
+            </p>
             <p class="sess" data-hi="कार्यक्रम या सत्र का नाम">Programme or session name</p>
             <p class="when" data-hi="तारीख़ और समय की पुष्टि होनी बाक़ी है">Date and time to be confirmed</p>
           </li>
         </ul>
         <p class="voice-note"
-          data-hi="हर प्रोफ़ाइल में फ़ोटो, पूरा नाम, पेशा या कार्यक्षेत्र, उनके योगदान का एक पंक्ति में परिचय, वे जिस कार्यक्रम या सत्र का हिस्सा हैं, और पुष्टि होने पर तारीख़ व समय होगा।">Each profile will carry a photograph, full name, profession or area of work, a one-line description of their contribution, the programme or session they are part of, and the date and time once confirmed.</p>
+          data-hi="हर प्रोफ़ाइल में फ़ोटो, पूरा नाम, पेशा या कार्यक्षेत्र, उनके योगदान का एक पंक्ति में परिचय, वे जिस कार्यक्रम या सत्र का हिस्सा हैं, और पुष्टि होने पर तारीख़ व समय होगा।">
+          Each profile will carry a photograph, full name, profession or area of work, a one-line description of their
+          contribution, the programme or session they are part of, and the date and time once confirmed.</p>
       </div>
     </section>
 
@@ -3431,12 +3613,15 @@
         <h2 id="sam-h" data-hi="लखनऊ रत्न सम्मान">Lucknow Ratna Samman</h2>
         <p class="lede"
           data-hi="लखनऊ रत्न सम्मान उन व्यक्तियों, संस्थाओं और उद्यमों को सम्मानित करता है जिनके काम ने लखनऊ में सार्थक योगदान दिया है।">
-          The Lucknow Ratna Samman recognises individuals, institutions and enterprises whose work has made a meaningful contribution to Lucknow.</p>
+          The Lucknow Ratna Samman recognises individuals, institutions and enterprises whose work has made a meaningful
+          contribution to Lucknow.</p>
         <p class="lede"
           data-hi="संस्कृति, साहित्य, शिक्षा, व्यापार, उद्यमिता, सामाजिक प्रभाव, जनसेवा और अन्य क्षेत्रों में ये सम्मान उत्कृष्टता, प्रतिबद्धता और शहर के लिए स्थायी योगदान का उत्सव मनाते हैं।">
-          Across culture, literature, education, business, entrepreneurship, social impact, public service and other fields, the honours celebrate excellence, commitment and lasting contribution to the city.</p>
+          Across culture, literature, education, business, entrepreneurship, social impact, public service and other
+          fields, the honours celebrate excellence, commitment and lasting contribution to the city.</p>
         <div class="cta" style="margin-top:28px">
-          <a class="btn gold" href="#contact" data-modal="nominate" data-hi="नामांकन के लिए पंजीकरण करें">Register for Nomination</a>
+          <a class="btn gold" href="#contact" data-modal="nominate" data-hi="नामांकन के लिए पंजीकरण करें">Register for
+            Nomination</a>
         </div>
         <div class="tiers">
           <div class="tier"><b data-n="15">15</b>
@@ -3464,16 +3649,83 @@
         </ul>
         <h3 class="subh" data-hi="सम्मान कैसे तय होते हैं">How the honours are decided</h3>
         <ol class="steps">
-          <li><div><b data-hi="नामांकन और पात्र उम्मीदवारों की पहचान।">Nominations and identification of eligible candidates.</b></div></li>
-          <li><div><b data-hi="दस्तावेज़ित मानदंडों पर मूल्यांकन।">Evaluation against documented criteria.</b></div></li>
-          <li><div><b data-hi="स्वतंत्र जूरी द्वारा समीक्षा।">Independent jury review.</b></div></li>
-          <li><div><b data-hi="अंतिम चयन और घोषणा।">Final selection and announcement.</b></div></li>
-          <li><div><b data-hi="उत्सव में सम्मान समारोह।">Presentation at the festival.</b></div></li>
+          <li>
+            <div><b data-hi="नामांकन और पात्र उम्मीदवारों की पहचान।">Nominations and identification of eligible
+                candidates.</b></div>
+          </li>
+          <li>
+            <div><b data-hi="दस्तावेज़ित मानदंडों पर मूल्यांकन।">Evaluation against documented criteria.</b></div>
+          </li>
+          <li>
+            <div><b data-hi="स्वतंत्र जूरी द्वारा समीक्षा।">Independent jury review.</b></div>
+          </li>
+          <li>
+            <div><b data-hi="अंतिम चयन और घोषणा।">Final selection and announcement.</b></div>
+          </li>
+          <li>
+            <div><b data-hi="उत्सव में सम्मान समारोह।">Presentation at the festival.</b></div>
+          </li>
         </ol>
       </div>
     </section>
 
-    <!-- 6. PROGRAMME -->
+    <!-- 6. CRAFT -->
+    <section id="craft" class="cv parch" aria-labelledby="craft-h">
+      <div class="wrap split">
+        <div class="ftx">
+          <p class="eyebrow" data-hi="शिल्प का अनुभव">Craft experience</p>
+          <h2 id="craft-h" data-hi="अवध का हुनर">Awadh ka Hunar</h2>
+          <p class="tg" data-hi="हाथ से बना। विरासत में रचा-बसा। आज के लिए नए रूप में।">Made by hand. Rooted in
+            heritage. Reimagined for today.</p>
+          <p class="lede"
+            data-hi="कारीगरों, डिज़ाइनरों और स्थानीय निर्माताओं के काम के ज़रिए चिकनकारी, ज़रदोज़ी, वस्त्र और पारंपरिक हस्तशिल्प को जानिए।">
+            Discover chikankari, zardozi, textiles and traditional handicrafts through the work of artisans, designers
+            and local makers.</p>
+          <div class="enq">
+            <p data-hi="क्या आप हमारे साथ साझेदारी करना चाहते हैं?">Interested in partnering with us?</p>
+            <a class="btn" data-modal="partner"
+              href="mailto:deepika.pawar@timesinternet.in?subject=Partnership%20enquiry%3A%20Grand%20Shaam-e-Awadh"
+              data-hi="अभी पूछताछ करें">Enquire now</a>
+          </div>
+        </div>
+        <div class="arch">
+          <img src="img/zardozi-500.jpg" srcset="img/zardozi-500.jpg 500w, img/zardozi-960.jpg 960w"
+            sizes="(max-width:820px) 440px, 480px" width="960" height="717"
+            alt="Royal Awadhi Zardozi embroidery with gold and silver metallic zari threads on rich velvet"
+            loading="lazy" decoding="async">
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. FOOD -->
+    <section id="taste" class="cv" aria-labelledby="taste-h">
+      <div class="wrap split rev">
+        <div class="ftx">
+          <p class="eyebrow" data-hi="खान-पान का अनुभव">Food experience</p>
+          <h2 id="taste-h" data-hi="ज़ायक़ा-ए-अवध">Zaika-e-Awadh</h2>
+          <p class="tg" data-hi="नुस्ख़े, परंपराएँ और ज़ायक़े, जो पीढ़ियों से चले आ रहे हैं।">Recipes, traditions and
+            flavours that have travelled through generations.</p>
+          <p class="lede"
+            data-hi="अवधी खान-पान, स्थानीय व्यंजनों, पारंपरिक मिठाइयों, स्ट्रीट फ़ूड और लखनऊ की खान-पान संस्कृति को ज़िंदा रखने वाले लोगों को जानिए।">
+            Explore Awadhi cuisine, local delicacies, traditional sweets, street food and the people who keep Lucknow's
+            food culture alive.</p>
+          <div class="enq">
+            <p data-hi="क्या आप हमारे साथ साझेदारी करना चाहते हैं?">Interested in partnering with us?</p>
+            <a class="btn" data-modal="partner"
+              href="mailto:deepika.pawar@timesinternet.in?subject=Partnership%20enquiry%3A%20Grand%20Shaam-e-Awadh"
+              data-hi="अभी पूछताछ करें">Enquire now</a>
+          </div>
+        </div>
+        <div class="arch">
+          <img src="img/chaat-500.jpg" srcset="img/chaat-500.jpg 500w, img/chaat-960.jpg 960w"
+            sizes="(max-width:820px) 440px, 480px" width="960" height="717"
+            alt="Crispy golden Lucknow Tokri Chaat basket filled with spiced potatoes, curd, chutneys and pomegranate"
+            loading="lazy" decoding="async">
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. PROGRAMME -->
     <section id="programme" aria-labelledby="prog-h">
       <div class="wrap">
         <p class="eyebrow" data-hi="कार्यक्रम">The programme</p>
@@ -3813,80 +4065,69 @@
       </div>
     </section>
 
-    <!-- 8. FOOD -->
-    <section id="taste" class="cv" aria-labelledby="taste-h">
-      <div class="wrap split rev">
-        <div class="ftx">
-          <p class="eyebrow" data-hi="खान-पान का अनुभव">Food experience</p>
-          <h2 id="taste-h" data-hi="अवध का स्वाद">The Taste of Awadh</h2>
-          <p class="tg" data-hi="नुस्ख़े, परंपराएँ और ज़ायक़े, जो पीढ़ियों से चले आ रहे हैं।">Recipes, traditions and flavours that have travelled through generations.</p>
-          <p class="lede" data-hi="अवधी खान-पान, स्थानीय व्यंजनों, पारंपरिक मिठाइयों, स्ट्रीट फ़ूड और लखनऊ की खान-पान संस्कृति को ज़िंदा रखने वाले लोगों को जानिए।">Explore Awadhi cuisine, local delicacies, traditional sweets, street food and the people who keep Lucknow's food culture alive.</p>
-          <div class="enq">
-            <p data-hi="क्या आप हमारे साथ साझेदारी करना चाहते हैं?">Interested in partnering with us?</p>
-            <a class="btn" data-modal="partner" href="mailto:deepika.pawar@timesinternet.in?subject=Partnership%20enquiry%3A%20Grand%20Shaam-e-Awadh" data-hi="अभी पूछताछ करें">Enquire now</a>
-          </div>
-        </div>
-        <div class="arch">
-          <img src="img/chaat-500.jpg" srcset="img/chaat-500.jpg 500w, img/chaat-960.jpg 960w"
-            sizes="(max-width:820px) 440px, 480px" width="960" height="717"
-            alt="Crispy golden Lucknow Tokri Chaat basket filled with spiced potatoes, curd, chutneys and pomegranate" loading="lazy" decoding="async">
-        </div>
-      </div>
-    </section>
-
-    <!-- 9. CRAFT -->
-    <section id="craft" class="cv parch" aria-labelledby="craft-h">
-      <div class="wrap split">
-        <div class="ftx">
-          <p class="eyebrow" data-hi="शिल्प का अनुभव">Craft experience</p>
-          <h2 id="craft-h" data-hi="अवध का हुनर">The Craft of Awadh</h2>
-          <p class="tg" data-hi="हाथ से बना। विरासत में रचा-बसा। आज के लिए नए रूप में।">Made by hand. Rooted in heritage. Reimagined for today.</p>
-          <p class="lede" data-hi="कारीगरों, डिज़ाइनरों और स्थानीय निर्माताओं के काम के ज़रिए चिकनकारी, ज़रदोज़ी, वस्त्र और पारंपरिक हस्तशिल्प को जानिए।">Discover chikankari, zardozi, textiles and traditional handicrafts through the work of artisans, designers and local makers.</p>
-          <div class="enq">
-            <p data-hi="क्या आप हमारे साथ साझेदारी करना चाहते हैं?">Interested in partnering with us?</p>
-            <a class="btn" data-modal="partner" href="mailto:deepika.pawar@timesinternet.in?subject=Partnership%20enquiry%3A%20Grand%20Shaam-e-Awadh" data-hi="अभी पूछताछ करें">Enquire now</a>
-          </div>
-        </div>
-        <div class="arch">
-          <img src="img/zardozi-500.jpg" srcset="img/zardozi-500.jpg 500w, img/zardozi-960.jpg 960w"
-            sizes="(max-width:820px) 440px, 480px" width="960" height="717"
-            alt="Royal Awadhi Zardozi embroidery with gold and silver metallic zari threads on rich velvet" loading="lazy" decoding="async">
-        </div>
-      </div>
-    </section>
-
-    <!-- 9b. PARTNER CTA -->
-    <section id="partner" class="cv maroon" aria-labelledby="part-h">
-      <div class="wrap pcta">
-        <div>
-          <h2 id="part-h" data-hi="ग्रैंड शाम-ए-अवध के साथ साझेदारी करें">Partner with Grand Shaam-e-Awadh</h2>
-          <p class="lede" data-hi="ब्रांड साझेदारी, श्रेणी सहयोग, प्रदर्शनी और फ़ूड-कोर्ट में भागीदारी।">Brand partnerships, category associations, exhibition and food-court participation.</p>
-        </div>
-        <a class="btn gold" data-modal="partner" href="mailto:deepika.pawar@timesinternet.in?subject=Partnership%20enquiry%3A%20Grand%20Shaam-e-Awadh" data-hi="अभी साझेदार बनें">Partner Now</a>
-      </div>
-    </section>
-
-    <!-- 10. VISIT -->
+    <!-- 9. VISIT -->
     <section id="visit" class="cv parch" aria-labelledby="visit-h">
       <div class="wrap">
         <p class="eyebrow" data-hi="आइए">Visit the festival</p>
         <h2 id="visit-h" data-hi="शाम-ए-अवध का हिस्सा बनिए।">Be Part of Shaam-e-Awadh.</h2>
-        <div class="cta" style="margin-top:28px">
-          <a class="btn" href="#visit" data-modal="register" data-hi="टिकट खरीदें">Buy Tickets</a>
-          <a class="btn" href="#visit" aria-disabled="true" role="link"
-            data-hi="दिशा-निर्देश: स्थान की पुष्टि के बाद">Get Directions: after venue is confirmed</a>
-          <a class="btn" href="#visit" aria-disabled="true" role="link" data-hi="संपर्क विवरण जल्द">Contact the
-            Organisers: details soon</a>
-        </div>
         <div class="passes">
           <div class="pass best">
-            <p class="eb" data-hi="अर्ली बर्ड">Early bird</p>
-            <h3 data-hi="दो दिन का पास">Two-day pass</h3>
-            <p class="price"><span class="was"><span class="sr" data-hi="मूल क़ीमत ">Original price </span><del>₹999</del></span> <span class="now"><span class="sr" data-hi="अर्ली बर्ड क़ीमत ">Early bird price </span>₹499</span></p>
-            <p data-hi="दोनों दिन, 16 और 17 जनवरी 2027, दोपहर से रात तक।">Both days, 16 and 17 January 2027, noon to night.</p>
-            <p class="lim" data-hi="सीमित पास ही उपलब्ध।">Limited passes only.</p>
+            <div>
+              <p class="eb" data-hi="1 से 3 पास">1 to 3 Passes</p>
+              <h3 data-hi="दो दिन का पास">Two-day Pass</h3>
+              <p class="price"><span class="was"><span class="sr" data-hi="मूल क़ीमत ">Original price </span><del>₹999</del></span> <span class="now">₹599</span> <span class="unit" data-hi="/ पास">/ pass</span></p>
+              <p data-hi="दोनों दिन, 16 और 17 जनवरी 2027, दोपहर से रात तक।">Both days, 16 and 17 January 2027, noon to
+                night.</p>
+              <p class="lim" data-hi="3 या उससे कम व्यक्तियों के लिए।">For 3 or fewer people.</p>
+            </div>
+            <div class="pass-act">
+              <div class="pq" data-min="1" data-max="3" data-price="599">
+                <div class="qty" role="group" aria-label="Quantity">
+                  <button type="button" data-pq="-1" disabled><span aria-hidden="true">−</span><span class="sr" data-hi="घटाएँ">Decrease</span></button>
+                  <output aria-live="polite">1</output>
+                  <button type="button" data-pq="1"><span aria-hidden="true">+</span><span class="sr" data-hi="बढ़ाएँ">Increase</span></button>
+                </div>
+                <p class="pq-t"><span data-hi="कुल">Total</span> <b data-pt>₹599</b></p>
+              </div>
+              <a class="btn gold" href="#visit" data-modal="register" data-qty="1" data-hi="टिकट खरीदें">Buy Tickets</a>
+            </div>
+          </div>
+          <div class="pass best">
+            <div>
+              <p class="eb" data-hi="ग्रुप ऑफर · 4+ पास">Group Offer · 4+ Passes</p>
+              <h3 data-hi="ग्रुप पास (4 या अधिक)">Group Pass (4 or more)</h3>
+              <p class="price"><span class="was"><span class="sr" data-hi="मूल क़ीमत ">Original price </span><del>₹999</del></span> <span class="now">₹499</span> <span class="unit" data-hi="/ पास">/ pass</span></p>
+              <p data-hi="दोनों दिन, 16 और 17 जनवरी 2027, दोपहर से रात तक।">Both days, 16 and 17 January 2027, noon to
+                night.</p>
+              <p class="lim" data-hi="4 या अधिक व्यक्तियों के समूह पर विशेष छूट।">Special discounted rate for 4 or more people.</p>
+            </div>
+            <div class="pass-act">
+              <div class="pq" data-min="4" data-max="10" data-price="499">
+                <div class="qty" role="group" aria-label="Quantity">
+                  <button type="button" data-pq="-1" disabled><span aria-hidden="true">−</span><span class="sr" data-hi="घटाएँ">Decrease</span></button>
+                  <output aria-live="polite">4</output>
+                  <button type="button" data-pq="1"><span aria-hidden="true">+</span><span class="sr" data-hi="बढ़ाएँ">Increase</span></button>
+                </div>
+                <p class="pq-t"><span data-hi="कुल">Total</span> <b data-pt>₹1996</b></p>
+              </div>
+              <a class="btn gold" href="#visit" data-modal="register" data-qty="4" data-hi="ग्रुप टिकट खरीदें">Buy Group Tickets</a>
+            </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- 10. PARTNER CTA -->
+    <section id="partner" class="cv maroon" aria-labelledby="part-h">
+      <div class="wrap pcta">
+        <div>
+          <h2 id="part-h" data-hi="ग्रैंड शाम-ए-अवध के साथ साझेदारी करें">Partner with Grand Shaam-e-Awadh</h2>
+          <p class="lede" data-hi="ब्रांड साझेदारी, श्रेणी सहयोग, प्रदर्शनी और फ़ूड-कोर्ट में भागीदारी।">Brand
+            partnerships, category associations, exhibition and food-court participation.</p>
+        </div>
+        <a class="btn gold" data-modal="partner"
+          href="mailto:deepika.pawar@timesinternet.in?subject=Partnership%20enquiry%3A%20Grand%20Shaam-e-Awadh"
+          data-hi="अभी साझेदार बनें">Partner Now</a>
       </div>
     </section>
 
@@ -3895,7 +4136,9 @@
       <div class="wrap">
         <p class="eyebrow" data-hi="संपर्क करें">Contact us</p>
         <h2 id="con-h" data-hi="संपर्क और सहायता केंद्र">Contact &amp; Help Centre</h2>
-        <p class="lede" data-hi="टिकट, कार्यक्रम की जानकारी, भागीदारी और साझेदारी से जुड़े सवालों के लिए हमसे संपर्क करें:">For tickets, programme information, participation and partnership enquiries, reach out to us:</p>
+        <p class="lede"
+          data-hi="टिकट, कार्यक्रम की जानकारी, भागीदारी और साझेदारी से जुड़े सवालों के लिए हमसे संपर्क करें:">For
+          tickets, programme information, participation and partnership enquiries, reach out to us:</p>
         <div class="team">
           <article class="tcard">
             <h4 data-hi="सामान्य पूछताछ">General query</h4>
@@ -3955,115 +4198,173 @@
     <section id="faqs" class="cv parch" aria-labelledby="faq-h">
       <div class="wrap">
         <p class="eyebrow" data-hi="अक्सर पूछे जाने वाले प्रश्न">Frequently asked questions</p>
-        <h2 id="faq-h" data-hi="उत्सव के सहज अनुभव के लिए आपको जो कुछ चाहिए।">Everything you need for a smooth festival experience.</h2>
+        <h2 id="faq-h" data-hi="उत्सव के सहज अनुभव के लिए आपको जो कुछ चाहिए।">Everything you need for a smooth festival
+          experience.</h2>
         <div class="faq" id="faq">
           <h4 data-hi="टिकट और बुकिंग">Tickets and booking</h4>
           <details>
-            <summary data-hi="ग्रैंड शाम-ए-अवध कब और कहाँ हो रहा है?">When and where is Grand Shaam-e-Awadh taking place?</summary>
-            <p data-hi="16 और 17 जनवरी 2027 को लखनऊ, उत्तर प्रदेश में। द्वार लगभग दोपहर 12 बजे खुलेंगे और रात 10 बजे तक परिसर बंद हो जाएगा, अनुमति प्राप्त समय और ध्वनि शर्तों के अधीन। स्थान और पूरा पता पुष्टि होते ही यहाँ प्रकाशित होगा।">On 16 and 17 January 2027 in Lucknow, Uttar Pradesh. Gates open around noon and the site closes by 10 p.m., subject to the timings and sound conditions the authorities permit. The venue and full address will be published here once confirmed.</p>
+            <summary data-hi="ग्रैंड शाम-ए-अवध कब और कहाँ हो रहा है?">When and where is Grand Shaam-e-Awadh taking
+              place?</summary>
+            <p
+              data-hi="16 और 17 जनवरी 2027 को लखनऊ, उत्तर प्रदेश में। द्वार लगभग दोपहर 12 बजे खुलेंगे और रात 10 बजे तक परिसर बंद हो जाएगा, अनुमति प्राप्त समय और ध्वनि शर्तों के अधीन। स्थान और पूरा पता पुष्टि होते ही यहाँ प्रकाशित होगा।">
+              On 16 and 17 January 2027 in Lucknow, Uttar Pradesh. Gates open around noon and the site closes by 10
+              p.m., subject to the timings and sound conditions the authorities permit. The venue and full address will
+              be published here once confirmed.</p>
           </details>
           <details>
-            <summary data-hi="टिकट की श्रेणियाँ और क़ीमतें क्या हैं?">What are the ticket categories and prices?</summary>
-            <p data-hi="टिकट की एक ही श्रेणी है: दो दिन का पास, ₹999 की जगह अर्ली बर्ड क़ीमत ₹499 पर, सीमित संख्या में। हर आगंतुक को टिकट लेना होगा, ओपन माइक कलाकारों को भी।">There is one ticket category: the two-day pass, at an early bird price of ₹499 instead of ₹999, for a limited number of passes. Every visitor needs a ticket, including Open Mic performers.</p>
+            <summary data-hi="टिकट की श्रेणियाँ और क़ीमतें क्या हैं?">What are the ticket categories and prices?
+            </summary>
+            <p
+              data-hi="टिकट की एक ही श्रेणी है: दो दिन का पास, ₹999 की जगह 1 से 3 पास के लिए ₹599 प्रति पास और 4 या अधिक के ग्रुप के लिए ₹499 प्रति पास, सीमित संख्या में। हर आगंतुक को टिकट लेना होगा, ओपन माइक कलाकारों को भी।">
+              There is one ticket category: the two-day pass, at ₹599 per pass for 1 to 3 passes and ₹499 per pass for groups of 4 or more, instead of ₹999, for a limited number of passes. Every visitor needs a ticket, including Open Mic performers.</p>
           </details>
           <details>
             <summary data-hi="क्या मैं सिर्फ़ एक दिन आ सकता/सकती हूँ?">Can I attend on one day only?</summary>
-            <p data-hi="नहीं। टिकट सिर्फ़ दो दिन के पास के रूप में मिलते हैं, जो 16 और 17 जनवरी दोनों दिन के लिए मान्य है।">No. Tickets are sold as a two-day pass only, which covers both 16 and 17 January.</p>
+            <p
+              data-hi="नहीं। टिकट सिर्फ़ दो दिन के पास के रूप में मिलते हैं, जो 16 और 17 जनवरी दोनों दिन के लिए मान्य है।">
+              No. Tickets are sold as a two-day pass only, which covers both 16 and 17 January.</p>
           </details>
           <details>
             <summary data-hi="क्या मैं टिकट स्थल पर ख़रीद सकता/सकती हूँ?">Can I purchase tickets at the venue?</summary>
-            <p data-hi="ये विवरण अभी पुष्ट नहीं हुए हैं और पुष्टि होते ही यहाँ प्रकाशित किए जाएँगे।">These details have not been confirmed yet and will be published here once they are.</p>
+            <p data-hi="ये विवरण अभी पुष्ट नहीं हुए हैं और पुष्टि होते ही यहाँ प्रकाशित किए जाएँगे।">These details have
+              not been confirmed yet and will be published here once they are.</p>
           </details>
           <details>
             <summary data-hi="क्या मुझे क्यूआर-कोड टिकट मिलेगा?">Will I receive a QR-code ticket?</summary>
-            <p data-hi="हाँ। भुगतान के बाद आपको एक विशिष्ट बुकिंग आईडी और क्यूआर-कोड टिकट मिलता है, और जहाँ सुविधा हो व आपकी सहमति हो, वहाँ ईमेल और एसएमएस/व्हाट्सऐप से पुष्टि भेजी जाती है। प्रवेश पर क्यूआर कोड स्कैन कर सत्यापित किया जाता है।">Yes. After payment you receive a unique booking ID and a QR-code ticket, with confirmation by email and by SMS or WhatsApp where supported and consented to. The QR code is scanned and validated at entry.</p>
+            <p
+              data-hi="हाँ। भुगतान के बाद आपको एक विशिष्ट बुकिंग आईडी और क्यूआर-कोड टिकट मिलता है, और जहाँ सुविधा हो व आपकी सहमति हो, वहाँ ईमेल और एसएमएस/व्हाट्सऐप से पुष्टि भेजी जाती है। प्रवेश पर क्यूआर कोड स्कैन कर सत्यापित किया जाता है।">
+              Yes. After payment you receive a unique booking ID and a QR-code ticket, with confirmation by email and by
+              SMS or WhatsApp where supported and consented to. The QR code is scanned and validated at entry.</p>
           </details>
           <details>
             <summary data-hi="भुगतान विफल हो जाए तो क्या होगा?">What happens if my payment fails?</summary>
-            <p data-hi="भुगतान विफल होने पर ग्राहक सहायता टीम मदद करेगी। आप नीचे संपर्क और सहायता केंद्र के ज़रिए टीम तक पहुँच सकते हैं।">Customer support will help with failed payments. You can reach the team through the Contact & Help Centre below.</p>
+            <p
+              data-hi="भुगतान विफल होने पर ग्राहक सहायता टीम मदद करेगी। आप नीचे संपर्क और सहायता केंद्र के ज़रिए टीम तक पहुँच सकते हैं।">
+              Customer support will help with failed payments. You can reach the team through the Contact & Help Centre
+              below.</p>
           </details>
           <details>
-            <summary data-hi="क्या मैं टिकट रद्द या हस्तांतरित कर सकता/सकती हूँ?">Can I cancel or transfer my ticket?</summary>
-            <p data-hi="रद्द करने और रिफ़ंड की स्पष्ट नीति, और अनुमति होने पर टिकट हस्तांतरण के नियम, पुष्टि होते ही यहाँ प्रकाशित किए जाएँगे।">A clear cancellation and refund policy, and ticket transfer rules if permitted, will be published here once confirmed.</p>
+            <summary data-hi="क्या मैं टिकट रद्द या हस्तांतरित कर सकता/सकती हूँ?">Can I cancel or transfer my ticket?
+            </summary>
+            <p
+              data-hi="रद्द करने और रिफ़ंड की स्पष्ट नीति, और अनुमति होने पर टिकट हस्तांतरण के नियम, पुष्टि होते ही यहाँ प्रकाशित किए जाएँगे।">
+              A clear cancellation and refund policy, and ticket transfer rules if permitted, will be published here
+              once confirmed.</p>
           </details>
           <details>
             <summary data-hi="क्या बच्चों के लिए अलग टिकट चाहिए?">Do children need separate tickets?</summary>
-            <p data-hi="ये विवरण अभी पुष्ट नहीं हुए हैं और पुष्टि होते ही यहाँ प्रकाशित किए जाएँगे।">These details have not been confirmed yet and will be published here once they are.</p>
+            <p data-hi="ये विवरण अभी पुष्ट नहीं हुए हैं और पुष्टि होते ही यहाँ प्रकाशित किए जाएँगे।">These details have
+              not been confirmed yet and will be published here once they are.</p>
           </details>
           <details>
             <summary data-hi="क्या दोबारा प्रवेश की अनुमति है?">Is re-entry permitted?</summary>
-            <p data-hi="ये विवरण अभी पुष्ट नहीं हुए हैं और पुष्टि होते ही यहाँ प्रकाशित किए जाएँगे।">These details have not been confirmed yet and will be published here once they are.</p>
+            <p data-hi="ये विवरण अभी पुष्ट नहीं हुए हैं और पुष्टि होते ही यहाँ प्रकाशित किए जाएँगे।">These details have
+              not been confirmed yet and will be published here once they are.</p>
           </details>
           <details>
-            <summary data-hi="क्या कोई वीआईपी या प्रीमियम टिकट श्रेणी है?">Is there a VIP or premium ticket category?</summary>
-            <p data-hi="ये विवरण अभी पुष्ट नहीं हुए हैं और पुष्टि होते ही यहाँ प्रकाशित किए जाएँगे।">These details have not been confirmed yet and will be published here once they are.</p>
+            <summary data-hi="क्या कोई वीआईपी या प्रीमियम टिकट श्रेणी है?">Is there a VIP or premium ticket category?
+            </summary>
+            <p data-hi="ये विवरण अभी पुष्ट नहीं हुए हैं और पुष्टि होते ही यहाँ प्रकाशित किए जाएँगे।">These details have
+              not been confirmed yet and will be published here once they are.</p>
           </details>
           <h4 data-hi="कार्यक्रम और कलाकार">Programme and artists</h4>
           <details>
             <summary data-hi="ताज़ा कार्यक्रम कहाँ मिलेगा?">Where can I find the latest programme?</summary>
-            <p data-hi="इस पेज के कार्यक्रम खंड में, जिसे सत्रों की पुष्टि के साथ अपडेट किया जाता है।">In the programme section of this page, which is updated as sessions are confirmed.</p>
+            <p data-hi="इस पेज के कार्यक्रम खंड में, जिसे सत्रों की पुष्टि के साथ अपडेट किया जाता है।">In the programme
+              section of this page, which is updated as sessions are confirmed.</p>
           </details>
           <details>
             <summary data-hi="क्या सूचीबद्ध सभी कलाकार पुष्ट हैं?">Are all listed artists confirmed?</summary>
-            <p data-hi="कलाकारों और वक्ताओं के नाम पुष्टि के बाद ही घोषित होते हैं और तभी इस पेज पर दिखते हैं।">Artists and speakers are announced only once confirmed. Names appear on this page only after confirmation.</p>
+            <p data-hi="कलाकारों और वक्ताओं के नाम पुष्टि के बाद ही घोषित होते हैं और तभी इस पेज पर दिखते हैं।">Artists
+              and speakers are announced only once confirmed. Names appear on this page only after confirmation.</p>
           </details>
           <details>
             <summary data-hi="क्या कार्यक्रम के समय बदल सकते हैं?">Can the programme timings change?</summary>
-            <p data-hi="हाँ। समय अनुमानित हैं और अनुमति प्राप्त समय व ध्वनि संबंधी शर्तों के अनुसार बदल सकते हैं।">Yes. Timings are indicative and may change with permitted hours and sound conditions.</p>
+            <p data-hi="हाँ। समय अनुमानित हैं और अनुमति प्राप्त समय व ध्वनि संबंधी शर्तों के अनुसार बदल सकते हैं।">Yes.
+              Timings are indicative and may change with permitted hours and sound conditions.</p>
           </details>
           <details>
             <summary data-hi="ओपन माइक के लिए आवेदन कैसे करूँ?">How do I apply for Open Mic?</summary>
-            <p data-hi="शाम-ए-अवध की वेबसाइट पर एक छोटा वीडियो, ऑडियो नमूना, कविता या प्रस्तुति का विचार भेजें। कविता, संगीत, कॉमेडी और क़िस्सागोई, नृत्य और रंगमंच से 20 कलाकार चुने जाएँगे। चुने गए कलाकारों को मुख्य मंच पर स्लॉट और परफ़ॉर्मर पास मिलेगा, प्रवेश टिकट अलग से लेना होगा।">Apply through the Shaam-e-Awadh website with a short video, audio sample, poem or performance idea. The team selects 20 performers across poetry, music, comedy and storytelling, dance and theatre, and splits them between the two days. Selected performers get a main-stage slot and a performer pass, and still buy an entry ticket.</p>
+            <p
+              data-hi="शाम-ए-अवध की वेबसाइट पर एक छोटा वीडियो, ऑडियो नमूना, कविता या प्रस्तुति का विचार भेजें। कविता, संगीत, कॉमेडी और क़िस्सागोई, नृत्य और रंगमंच से 20 कलाकार चुने जाएँगे। चुने गए कलाकारों को मुख्य मंच पर स्लॉट और परफ़ॉर्मर पास मिलेगा, प्रवेश टिकट अलग से लेना होगा।">
+              Apply through the Shaam-e-Awadh website with a short video, audio sample, poem or performance idea. The
+              team selects 20 performers across poetry, music, comedy and storytelling, dance and theatre, and splits
+              them between the two days. Selected performers get a main-stage slot and a performer pass, and still buy
+              an entry ticket.</p>
           </details>
           <details>
-            <summary data-hi="क्या मैं मंच के किसी सत्र में आए बिना खान-पान और शिल्प के अनुभव ले सकता/सकती हूँ?">Can I attend the food and craft experiences without attending a stage session?</summary>
-            <p data-hi="ये विवरण अभी पुष्ट नहीं हुए हैं और पुष्टि होते ही यहाँ प्रकाशित किए जाएँगे।">These details have not been confirmed yet and will be published here once they are.</p>
+            <summary data-hi="क्या मैं मंच के किसी सत्र में आए बिना खान-पान और शिल्प के अनुभव ले सकता/सकती हूँ?">Can I
+              attend the food and craft experiences without attending a stage session?</summary>
+            <p data-hi="ये विवरण अभी पुष्ट नहीं हुए हैं और पुष्टि होते ही यहाँ प्रकाशित किए जाएँगे।">These details have
+              not been confirmed yet and will be published here once they are.</p>
           </details>
           <h4 data-hi="स्थान और सुविधाएँ">Venue and facilities</h4>
           <details>
             <summary data-hi="स्थल तक कैसे पहुँचूँ?">How do I reach the venue?</summary>
-            <p data-hi="लखनऊ में स्थल की पुष्टि होना बाक़ी है। पुष्टि होते ही दिशा-निर्देश यहाँ प्रकाशित होंगे।">The venue in Lucknow is yet to be confirmed. Directions will be published here once it is.</p>
+            <p data-hi="लखनऊ में स्थल की पुष्टि होना बाक़ी है। पुष्टि होते ही दिशा-निर्देश यहाँ प्रकाशित होंगे।">The
+              venue in Lucknow is yet to be confirmed. Directions will be published here once it is.</p>
           </details>
           <details>
             <summary data-hi="क्या पार्किंग उपलब्ध है?">Is parking available?</summary>
-            <p data-hi="ये विवरण अभी पुष्ट नहीं हुए हैं और पुष्टि होते ही यहाँ प्रकाशित किए जाएँगे।">These details have not been confirmed yet and will be published here once they are.</p>
+            <p data-hi="ये विवरण अभी पुष्ट नहीं हुए हैं और पुष्टि होते ही यहाँ प्रकाशित किए जाएँगे।">These details have
+              not been confirmed yet and will be published here once they are.</p>
           </details>
           <details>
-            <summary data-hi="क्या दिव्यांगजनों के लिए सुविधाएँ हैं?">Are there facilities for people with disabilities?</summary>
-            <p data-hi="सुगम मार्ग स्थल पर निर्भर हैं। स्थान की पुष्टि होते ही विवरण यहाँ प्रकाशित होंगे।">Accessible routes depend on the site. Details will be published here once the venue is confirmed.</p>
+            <summary data-hi="क्या दिव्यांगजनों के लिए सुविधाएँ हैं?">Are there facilities for people with disabilities?
+            </summary>
+            <p data-hi="सुगम मार्ग स्थल पर निर्भर हैं। स्थान की पुष्टि होते ही विवरण यहाँ प्रकाशित होंगे।">Accessible
+              routes depend on the site. Details will be published here once the venue is confirmed.</p>
           </details>
           <details>
             <summary data-hi="क्या खाने-पीने की चीज़ें उपलब्ध होंगी?">Will food and beverages be available?</summary>
-            <p data-hi="हाँ। उत्सव में अवधी खान-पान, स्थानीय व्यंजन, पारंपरिक मिठाइयाँ और स्ट्रीट फ़ूड होंगे।">Yes. The festival includes Awadhi cuisine, local delicacies, traditional sweets and street food.</p>
+            <p data-hi="हाँ। उत्सव में अवधी खान-पान, स्थानीय व्यंजन, पारंपरिक मिठाइयाँ और स्ट्रीट फ़ूड होंगे।">Yes. The
+              festival includes Awadhi cuisine, local delicacies, traditional sweets and street food.</p>
           </details>
           <details>
-            <summary data-hi="क्या चिकित्सा और प्राथमिक उपचार की सुविधा है?">Are there medical and first-aid facilities?</summary>
-            <p data-hi="प्राथमिक उपचार, पेयजल और स्वच्छता की व्यवस्था प्रस्तावित है। स्थान की पुष्टि के बाद विवरण दिए जाएँगे।">First aid, drinking water and sanitation are planned. Details will follow once the venue is confirmed.</p>
+            <summary data-hi="क्या चिकित्सा और प्राथमिक उपचार की सुविधा है?">Are there medical and first-aid facilities?
+            </summary>
+            <p
+              data-hi="प्राथमिक उपचार, पेयजल और स्वच्छता की व्यवस्था प्रस्तावित है। स्थान की पुष्टि के बाद विवरण दिए जाएँगे।">
+              First aid, drinking water and sanitation are planned. Details will follow once the venue is confirmed.</p>
           </details>
           <details>
-            <summary data-hi="परिसर के अंदर किन चीज़ों की अनुमति नहीं है?">What items are not permitted inside?</summary>
-            <p data-hi="ये विवरण अभी पुष्ट नहीं हुए हैं और पुष्टि होते ही यहाँ प्रकाशित किए जाएँगे।">These details have not been confirmed yet and will be published here once they are.</p>
+            <summary data-hi="परिसर के अंदर किन चीज़ों की अनुमति नहीं है?">What items are not permitted inside?
+            </summary>
+            <p data-hi="ये विवरण अभी पुष्ट नहीं हुए हैं और पुष्टि होते ही यहाँ प्रकाशित किए जाएँगे।">These details have
+              not been confirmed yet and will be published here once they are.</p>
           </details>
           <details>
-            <summary data-hi="बारिश या अन्य ख़राब मौसम की स्थिति में क्या होगा?">What happens in case of rain or other adverse weather?</summary>
-            <p data-hi="ये विवरण अभी पुष्ट नहीं हुए हैं और पुष्टि होते ही यहाँ प्रकाशित किए जाएँगे।">These details have not been confirmed yet and will be published here once they are.</p>
+            <summary data-hi="बारिश या अन्य ख़राब मौसम की स्थिति में क्या होगा?">What happens in case of rain or other
+              adverse weather?</summary>
+            <p data-hi="ये विवरण अभी पुष्ट नहीं हुए हैं और पुष्टि होते ही यहाँ प्रकाशित किए जाएँगे।">These details have
+              not been confirmed yet and will be published here once they are.</p>
           </details>
           <h4 data-hi="भागीदारी और साझेदारी">Participation and partnerships</h4>
           <details>
-            <summary data-hi="मैं विक्रेता या कारीगर के रूप में कैसे भाग ले सकता/सकती हूँ?">How can I participate as a vendor or artisan?</summary>
-            <p data-hi="भागीदारी के अवसर टीम को लिखें, जिनका विवरण नीचे संपर्क और सहायता केंद्र में दिया गया है।">Write to the Participation opportunities team listed in the Contact & Help Centre below.</p>
+            <summary data-hi="मैं विक्रेता या कारीगर के रूप में कैसे भाग ले सकता/सकती हूँ?">How can I participate as a
+              vendor or artisan?</summary>
+            <p data-hi="भागीदारी के अवसर टीम को लिखें, जिनका विवरण नीचे संपर्क और सहायता केंद्र में दिया गया है।">Write
+              to the Participation opportunities team listed in the Contact & Help Centre below.</p>
           </details>
           <details>
-            <summary data-hi="मैं प्रायोजक या साझेदार कैसे बन सकता/सकती हूँ?">How can I become a sponsor or partner?</summary>
-            <p data-hi="प्रायोजन या साझेदारी टीम को लिखें, जिनका विवरण नीचे संपर्क और सहायता केंद्र में दिया गया है।">Write to the Sponsorships or Partnership team listed in the Contact & Help Centre below.</p>
+            <summary data-hi="मैं प्रायोजक या साझेदार कैसे बन सकता/सकती हूँ?">How can I become a sponsor or partner?
+            </summary>
+            <p data-hi="प्रायोजन या साझेदारी टीम को लिखें, जिनका विवरण नीचे संपर्क और सहायता केंद्र में दिया गया है।">
+              Write to the Sponsorships or Partnership team listed in the Contact & Help Centre below.</p>
           </details>
           <details>
-            <summary data-hi="मीडिया एक्रेडिटेशन के लिए आवेदन कैसे करूँ?">How can I apply for media accreditation?</summary>
-            <p data-hi="सामान्य पूछताछ के संपर्क को लिखें, जिनका विवरण नीचे संपर्क और सहायता केंद्र में दिया गया है।">Write to the General query contact listed in the Contact & Help Centre below.</p>
+            <summary data-hi="मीडिया एक्रेडिटेशन के लिए आवेदन कैसे करूँ?">How can I apply for media accreditation?
+            </summary>
+            <p data-hi="सामान्य पूछताछ के संपर्क को लिखें, जिनका विवरण नीचे संपर्क और सहायता केंद्र में दिया गया है।">
+              Write to the General query contact listed in the Contact & Help Centre below.</p>
           </details>
           <details>
-            <summary data-hi="लखनऊ रत्न सम्मान के विजेताओं का चयन कैसे होता है?">How are Lucknow Ratna Samman awardees selected?</summary>
-            <p data-hi="पाँच चरणों में: नामांकन और पात्र उम्मीदवारों की पहचान, दस्तावेज़ित मानदंडों पर मूल्यांकन, स्वतंत्र जूरी द्वारा समीक्षा, अंतिम चयन और घोषणा, और उत्सव में सम्मान समारोह।">In five steps: nominations and identification of eligible candidates, evaluation against documented criteria, independent jury review, final selection and announcement, and presentation at the festival.</p>
+            <summary data-hi="लखनऊ रत्न सम्मान के विजेताओं का चयन कैसे होता है?">How are Lucknow Ratna Samman awardees
+              selected?</summary>
+            <p
+              data-hi="पाँच चरणों में: नामांकन और पात्र उम्मीदवारों की पहचान, दस्तावेज़ित मानदंडों पर मूल्यांकन, स्वतंत्र जूरी द्वारा समीक्षा, अंतिम चयन और घोषणा, और उत्सव में सम्मान समारोह।">
+              In five steps: nominations and identification of eligible candidates, evaluation against documented
+              criteria, independent jury review, final selection and announcement, and presentation at the festival.</p>
           </details>
         </div>
       </div>
@@ -4105,6 +4406,11 @@
         </ul>
       </div>
     </div>
+    <div class="ftr-disc">
+      <p data-hi="* अस्वीकरण: इस वेबसाइट पर प्रदर्शित सभी चित्र, दृश्य, व्यंजन और शिल्प केवल उत्सव के वातावरण और अवधी संस्कृति के प्रतीकात्मक और कलात्मक प्रतिनिधित्व (इंडेक्सेटिव) के रूप में प्रस्तुत किए गए हैं। वास्तविक कार्यक्रम में उपलब्ध व्यंजन, प्रदर्शन, स्टॉल और सामग्रियाँ उपलब्धता, कारीगरों, विक्रेताओं और आयोजन-स्थल की व्यवस्था के अनुसार भिन्न हो सकती हैं।">
+        * Disclaimer: Imagery, culinary displays, and artistic representations featured on this website are illustrative and artistic impressions intended to evoke the heritage and celebratory spirit of Awadh. Actual culinary offerings, handicraft showcases, artisan displays, and event presentations during the festival may vary based on seasonal availability, partner curators, and on-ground arrangements.
+      </p>
+    </div>
   </footer>
 
 
@@ -4121,210 +4427,300 @@
 
   <dialog class="mdl" id="m-register" data-type="registration" aria-labelledby="m-register-t">
     <form novalidate>
-    <header class="mh">
-      <div><h2 id="m-register-t" data-hi="ग्रैंड शाम-ए-अवध के टिकट खरीदें">Buy Tickets for Grand Shaam-e-Awadh</h2>
-      <p class="msub" data-hi="दो दिन का पास · 16–17 जनवरी 2027 · लखनऊ">Two-day pass · 16–17 January 2027 · Lucknow</p></div>
-      <button type="button" class="mx" data-close><span aria-hidden="true">×</span><span class="sr" data-hi="बंद करें">Close</span></button>
-    </header>
-    <ol class="stp" aria-label="Progress">
-      <li class="on" aria-current="step"><span>1</span><b data-hi="विवरण">Details</b></li>
-      <li><span>2</span><b data-hi="भुगतान">Payment</b></li>
-    </ol>
-    <section class="pane" data-pane="1">
-        <div class="fld"><label for="r_name"><span data-hi="पूरा नाम">Full name</span> <i aria-hidden="true">*</i></label>
+      <header class="mh">
+        <div>
+          <h2 id="m-register-t" data-hi="ग्रैंड शाम-ए-अवध के टिकट खरीदें">Buy Tickets for Grand Shaam-e-Awadh</h2>
+          <p class="msub" data-hi="दो दिन का पास · 16–17 जनवरी 2027 · लखनऊ">Two-day pass · 16–17 January 2027 · Lucknow
+          </p>
+        </div>
+        <button type="button" class="mx" data-close><span aria-hidden="true">×</span><span class="sr"
+            data-hi="बंद करें">Close</span></button>
+      </header>
+      <ol class="stp" aria-label="Progress">
+        <li class="on" aria-current="step"><span>1</span><b data-hi="विवरण">Details</b></li>
+        <li><span>2</span><b data-hi="भुगतान">Payment</b></li>
+      </ol>
+      <section class="pane" data-pane="1">
+        <div class="fld"><label for="r_name"><span data-hi="पूरा नाम">Full name</span> <i
+              aria-hidden="true">*</i></label>
           <input id="r_name" name="name" type="text" data-v="req" autocomplete="name">
-          <p class="err" id="r_name-e" hidden></p></div>
+          <p class="err" id="r_name-e" hidden></p>
+        </div>
         <div class="fld"><label for="r_email"><span data-hi="ईमेल">Email</span> <i aria-hidden="true">*</i></label>
           <input id="r_email" name="email" type="email" data-v="req email" autocomplete="email">
-          <p class="err" id="r_email-e" hidden></p></div>
-        <div class="fld"><label for="r_mobile"><span data-hi="मोबाइल नंबर">Mobile number</span> <i aria-hidden="true">*</i></label>
+          <p class="err" id="r_email-e" hidden></p>
+        </div>
+        <div class="fld"><label for="r_mobile"><span data-hi="मोबाइल नंबर">Mobile number</span> <i
+              aria-hidden="true">*</i></label>
           <input id="r_mobile" name="mobile" type="tel" data-v="req tel" autocomplete="tel" inputmode="numeric">
-          <p class="err" id="r_mobile-e" hidden></p></div>
+          <p class="err" id="r_mobile-e" hidden></p>
+        </div>
         <div class="otp" data-mobile="r_mobile">
           <button type="button" class="btn ghost sm" data-otp="send" data-hi="ओटीपी भेजें">Send OTP</button>
           <div class="otp-box" hidden>
             <label for="r_otp"><span data-hi="4 अंकों का ओटीपी दर्ज करें">Enter the 4-digit OTP</span></label>
             <div class="otp-row">
-              <input id="r_otp" name="otp_code" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="4" pattern="[0-9]*">
+              <input id="r_otp" name="otp_code" type="text" inputmode="numeric" autocomplete="one-time-code"
+                maxlength="4" pattern="[0-9]*">
               <button type="button" class="btn sm" data-otp="verify" data-hi="सत्यापित करें">Verify</button>
             </div>
           </div>
           <p class="otp-msg" role="status" aria-live="polite" hidden></p>
         </div>
-        <label class="chk"><input type="checkbox" name="consent_updates"><span data-hi="मेरी पुष्टि ईमेल और एसएमएस/व्हाट्सऐप से भेजें।">Send my confirmation by email and by SMS or WhatsApp.</span></label>
+        <label class="chk"><input type="checkbox" name="consent_updates"><span
+            data-hi="मेरी पुष्टि ईमेल और एसएमएस/व्हाट्सऐप से भेजें।">Send my confirmation by email and by SMS or
+            WhatsApp.</span></label>
         <div class="hp" aria-hidden="true"><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
-      <div class="act"><button type="button" class="btn" data-next data-hi="आगे बढ़ें">Continue</button></div>
-    </section>
-    <section class="pane" data-pane="2" hidden>
-      <p class="pl" data-hi="आपका विवरण तैयार है। आप आगे कैसे बढ़ना चाहेंगे?">Your details are ready. How would you like to proceed?</p>
-      <div class="choice">
-        <button type="button" class="btn gold" data-pay="now" data-hi="अभी भुगतान करें">Pay now</button>
-        <button type="button" class="btn ghost" data-pay="later" data-hi="बाद में भुगतान करें">Pay later</button>
-      </div>
-      <p class="hint" data-hi="बाद में भुगतान करने पर आपका विवरण सहेज लिया जाता है और हमारी टीम आपसे संपर्क करेगी।">Choosing pay later saves your details and our team will contact you.</p>
-      <div class="act"><button type="button" class="lnk" data-back="1" data-hi="← वापस">← Back</button></div>
-    </section>
-    <section class="pane" data-pane="3" hidden>
-      <h3 class="ph3" data-hi="संख्या चुनें">Select quantity</h3>
-      <div class="prod">
-        <div class="pi"><b data-hi="दो दिन का पास (अर्ली बर्ड)">Two-day pass (early bird)</b><p class="pp"><span class="was"><del>₹999</del></span> ₹499 <span data-hi="प्रति पास">per pass</span></p></div>
-        <div class="qty" role="group" aria-label="Quantity">
-          <button type="button" data-q="-1"><span aria-hidden="true">−</span><span class="sr" data-hi="घटाएँ">Decrease</span></button>
-          <output aria-live="polite">1</output>
-          <button type="button" data-q="1"><span aria-hidden="true">+</span><span class="sr" data-hi="बढ़ाएँ">Increase</span></button>
+        <div class="act"><button type="button" class="btn" data-next data-hi="आगे बढ़ें">Continue</button></div>
+      </section>
+      <section class="pane" data-pane="2" hidden>
+        <p class="pl" data-hi="आपका विवरण तैयार है। आप आगे कैसे बढ़ना चाहेंगे?">Your details are ready. How would you
+          like to proceed?</p>
+        <div class="choice">
+          <button type="button" class="btn gold" data-pay="now" data-hi="अभी भुगतान करें">Pay now</button>
+          <button type="button" class="btn ghost" data-pay="later" data-hi="बाद में भुगतान करें">Pay later</button>
         </div>
-      </div>
-      <p class="tot"><span data-hi="कुल">Total</span> <b data-total>₹499</b></p>
-      <div class="act"><button type="button" class="lnk" data-back="2" data-hi="← वापस">← Back</button>
-        <button type="button" class="btn gold" data-checkout data-hi="चेकआउट पर जाएँ">Proceed to checkout</button></div>
-    </section>
-    <section class="pane res" data-pane="res" hidden>
-      <div class="tick" aria-hidden="true">✓</div>
-      <h3 class="res-t" tabindex="-1"></h3>
-      <p class="res-b"></p>
-      <p class="res-ref"></p>
-      <div class="act"><button type="button" class="btn" data-close data-hi="बंद करें">Close</button></div>
-    </section>
-    <p class="fail" role="alert" hidden></p>
+        <p class="hint" data-hi="बाद में भुगतान करने पर आपका विवरण सहेज लिया जाता है और हमारी टीम आपसे संपर्क करेगी।">
+          Choosing pay later saves your details and our team will contact you.</p>
+        <div class="act"><button type="button" class="lnk" data-back="1" data-hi="← वापस">← Back</button></div>
+      </section>
+      <section class="pane" data-pane="3" hidden>
+        <h3 class="ph3" data-hi="संख्या चुनें">Select quantity</h3>
+        <div class="prod">
+          <div class="pi"><b data-hi="दो दिन का पास">Two-day pass</b>
+            <p class="pp">₹599 <span data-hi="प्रति पास">per pass</span></p>
+          </div>
+          <div class="qty" role="group" aria-label="Quantity">
+            <button type="button" data-q="-1"><span aria-hidden="true">−</span><span class="sr"
+                data-hi="घटाएँ">Decrease</span></button>
+            <output aria-live="polite">1</output>
+            <button type="button" data-q="1"><span aria-hidden="true">+</span><span class="sr"
+                data-hi="बढ़ाएँ">Increase</span></button>
+          </div>
+        </div>
+        <p class="tot"><span data-hi="कुल">Total</span> <b data-total>₹499</b></p>
+        <div class="act"><button type="button" class="lnk" data-back="2" data-hi="← वापस">← Back</button>
+          <button type="button" class="btn gold" data-checkout data-hi="चेकआउट पर जाएँ">Proceed to checkout</button>
+        </div>
+      </section>
+      <section class="pane res" data-pane="res" hidden>
+        <div class="tick" aria-hidden="true">✓</div>
+        <h3 class="res-t" tabindex="-1"></h3>
+        <p class="res-b"></p>
+        <p class="res-ref"></p>
+        <div class="act"><button type="button" class="btn" data-close data-hi="बंद करें">Close</button></div>
+      </section>
+      <p class="fail" role="alert" hidden></p>
     </form>
   </dialog>
 
   <dialog class="mdl" id="m-nominate" data-type="nomination" aria-labelledby="m-nominate-t">
     <form novalidate>
-    <header class="mh">
-      <div><h2 id="m-nominate-t" data-hi="नामांकन के लिए पंजीकरण">Register for Nomination</h2>
-      <p class="msub" data-hi="लखनऊ रत्न सम्मान · लखनऊ को गढ़ने वाले व्यक्तियों, संस्थाओं और उद्यमों का सम्मान।">Lucknow Ratna Samman · Recognising individuals, institutions and enterprises that shape Lucknow.</p></div>
-      <button type="button" class="mx" data-close><span aria-hidden="true">×</span><span class="sr" data-hi="बंद करें">Close</span></button>
-    </header>
-    <ol class="stp" aria-label="Progress">
-      <li class="on" aria-current="step"><span>1</span><b data-hi="विवरण">Details</b></li>
-      <li><span>2</span><b data-hi="भुगतान">Payment</b></li>
-    </ol>
-    <section class="pane" data-pane="1">
-      <fieldset><legend data-hi="आपका विवरण">Your details</legend>
-        <div class="fld"><label for="n_name"><span data-hi="आपका नाम">Your name</span> <i aria-hidden="true">*</i></label>
-          <input id="n_name" name="name" type="text" data-v="req" autocomplete="name">
-          <p class="err" id="n_name-e" hidden></p></div>
-        <div class="fld"><label for="n_email"><span data-hi="आपका ईमेल">Your email</span> <i aria-hidden="true">*</i></label>
-          <input id="n_email" name="email" type="email" data-v="req email" autocomplete="email">
-          <p class="err" id="n_email-e" hidden></p></div>
-        <div class="fld"><label for="n_mobile"><span data-hi="आपका मोबाइल नंबर">Your mobile number</span> <i aria-hidden="true">*</i></label>
-          <input id="n_mobile" name="mobile" type="tel" data-v="req tel" autocomplete="tel" inputmode="numeric">
-          <p class="err" id="n_mobile-e" hidden></p></div>
-        <div class="otp" data-mobile="n_mobile">
-          <button type="button" class="btn ghost sm" data-otp="send" data-hi="ओटीपी भेजें">Send OTP</button>
-          <div class="otp-box" hidden>
-            <label for="n_otp"><span data-hi="4 अंकों का ओटीपी दर्ज करें">Enter the 4-digit OTP</span></label>
-            <div class="otp-row">
-              <input id="n_otp" name="otp_code" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="4" pattern="[0-9]*">
-              <button type="button" class="btn sm" data-otp="verify" data-hi="सत्यापित करें">Verify</button>
-            </div>
+      <header class="mh">
+        <div>
+          <h2 id="m-nominate-t" data-hi="नामांकन के लिए पंजीकरण">Register for Nomination</h2>
+          <p class="msub" data-hi="लखनऊ रत्न सम्मान · लखनऊ को गढ़ने वाले व्यक्तियों, संस्थाओं और उद्यमों का सम्मान।">
+            Lucknow Ratna Samman · Recognising individuals, institutions and enterprises that shape Lucknow.</p>
+        </div>
+        <button type="button" class="mx" data-close><span aria-hidden="true">×</span><span class="sr"
+            data-hi="बंद करें">Close</span></button>
+      </header>
+      <ol class="stp" aria-label="Progress">
+        <li class="on" aria-current="step"><span>1</span><b data-hi="विवरण">Details</b></li>
+        <li><span>2</span><b data-hi="भुगतान">Payment</b></li>
+      </ol>
+      <section class="pane" data-pane="1">
+        <fieldset>
+          <legend data-hi="आपका विवरण">Your details</legend>
+          <div class="fld"><label for="n_name"><span data-hi="आपका नाम">Your name</span> <i
+                aria-hidden="true">*</i></label>
+            <input id="n_name" name="name" type="text" data-v="req" autocomplete="name">
+            <p class="err" id="n_name-e" hidden></p>
           </div>
-          <p class="otp-msg" role="status" aria-live="polite" hidden></p>
-        </div>
-      </fieldset>
-      <fieldset><legend data-hi="नामांकित व्यक्ति या संस्था">Nominee</legend>
-        <div class="fld"><label for="n_nominee"><span data-hi="नामांकित का नाम">Nominee name</span> <i aria-hidden="true">*</i></label>
-          <input id="n_nominee" name="nominee_name" type="text" data-v="req">
-          <p class="err" id="n_nominee-e" hidden></p></div>
-        <div class="fld"><label for="n_type"><span data-hi="नामांकित का प्रकार">Nominee type</span> <i aria-hidden="true">*</i></label>
-          <select id="n_type" name="nominee_type" data-v="req"><option value="" data-hi="चुनें…">Select…</option><option value="Individual" data-hi="व्यक्ति">Individual</option><option value="Institution" data-hi="संस्था">Institution</option><option value="Enterprise" data-hi="उद्यम">Enterprise</option></select>
-          <p class="err" id="n_type-e" hidden></p></div>
-        <div class="fld"><label for="n_field"><span data-hi="योगदान का क्षेत्र">Field of contribution</span> <i aria-hidden="true">*</i></label>
-          <select id="n_field" name="field" data-v="req"><option value="" data-hi="चुनें…">Select…</option><option value="Culture" data-hi="संस्कृति">Culture</option><option value="Literature" data-hi="साहित्य">Literature</option><option value="Education" data-hi="शिक्षा">Education</option><option value="Business" data-hi="व्यापार">Business</option><option value="Entrepreneurship" data-hi="उद्यमिता">Entrepreneurship</option><option value="Social impact" data-hi="सामाजिक प्रभाव">Social impact</option><option value="Public service" data-hi="जनसेवा">Public service</option><option value="Other fields" data-hi="अन्य क्षेत्र">Other fields</option></select>
-          <p class="err" id="n_field-e" hidden></p></div>
-        <div class="fld"><label for="n_contact"><span data-hi="नामांकित का ईमेल या मोबाइल">Nominee email or mobile</span> <small data-hi="(वैकल्पिक)">(optional)</small></label>
-          <input id="n_contact" name="nominee_contact" type="text" data-v="contact">
-          <p class="err" id="n_contact-e" hidden></p></div>
-        <div class="fld"><label for="n_why"><span data-hi="उन्हें सम्मानित क्यों किया जाए?">Why should they be honoured?</span> <i aria-hidden="true">*</i></label>
-          <textarea id="n_why" name="why" rows="4" maxlength="800" data-v="req min20"></textarea>
-          <p class="err" id="n_why-e" hidden></p></div>
-      </fieldset>
+          <div class="fld"><label for="n_email"><span data-hi="आपका ईमेल">Your email</span> <i
+                aria-hidden="true">*</i></label>
+            <input id="n_email" name="email" type="email" data-v="req email" autocomplete="email">
+            <p class="err" id="n_email-e" hidden></p>
+          </div>
+          <div class="fld"><label for="n_mobile"><span data-hi="आपका मोबाइल नंबर">Your mobile number</span> <i
+                aria-hidden="true">*</i></label>
+            <input id="n_mobile" name="mobile" type="tel" data-v="req tel" autocomplete="tel" inputmode="numeric">
+            <p class="err" id="n_mobile-e" hidden></p>
+          </div>
+          <div class="otp" data-mobile="n_mobile">
+            <button type="button" class="btn ghost sm" data-otp="send" data-hi="ओटीपी भेजें">Send OTP</button>
+            <div class="otp-box" hidden>
+              <label for="n_otp"><span data-hi="4 अंकों का ओटीपी दर्ज करें">Enter the 4-digit OTP</span></label>
+              <div class="otp-row">
+                <input id="n_otp" name="otp_code" type="text" inputmode="numeric" autocomplete="one-time-code"
+                  maxlength="4" pattern="[0-9]*">
+                <button type="button" class="btn sm" data-otp="verify" data-hi="सत्यापित करें">Verify</button>
+              </div>
+            </div>
+            <p class="otp-msg" role="status" aria-live="polite" hidden></p>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend data-hi="नामांकित व्यक्ति या संस्था">Nominee</legend>
+          <div class="fld"><label for="n_nominee"><span data-hi="नामांकित का नाम">Nominee name</span> <i
+                aria-hidden="true">*</i></label>
+            <input id="n_nominee" name="nominee_name" type="text" data-v="req">
+            <p class="err" id="n_nominee-e" hidden></p>
+          </div>
+          <div class="fld"><label for="n_type"><span data-hi="नामांकित का प्रकार">Nominee type</span> <i
+                aria-hidden="true">*</i></label>
+            <select id="n_type" name="nominee_type" data-v="req">
+              <option value="" data-hi="चुनें…">Select…</option>
+              <option value="Individual" data-hi="व्यक्ति">Individual</option>
+              <option value="Institution" data-hi="संस्था">Institution</option>
+              <option value="Enterprise" data-hi="उद्यम">Enterprise</option>
+            </select>
+            <p class="err" id="n_type-e" hidden></p>
+          </div>
+          <div class="fld"><label for="n_field"><span data-hi="योगदान का क्षेत्र">Field of contribution</span> <i
+                aria-hidden="true">*</i></label>
+            <select id="n_field" name="field" data-v="req">
+              <option value="" data-hi="चुनें…">Select…</option>
+              <option value="Culture" data-hi="संस्कृति">Culture</option>
+              <option value="Literature" data-hi="साहित्य">Literature</option>
+              <option value="Education" data-hi="शिक्षा">Education</option>
+              <option value="Business" data-hi="व्यापार">Business</option>
+              <option value="Entrepreneurship" data-hi="उद्यमिता">Entrepreneurship</option>
+              <option value="Social impact" data-hi="सामाजिक प्रभाव">Social impact</option>
+              <option value="Public service" data-hi="जनसेवा">Public service</option>
+              <option value="Other fields" data-hi="अन्य क्षेत्र">Other fields</option>
+            </select>
+            <p class="err" id="n_field-e" hidden></p>
+          </div>
+          <div class="fld"><label for="n_contact"><span data-hi="नामांकित का ईमेल या मोबाइल">Nominee email or
+                mobile</span> <small data-hi="(वैकल्पिक)">(optional)</small></label>
+            <input id="n_contact" name="nominee_contact" type="text" data-v="contact">
+            <p class="err" id="n_contact-e" hidden></p>
+          </div>
+          <div class="fld"><label for="n_why"><span data-hi="उन्हें सम्मानित क्यों किया जाए?">Why should they be
+                honoured?</span> <i aria-hidden="true">*</i></label>
+            <textarea id="n_why" name="why" rows="4" maxlength="800" data-v="req min20"></textarea>
+            <p class="err" id="n_why-e" hidden></p>
+          </div>
+        </fieldset>
         <div class="hp" aria-hidden="true"><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
-      <div class="act"><button type="button" class="btn" data-next data-hi="आगे बढ़ें">Continue</button></div>
-    </section>
-    <section class="pane" data-pane="2" hidden>
-      <p class="pl" data-hi="आपका विवरण तैयार है। आप आगे कैसे बढ़ना चाहेंगे?">Your details are ready. How would you like to proceed?</p>
-      <div class="choice">
-        <button type="button" class="btn gold" data-pay="now" data-hi="अभी भुगतान करें">Pay now</button>
-        <button type="button" class="btn ghost" data-pay="later" data-hi="बाद में भुगतान करें">Pay later</button>
-      </div>
-      <p class="hint" data-hi="बाद में भुगतान करने पर आपका विवरण सहेज लिया जाता है और हमारी टीम आपसे संपर्क करेगी।">Choosing pay later saves your details and our team will contact you.</p>
-      <div class="act"><button type="button" class="lnk" data-back="1" data-hi="← वापस">← Back</button></div>
-    </section>
-    <section class="pane" data-pane="3" hidden>
-      <h3 class="ph3" data-hi="संख्या चुनें">Select quantity</h3>
-      <div class="prod">
-        <div class="pi"><b data-hi="पुरस्कार नामांकन">Award nomination</b><p class="pp" data-hi="राशि की पुष्टि होनी बाक़ी है">Amount to be confirmed</p></div>
-        <div class="qty" role="group" aria-label="Quantity">
-          <button type="button" data-q="-1"><span aria-hidden="true">−</span><span class="sr" data-hi="घटाएँ">Decrease</span></button>
-          <output aria-live="polite">1</output>
-          <button type="button" data-q="1"><span aria-hidden="true">+</span><span class="sr" data-hi="बढ़ाएँ">Increase</span></button>
+        <div class="act"><button type="button" class="btn" data-next data-hi="आगे बढ़ें">Continue</button></div>
+      </section>
+      <section class="pane" data-pane="2" hidden>
+        <p class="pl" data-hi="आपका विवरण तैयार है। आप आगे कैसे बढ़ना चाहेंगे?">Your details are ready. How would you
+          like to proceed?</p>
+        <div class="choice">
+          <button type="button" class="btn gold" data-pay="now" data-hi="अभी भुगतान करें">Pay now</button>
+          <button type="button" class="btn ghost" data-pay="later" data-hi="बाद में भुगतान करें">Pay later</button>
         </div>
-      </div>
-      <p class="tot"><span data-hi="कुल">Total</span> <b data-total>₹499</b></p>
-      <div class="act"><button type="button" class="lnk" data-back="2" data-hi="← वापस">← Back</button>
-        <button type="button" class="btn gold" data-checkout data-hi="चेकआउट पर जाएँ">Proceed to checkout</button></div>
-    </section>
-    <section class="pane res" data-pane="res" hidden>
-      <div class="tick" aria-hidden="true">✓</div>
-      <h3 class="res-t" tabindex="-1"></h3>
-      <p class="res-b"></p>
-      <p class="res-ref"></p>
-      <div class="act"><button type="button" class="btn" data-close data-hi="बंद करें">Close</button></div>
-    </section>
-    <p class="fail" role="alert" hidden></p>
+        <p class="hint" data-hi="बाद में भुगतान करने पर आपका विवरण सहेज लिया जाता है और हमारी टीम आपसे संपर्क करेगी।">
+          Choosing pay later saves your details and our team will contact you.</p>
+        <div class="act"><button type="button" class="lnk" data-back="1" data-hi="← वापस">← Back</button></div>
+      </section>
+      <section class="pane" data-pane="3" hidden>
+        <h3 class="ph3" data-hi="संख्या चुनें">Select quantity</h3>
+        <div class="prod">
+          <div class="pi"><b data-hi="पुरस्कार नामांकन">Award nomination</b>
+            <p class="pp" data-hi="राशि की पुष्टि होनी बाक़ी है">Amount to be confirmed</p>
+          </div>
+          <div class="qty" role="group" aria-label="Quantity">
+            <button type="button" data-q="-1"><span aria-hidden="true">−</span><span class="sr"
+                data-hi="घटाएँ">Decrease</span></button>
+            <output aria-live="polite">1</output>
+            <button type="button" data-q="1"><span aria-hidden="true">+</span><span class="sr"
+                data-hi="बढ़ाएँ">Increase</span></button>
+          </div>
+        </div>
+        <p class="tot"><span data-hi="कुल">Total</span> <b data-total>₹499</b></p>
+        <div class="act"><button type="button" class="lnk" data-back="2" data-hi="← वापस">← Back</button>
+          <button type="button" class="btn gold" data-checkout data-hi="चेकआउट पर जाएँ">Proceed to checkout</button>
+        </div>
+      </section>
+      <section class="pane res" data-pane="res" hidden>
+        <div class="tick" aria-hidden="true">✓</div>
+        <h3 class="res-t" tabindex="-1"></h3>
+        <p class="res-b"></p>
+        <p class="res-ref"></p>
+        <div class="act"><button type="button" class="btn" data-close data-hi="बंद करें">Close</button></div>
+      </section>
+      <p class="fail" role="alert" hidden></p>
     </form>
   </dialog>
 
   <dialog class="mdl" id="m-partner" data-type="partnership" aria-labelledby="m-partner-t">
     <form novalidate>
-    <header class="mh">
-      <div><h2 id="m-partner-t" data-hi="ग्रैंड शाम-ए-अवध के साथ साझेदारी करें">Partner with Grand Shaam-e-Awadh</h2>
-      <p class="msub" data-hi="बताइए कि आप हमारे साथ कैसे साझेदारी करना चाहते हैं।">Tell us how you would like to partner with us.</p></div>
-      <button type="button" class="mx" data-close><span aria-hidden="true">×</span><span class="sr" data-hi="बंद करें">Close</span></button>
-    </header>
-    <section class="pane" data-pane="1">
-        <div class="fld"><label for="p_name"><span data-hi="आपका नाम">Your name</span> <i aria-hidden="true">*</i></label>
+      <header class="mh">
+        <div>
+          <h2 id="m-partner-t" data-hi="ग्रैंड शाम-ए-अवध के साथ साझेदारी करें">Partner with Grand Shaam-e-Awadh</h2>
+          <p class="msub" data-hi="बताइए कि आप हमारे साथ कैसे साझेदारी करना चाहते हैं।">Tell us how you would like to
+            partner with us.</p>
+        </div>
+        <button type="button" class="mx" data-close><span aria-hidden="true">×</span><span class="sr"
+            data-hi="बंद करें">Close</span></button>
+      </header>
+      <section class="pane" data-pane="1">
+        <div class="fld"><label for="p_name"><span data-hi="आपका नाम">Your name</span> <i
+              aria-hidden="true">*</i></label>
           <input id="p_name" name="name" type="text" data-v="req" autocomplete="name">
-          <p class="err" id="p_name-e" hidden></p></div>
-        <div class="fld"><label for="p_org"><span data-hi="संगठन">Organisation</span> <i aria-hidden="true">*</i></label>
+          <p class="err" id="p_name-e" hidden></p>
+        </div>
+        <div class="fld"><label for="p_org"><span data-hi="संगठन">Organisation</span> <i
+              aria-hidden="true">*</i></label>
           <input id="p_org" name="organisation" type="text" data-v="req" autocomplete="organization">
-          <p class="err" id="p_org-e" hidden></p></div>
-        <div class="fld"><label for="p_email"><span data-hi="कार्य ईमेल">Work email</span> <i aria-hidden="true">*</i></label>
+          <p class="err" id="p_org-e" hidden></p>
+        </div>
+        <div class="fld"><label for="p_email"><span data-hi="कार्य ईमेल">Work email</span> <i
+              aria-hidden="true">*</i></label>
           <input id="p_email" name="email" type="email" data-v="req email" autocomplete="email">
-          <p class="err" id="p_email-e" hidden></p></div>
-        <div class="fld"><label for="p_mobile"><span data-hi="मोबाइल नंबर">Mobile number</span> <i aria-hidden="true">*</i></label>
+          <p class="err" id="p_email-e" hidden></p>
+        </div>
+        <div class="fld"><label for="p_mobile"><span data-hi="मोबाइल नंबर">Mobile number</span> <i
+              aria-hidden="true">*</i></label>
           <input id="p_mobile" name="mobile" type="tel" data-v="req tel" autocomplete="tel" inputmode="numeric">
-          <p class="err" id="p_mobile-e" hidden></p></div>
+          <p class="err" id="p_mobile-e" hidden></p>
+        </div>
         <div class="otp" data-mobile="p_mobile">
           <button type="button" class="btn ghost sm" data-otp="send" data-hi="ओटीपी भेजें">Send OTP</button>
           <div class="otp-box" hidden>
             <label for="p_otp"><span data-hi="4 अंकों का ओटीपी दर्ज करें">Enter the 4-digit OTP</span></label>
             <div class="otp-row">
-              <input id="p_otp" name="otp_code" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="4" pattern="[0-9]*">
+              <input id="p_otp" name="otp_code" type="text" inputmode="numeric" autocomplete="one-time-code"
+                maxlength="4" pattern="[0-9]*">
               <button type="button" class="btn sm" data-otp="verify" data-hi="सत्यापित करें">Verify</button>
             </div>
           </div>
           <p class="otp-msg" role="status" aria-live="polite" hidden></p>
         </div>
-        <div class="fld"><label for="p_interest"><span data-hi="साझेदारी का प्रकार">Type of partnership</span> <i aria-hidden="true">*</i></label>
-          <select id="p_interest" name="interest" data-v="req"><option value="" data-hi="चुनें…">Select…</option><option value="Brand partnership" data-hi="ब्रांड साझेदारी">Brand partnership</option><option value="Category association" data-hi="श्रेणी सहयोग">Category association</option><option value="Sponsorship" data-hi="प्रायोजन">Sponsorship</option><option value="Exhibition participation" data-hi="प्रदर्शनी में भागीदारी">Exhibition participation</option><option value="Food-court participation" data-hi="फ़ूड-कोर्ट में भागीदारी">Food-court participation</option><option value="Other" data-hi="अन्य">Other</option></select>
-          <p class="err" id="p_interest-e" hidden></p></div>
-        <div class="fld"><label for="p_msg"><span data-hi="संदेश">Message</span> <small data-hi="(वैकल्पिक)">(optional)</small></label>
+        <div class="fld"><label for="p_interest"><span data-hi="साझेदारी का प्रकार">Type of partnership</span> <i
+              aria-hidden="true">*</i></label>
+          <select id="p_interest" name="interest" data-v="req">
+            <option value="" data-hi="चुनें…">Select…</option>
+            <option value="Brand partnership" data-hi="ब्रांड साझेदारी">Brand partnership</option>
+            <option value="Category association" data-hi="श्रेणी सहयोग">Category association</option>
+            <option value="Sponsorship" data-hi="प्रायोजन">Sponsorship</option>
+            <option value="Exhibition participation" data-hi="प्रदर्शनी में भागीदारी">Exhibition participation</option>
+            <option value="Food-court participation" data-hi="फ़ूड-कोर्ट में भागीदारी">Food-court participation</option>
+            <option value="Other" data-hi="अन्य">Other</option>
+          </select>
+          <p class="err" id="p_interest-e" hidden></p>
+        </div>
+        <div class="fld"><label for="p_msg"><span data-hi="संदेश">Message</span> <small
+              data-hi="(वैकल्पिक)">(optional)</small></label>
           <textarea id="p_msg" name="message" rows="4" maxlength="1000" data-v=""></textarea>
-          <p class="err" id="p_msg-e" hidden></p></div>
+          <p class="err" id="p_msg-e" hidden></p>
+        </div>
         <div class="hp" aria-hidden="true"><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
-      <div class="act"><button type="button" class="btn gold" data-submit data-hi="पूछताछ भेजें">Submit enquiry</button></div>
-    </section>
-    <section class="pane res" data-pane="res" hidden>
-      <div class="tick" aria-hidden="true">✓</div>
-      <h3 class="res-t" tabindex="-1"></h3>
-      <p class="res-b"></p>
-      <p class="res-ref"></p>
-      <div class="act"><button type="button" class="btn" data-close data-hi="बंद करें">Close</button></div>
-    </section>
-    <p class="fail" role="alert" hidden></p>
+        <div class="act"><button type="button" class="btn gold" data-submit data-hi="पूछताछ भेजें">Submit
+            enquiry</button></div>
+      </section>
+      <section class="pane res" data-pane="res" hidden>
+        <div class="tick" aria-hidden="true">✓</div>
+        <h3 class="res-t" tabindex="-1"></h3>
+        <p class="res-b"></p>
+        <p class="res-ref"></p>
+        <div class="act"><button type="button" class="btn" data-close data-hi="बंद करें">Close</button></div>
+      </section>
+      <p class="fail" role="alert" hidden></p>
     </form>
   </dialog>
 
@@ -4412,7 +4808,7 @@
           otpEndpoint: ''    // JSON POST {action:'send'|'verify', mobile, code}. Empty = OTP step is skipped.
         };
         var PRODUCTS = {
-          registration: { max: 10, price: 499, name: 'Two-day pass (early bird)' },
+          registration: { max: 10, price: function (q) { return q >= 4 ? 499 : 599 }, name: 'Two-day pass' },
           nomination: { max: 10, price: null, name: 'Award nomination' }
         };
         var TX = {
@@ -4465,12 +4861,24 @@
           if (f) setTimeout(function () { f.focus() }, 30);
           dlg.scrollTop = 0;
         }
+        function getUnitPrice(type, qty) {
+          var P = PRODUCTS[type];
+          if (!P || P.price == null) return null;
+          return typeof P.price === 'function' ? P.price(qty) : P.price;
+        }
         function totalText(dlg) {
-          var P = PRODUCTS[dlg.getAttribute('data-type')], st = dlg._s;
-          return P.price == null ? tx('tbc') : money(P.price * st.qty);
+          var type = dlg.getAttribute('data-type'), st = dlg._s, up = getUnitPrice(type, st.qty);
+          return up == null ? tx('tbc') : money(up * st.qty);
         }
         function renderQty(dlg) {
-          q1('.qty output', dlg).textContent = dlg._s.qty; q1('[data-total]', dlg).textContent = totalText(dlg);
+          var type = dlg.getAttribute('data-type'), st = dlg._s, up = getUnitPrice(type, st.qty);
+          q1('.qty output', dlg).textContent = st.qty;
+          q1('[data-total]', dlg).textContent = totalText(dlg);
+          var ppEl = q1('.prod .pi .pp', dlg);
+          if (ppEl && up != null) {
+            var isGrp = st.qty >= 4;
+            ppEl.innerHTML = (isGrp ? '<span class="was"><del>₹599</del></span> ' : '') + '₹' + up + ' <span data-hi="' + (root.lang === 'hi' ? 'प्रति पास' : 'per pass') + '">' + (root.lang === 'hi' ? 'प्रति पास' : 'per pass') + '</span>' + (isGrp ? ' <small style="color:var(--emerald);font-weight:600;display:inline-block;margin-left:4px">(' + (root.lang === 'hi' ? 'ग्रुप छूट' : 'Group rate') + ')</small>' : '');
+          }
         }
         function renderRes(dlg) {
           var st = dlg._s; if (!st.res) return;
@@ -4500,9 +4908,14 @@
           if (dlg.close) dlg.close(); else dlg.removeAttribute('open');
           root.classList.remove('mo'); if (dlg._s) clearInterval(dlg._s.timer); if (openDlg === dlg) openDlg = null;
         }
-        function openM(name) {
+        function openM(name, initialQty) {
           var dlg = d.getElementById('m-' + name); if (!dlg) return;
-          resetDlg(dlg); root.classList.add('mo'); openDlg = dlg;
+          resetDlg(dlg);
+          if (initialQty) {
+            dlg._s.qty = Math.max(1, Math.min(PRODUCTS[name] ? PRODUCTS[name].max : 10, parseInt(initialQty, 10) || 1));
+            if (q1('.qty output', dlg)) renderQty(dlg);
+          }
+          root.classList.add('mo'); openDlg = dlg;
           if (dlg.showModal) dlg.showModal(); else dlg.setAttribute('open', '');
         }
         function validate(dlg) {
@@ -4566,8 +4979,9 @@
         }
         function submit(dlg, status, res) {
           var st = dlg._s, type = dlg.getAttribute('data-type'), P = PRODUCTS[type], fail = q1('.fail', dlg);
-          var rec = { id: 'SEA-' + Date.now().toString(36).toUpperCase() + Math.random().toString(36).slice(2, 5).toUpperCase(), type: type, status: status, mobileVerified: true, otpMode: SEA_CONFIG.otpEndpoint ? 'service' : 'skipped', ts: new Date().toISOString(), lang: root.lang, page: location.href, fields: collect(dlg) };
-          if (status === 'checkout_started') rec.order = { product: P.name, quantity: st.qty, unitPrice: P.price, total: P.price == null ? null : P.price * st.qty };
+          var rec = { id: 'SEA-' + Date.now().toString(36).toUpperCase() + Math.random().toString(36).slice(2, 5).toUpperCase(), type: type, status: status, mobileVerified: !!SEA_CONFIG.otpEndpoint, otpMode: SEA_CONFIG.otpEndpoint ? 'service' : 'none', ts: new Date().toISOString(), lang: root.lang, page: location.href, fields: collect(dlg) };
+          var up = getUnitPrice(type, st.qty);
+          if (status === 'checkout_started') rec.order = { product: P.name, quantity: st.qty, unitPrice: up, total: up == null ? null : up * st.qty };
           fail.hidden = true; dlg.setAttribute('aria-busy', 'true');
           $('button', dlg).forEach(function (b) { b.setAttribute('data-was', b.disabled ? '1' : '0'); b.disabled = true });
           return save(rec).then(function (ok) {
@@ -4614,8 +5028,17 @@
         $('.mdl').forEach(wire);
         if (!SEA_CONFIG.endpoint && window.console) console.warn('SEA forms: no endpoint configured. Submissions are only stored in this browser (SEA.leads()). Set SEA_CONFIG.endpoint before launch.');
         d.addEventListener('click', function (e) {
+          var pb = e.target.closest('[data-pq]');
+          if (pb) {
+            var pq = pb.closest('.pq'), o = q1('output', pq), lo = +pq.getAttribute('data-min'), hi = +pq.getAttribute('data-max'), pr = +pq.getAttribute('data-price');
+            var n = Math.max(lo, Math.min(hi, (+o.textContent) + (+pb.getAttribute('data-pq'))));
+            o.textContent = n; q1('[data-pt]', pq).textContent = money(n * pr);
+            $('[data-pq]', pq).forEach(function (b) { b.disabled = (+b.getAttribute('data-pq') < 0 && n <= lo) || (+b.getAttribute('data-pq') > 0 && n >= hi) });
+            q1('[data-modal]', pq.parentNode).setAttribute('data-qty', n);
+            return;
+          }
           var a = e.target.closest('[data-modal]'); if (!a || !d.getElementById('m-' + a.getAttribute('data-modal'))) return;
-          e.preventDefault(); openM(a.getAttribute('data-modal'));
+          e.preventDefault(); openM(a.getAttribute('data-modal'), a.getAttribute('data-qty'));
         });
         window.__onLang = function () {
           if (!openDlg) return; var dlg = openDlg, st = dlg._s; if (!st) return;
