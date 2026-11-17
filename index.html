@@ -1365,6 +1365,15 @@
       cursor: not-allowed
     }
 
+    .pq-e {
+      flex-basis: 100%;
+      margin: 0;
+      padding: 8px 10px;
+      border-radius: 8px;
+      background: #fff;
+      font-weight: 600
+    }
+
     .pq-t {
       font: 600 1.05rem var(--sans);
       margin: 0
@@ -4102,13 +4111,14 @@
               <p class="lim" data-hi="4 या अधिक व्यक्तियों के समूह पर विशेष छूट।">Special discounted rate for 4 or more people.</p>
             </div>
             <div class="pass-act">
-              <div class="pq" data-min="4" data-max="10" data-price="499">
+              <div class="pq" data-min="4" data-max="9" data-price="499">
                 <div class="qty" role="group" aria-label="Quantity">
                   <button type="button" data-pq="-1" disabled><span aria-hidden="true">−</span><span class="sr" data-hi="घटाएँ">Decrease</span></button>
                   <output aria-live="polite">4</output>
                   <button type="button" data-pq="1"><span aria-hidden="true">+</span><span class="sr" data-hi="बढ़ाएँ">Increase</span></button>
                 </div>
                 <p class="pq-t"><span data-hi="कुल">Total</span> <b data-pt>₹1996</b></p>
+                <p class="err pq-e" role="alert" hidden></p>
               </div>
               <a class="btn gold" href="#visit" data-modal="register" data-qty="4" data-hi="ग्रुप टिकट खरीदें">Buy Group Tickets</a>
             </div>
@@ -4498,6 +4508,7 @@
                 data-hi="बढ़ाएँ">Increase</span></button>
           </div>
         </div>
+        <p class="err qty-e" role="alert" hidden></p>
         <p class="tot"><span data-hi="कुल">Total</span> <b data-total>₹499</b></p>
         <div class="act"><button type="button" class="lnk" data-back="2" data-hi="← वापस">← Back</button>
           <button type="button" class="btn gold" data-checkout data-hi="चेकआउट पर जाएँ">Proceed to checkout</button>
@@ -4808,7 +4819,7 @@
           otpEndpoint: ''    // JSON POST {action:'send'|'verify', mobile, code}. Empty = OTP step is skipped.
         };
         var PRODUCTS = {
-          registration: { max: 10, price: function (q) { return q >= 4 ? 499 : 599 }, name: 'Two-day pass' },
+          registration: { max: 9, price: function (q) { return q >= 4 ? 499 : 599 }, name: 'Two-day pass' },
           nomination: { max: 10, price: null, name: 'Award nomination' }
         };
         var TX = {
@@ -4832,6 +4843,7 @@
           ordB: { en: 'Your details and your order ({q} × {p}) are saved. Online checkout is not live yet, so our team will contact you shortly with payment instructions.', hi: 'आपका विवरण और ऑर्डर ({q} × {p}) सहेज लिया गया है। ऑनलाइन चेकआउट अभी शुरू नहीं हुआ है, इसलिए हमारी टीम जल्द ही भुगतान के निर्देशों के साथ आपसे संपर्क करेगी।' },
           doneT: { en: 'Enquiry submitted', hi: 'पूछताछ जमा हो गई' },
           doneB: { en: 'Thank you. Your enquiry has been submitted and your details are saved. Our team will contact you shortly.', hi: 'धन्यवाद। आपकी पूछताछ जमा हो गई है और आपका विवरण सहेज लिया गया है। हमारी टीम जल्द ही आपसे संपर्क करेगी।' },
+          maxPass: { en: 'Only 9 passes can be bought at a time. For more than 9 passes, please make a separate purchase.', hi: 'एक बार में अधिकतम 9 पास ही ख़रीदे जा सकते हैं। 9 से अधिक पास के लिए कृपया अलग से ख़रीदारी करें।' },
           ref: { en: 'Reference: {n}', hi: 'संदर्भ: {n}' }
         };
         function tx(k, o) { var t = TX[k][root.lang === 'hi' ? 'hi' : 'en']; for (var x in o) t = t.replace('{' + x + '}', o[x]); return t }
@@ -4901,6 +4913,7 @@
             q1('.otp-box', dlg).hidden = true; var sb = q1('[data-otp=send]', dlg); sb.hidden = false; sb.disabled = false; sb.textContent = root.lang === 'hi' ? 'ओटीपी भेजें' : 'Send OTP';
             otpMsg(dlg, '');
           }
+          var qe0 = q1('.qty-e', dlg); if (qe0) qe0.hidden = true;
           if (q1('.qty output', dlg)) renderQty(dlg);
           setPane(dlg, '1');
         }
@@ -5004,7 +5017,7 @@
             else if (b.hasAttribute('data-back')) setPane(dlg, b.getAttribute('data-back'));
             else if (b.getAttribute('data-pay') === 'now') { setPane(dlg, '3'); renderQty(dlg) }
             else if (b.getAttribute('data-pay') === 'later') submit(dlg, 'payment_pending', 'pend').then(function (ok) { if (ok) showRes(dlg) });
-            else if (b.hasAttribute('data-q')) { st.qty = Math.max(1, Math.min(P.max, st.qty + (+b.getAttribute('data-q')))); renderQty(dlg) }
+            else if (b.hasAttribute('data-q')) { var qe = q1('.qty-e', dlg); if (qe) { var over = +b.getAttribute('data-q') > 0 && st.qty >= P.max && type === 'registration'; qe.textContent = over ? tx('maxPass') : ''; qe.hidden = !over } st.qty = Math.max(1, Math.min(P.max, st.qty + (+b.getAttribute('data-q')))); renderQty(dlg) }
             else if (b.hasAttribute('data-checkout')) submit(dlg, 'checkout_started', 'ord').then(function (ok) {
               if (!ok) return;
               if (SEA_CONFIG.checkoutUrl) { var u = SEA_CONFIG.checkoutUrl; location.href = u + (u.indexOf('?') > -1 ? '&' : '?') + 'ref=' + encodeURIComponent(st.rec.id) + '&product=' + encodeURIComponent(type) + '&qty=' + st.qty; return }
@@ -5031,9 +5044,11 @@
           var pb = e.target.closest('[data-pq]');
           if (pb) {
             var pq = pb.closest('.pq'), o = q1('output', pq), lo = +pq.getAttribute('data-min'), hi = +pq.getAttribute('data-max'), pr = +pq.getAttribute('data-price');
-            var n = Math.max(lo, Math.min(hi, (+o.textContent) + (+pb.getAttribute('data-pq'))));
+            var cur = +o.textContent, pe = q1('.pq-e', pq), dl = +pb.getAttribute('data-pq');
+            if (pe) { if (dl > 0 && cur >= hi) { pe.textContent = tx('maxPass'); pe.hidden = false; return } pe.hidden = true }
+            var n = Math.max(lo, Math.min(hi, cur + dl));
             o.textContent = n; q1('[data-pt]', pq).textContent = money(n * pr);
-            $('[data-pq]', pq).forEach(function (b) { b.disabled = (+b.getAttribute('data-pq') < 0 && n <= lo) || (+b.getAttribute('data-pq') > 0 && n >= hi) });
+            $('[data-pq]', pq).forEach(function (b) { b.disabled = (+b.getAttribute('data-pq') < 0 && n <= lo) || (!pe && +b.getAttribute('data-pq') > 0 && n >= hi) });
             q1('[data-modal]', pq.parentNode).setAttribute('data-qty', n);
             return;
           }

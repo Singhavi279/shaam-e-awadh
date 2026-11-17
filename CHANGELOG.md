@@ -128,3 +128,9 @@ SEO/AEO (title, meta description, Open Graph, JSON-LD) is re-checked on every co
   hidden at 360px and below.
 - **SEO/AEO changed:** meta description carries "Passes from ₹499"; Event JSON-LD has two offers (₹599, ₹499); FAQ
   answer (EN and HI, JSON-LD and visible) states both tiers. `tools/seo-check.mjs` now parses multi-line meta tags.
+
+## 0.9.2 – 2026-11-17 – group pass limit
+- Group pass is limited to 4–9 passes per purchase (card stepper and the form's quantity step). Pressing + at 9 shows
+  "Only 9 passes can be bought at a time. For more than 9 passes, please make a separate purchase." (EN and HI).
+- Full responsive audit, widths 320–2560 incl. breakpoint edges: no horizontal overflow, no undersized tap targets.
+- SEO/AEO unchanged; `node tools/seo-check.mjs` passes.
