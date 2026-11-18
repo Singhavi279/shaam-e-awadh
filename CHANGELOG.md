@@ -137,3 +137,20 @@ SEO/AEO (title, meta description, Open Graph, JSON-LD) is re-checked on every co
 
 ## 0.9.3 – 2026-11-17 – city section hidden
 - "Lucknow: Beyond the Postcards" (#city) is commented out in index.html, not deleted. SEO/AEO unchanged; seo-check passes.
+
+## 0.9.4 – 2026-11-18 – weekdays and swipe-up loader
+- Weekdays added wherever the dates appear: hero (Saturday / Sunday pills), day tabs and day headings, pass cards,
+  sticky bar, ticket form header, and the FAQ answers (EN and HI, page and JSON-LD).
+- Loader: "Skip intro" replaced by an animated "Swipe up" control. Click, a swipe up (the page follows the finger),
+  mouse wheel, arrow keys or Esc all lift the intro away and reveal the site.
+- SEO/AEO: FAQ answers now say "Saturday 16 and Sunday 17 January 2027" in both the page and JSON-LD; seo-check passes.
+
+## 0.9.5 – 2026-11-18 – contacts in forms
+- All Partner Now and Enquire now buttons open the partnership form (phone-call change reverted).
+- Each form shows a contact line in its footer and on the confirmation screen: tickets → Avnish Singh, award nomination → Sagun Kumari, partnership/expo enquiries → Deepika Pawar.
+- Contact Us: Award nomination is now Sagun Kumari; Participation opportunities is now Simran Singh. SEO unchanged.
+- Ticket form step 2 now shows the same pass cards as the Tickets section (1–3 at ₹599, group 4–9 at ₹499) with steppers, total, Proceed to checkout and a quiet Pay later link, replacing the Pay now / Pay later choice.
+- Hero "Explore the Festival" replaced by "Book a Stall", opening the partnership form with "Exhibition participation" preselected.
+- Partnership form dropdown: Sponsorship, Exhibition Partner / Booth Space, Food Court Integration, Other; Book a Stall preselects Exhibition Partner / Booth Space.
+- Contact Us: "Partnership" card renamed "Booth Space / Partnership".
+- Nominee form trimmed to: nominee name, contact email, contact mobile (OTP), nominee type, field of contribution, why honoured. No length limits on the reason (a single "." is accepted); the form is titled "Nominee Enquiry Form".

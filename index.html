@@ -139,7 +139,7 @@
           "name": "When and where is Grand Shaam-e-Awadh taking place?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "On 16 and 17 January 2027 in Lucknow, Uttar Pradesh. Gates open around noon and the site closes by 10 p.m., subject to the timings and sound conditions the authorities permit. The venue and full address will be published here once confirmed."
+            "text": "On Saturday 16 and Sunday 17 January 2027 in Lucknow, Uttar Pradesh. Gates open around noon and the site closes by 10 p.m., subject to the timings and sound conditions the authorities permit. The venue and full address will be published here once confirmed."
           }
         },
         {
@@ -155,7 +155,7 @@
           "name": "Can I attend on one day only?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No. Tickets are sold as a two-day pass only, which covers both 16 and 17 January."
+            "text": "No. Tickets are sold as a two-day pass only, which covers both Saturday 16 and Sunday 17 January."
           }
         },
         {
@@ -603,6 +603,10 @@
     }
 
     .hero .fact {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 12px;
       margin-top: 20px;
       font-weight: 600;
       font-size: 1.125rem
@@ -1326,6 +1330,152 @@
       box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25)
     }
 
+    .dow {
+      display: inline-flex;
+      gap: 6px;
+      vertical-align: middle
+    }
+
+    .dow i {
+      font: 700 .68rem/1 var(--sans);
+      font-style: normal;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid currentColor;
+      color: #ecc872;
+      background: rgba(0, 0, 0, .18)
+    }
+
+    .day-btn span {
+      display: block
+    }
+
+    .day-btn .dn {
+      font-size: .72rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      opacity: .8
+    }
+
+    .day-btn {
+      padding-block: 8px;
+      line-height: 1.25
+    }
+
+    .dayhead .dwk {
+      display: block;
+      margin-top: 4px;
+      font: 700 .72rem/1 var(--sans);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--maroon)
+    }
+
+    @media (max-width:600px) {
+      .sbar-info .lk {
+        display: none
+      }
+    }
+
+    .mft {
+      margin: 18px 0 0;
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+      font-size: .875rem;
+      color: var(--muted)
+    }
+
+    .mft a,
+    .res-c a {
+      color: var(--maroon);
+      font-weight: 700;
+      white-space: nowrap
+    }
+
+    .res-c {
+      margin: 14px auto 0;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: #fff;
+      border: 1px solid var(--line);
+      font-size: .95rem
+    }
+
+    .mcards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 12px
+    }
+
+    @media (max-width:560px) {
+      .mcards {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .mcard {
+      padding: 14px 16px;
+      border: 2px solid var(--line);
+      border-radius: 12px;
+      background: #fff;
+      cursor: pointer;
+      transition: border-color .15s, box-shadow .15s
+    }
+
+    .mcard.sel {
+      border-color: var(--emerald);
+      box-shadow: 0 0 0 3px #1f5c4a26
+    }
+
+    .mcard .eb {
+      font: 700 .7rem var(--sans);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--maroon);
+      margin: 0 0 4px
+    }
+
+    .mcard h4 {
+      font-size: 1.1rem;
+      margin: 0
+    }
+
+    .mcard .mpr {
+      margin: 4px 0;
+      font-size: 1.05rem
+    }
+
+    .mcard .mpr del {
+      color: var(--muted);
+      font-size: .85rem
+    }
+
+    .mcard .mpr b {
+      font: 700 1.5rem var(--serif)
+    }
+
+    .mcard .mn {
+      margin: 0 0 10px;
+      font-size: .85rem;
+      color: var(--muted)
+    }
+
+    .mcard:not(.sel) .qty {
+      opacity: .55
+    }
+
+    .mcard .qty button:disabled {
+      opacity: .35;
+      cursor: not-allowed
+    }
+
+    .mdl .hint .lnk {
+      display: inline
+    }
+
     .nb {
       white-space: nowrap
     }
@@ -1760,6 +1910,7 @@
     }
 
     .ld {
+      touch-action: none;
       position: fixed;
       inset: 0;
       z-index: 1000;
@@ -1940,22 +2091,47 @@
     .ld .sk {
       position: absolute;
       z-index: 9;
-      right: max(16px, env(safe-area-inset-right));
-      bottom: max(16px, env(safe-area-inset-bottom));
-      min-height: 44px;
-      padding: 0 20px;
-      border-radius: 999px;
-      border: 1px solid rgba(243, 233, 210, .38);
-      background: rgba(10, 4, 5, .35);
+      left: 50%;
+      bottom: max(22px, env(safe-area-inset-bottom));
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      min-width: 44px;
+      min-height: 56px;
+      padding: 6px 18px;
+      border: 0;
+      background: none;
       color: #f3e9d2;
-      font: 600 .875rem/1 var(--sans, system-ui, sans-serif);
-      letter-spacing: .06em;
+      font: 600 .78rem/1 var(--sans, system-ui, sans-serif);
+      letter-spacing: .22em;
+      text-transform: uppercase;
       cursor: pointer;
       opacity: 0
     }
 
+    .ld .sk svg {
+      animation: swp 1.6s ease-in-out infinite
+    }
+
+    @keyframes swp {
+      0% {
+        transform: translateY(8px);
+        opacity: 0
+      }
+
+      50% {
+        opacity: 1
+      }
+
+      100% {
+        transform: translateY(-8px);
+        opacity: 0
+      }
+    }
+
     .ld .sk:hover {
-      border-color: #c9a24e;
       color: #fff
     }
 
@@ -2236,7 +2412,7 @@
     @keyframes push {
       to {
         opacity: 0;
-        transform: scale(1.22);
+        transform: translateY(-100%);
         visibility: hidden
       }
     }
@@ -3179,15 +3355,21 @@
     </div>
     <i class="fl f1" aria-hidden="true"></i><i class="fl f2" aria-hidden="true"></i><i class="rg"
       aria-hidden="true"></i><i class="fs" aria-hidden="true"></i>
-    <button class="sk" type="button">Skip intro</button>
+    <button class="sk" type="button" aria-label="Swipe up to enter the site"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path d="M5 15l7-7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Swipe up</span></button>
   </div>
   <script>(function () {
       var d = document, r = d.documentElement, L = d.getElementById('ld'); if (!L) return;
       var mq = function (q) { return !!(window.matchMedia && matchMedia(q).matches) }, RM = mq('(prefers-reduced-motion: reduce)'), cn = navigator.connection || {}, lite = cn.saveData || /2g/.test(cn.effectiveType || '');
       var done = 0, raf = 0; r.classList.add('ldr');
       function finish() { if (done) return; done = 1; cancelAnimationFrame(raf); r.classList.remove('ldr'); L.classList.add('out'); removeEventListener('keydown', key); setTimeout(function () { L.remove() }, 950) }
-      function key(e) { if (e.key === 'Escape') finish() }
+      function key(e) { if (e.key === 'Escape' || e.key === 'ArrowUp' || e.key === 'ArrowDown' || e.key === 'PageDown') finish() }
       L.querySelector('.sk').addEventListener('click', finish); addEventListener('keydown', key);
+      /* swipe up (touch drag or wheel/trackpad) also opens the site */
+      var ty = null, dy = 0;
+      L.addEventListener('touchstart', function (e) { ty = e.touches[0].clientY; dy = 0; L.style.transition = 'none' }, { passive: true });
+      L.addEventListener('touchmove', function (e) { if (ty === null || done) return; dy = e.touches[0].clientY - ty; if (dy < 0) L.style.transform = 'translateY(' + dy + 'px)' }, { passive: true });
+      L.addEventListener('touchend', function () { if (ty === null) return; ty = null; if (dy < -50) { finish() } else { L.style.transition = 'transform .25s'; L.style.transform = '' } });
+      L.addEventListener('wheel', function (e) { if (Math.abs(e.deltaY) > 8) finish() }, { passive: true });
       setTimeout(finish, 9000);
       try {
         /* chikankari rosette: 16 outer petals, 8 inner petals, 16 keri (paisley) and a ring of stitches */
@@ -3345,10 +3527,10 @@
         <p class="lede"
           data-hi="दो दिनों का एक उत्सव, जो लखनऊ को लखनऊ बनाने वाले लोगों, विचारों, कला, संगीत, खान-पान, दस्तकारी और महत्वाकांक्षा को एक मंच पर लाता है।">
           A two day festival celebrating Lucknow's people, ideas, art, music, food, craftsmanship and ambition.</p>
-        <p class="fact"><span data-hi="16–17 जनवरी 2027 | लखनऊ">16–17 January 2027 | Lucknow</span></p>
+        <p class="fact"><span data-hi="16–17 जनवरी 2027 | लखनऊ">16–17 January 2027 | Lucknow</span><span class="dow" role="img" aria-label="Saturday and Sunday"><i data-hi="शनिवार">Saturday</i><i data-hi="रविवार">Sunday</i></span></p>
         <div class="cta">
           <a class="btn gold" href="#visit" data-modal="register" data-hi="टिकट खरीदें">Buy Tickets</a>
-          <a class="btn ghost" href="#about" data-hi="उत्सव को जानें">Explore the Festival</a>
+          <a class="btn ghost" href="mailto:deepika.pawar@timesinternet.in?subject=Stall%20enquiry%3A%20Grand%20Shaam-e-Awadh" data-modal="partner" data-interest="Exhibition Partner / Booth Space" data-hi="स्टॉल बुक करें">Book a Stall</a>
         </div>
         <p class="tag-line" data-hi="टाइम्स इंटरनेट लैंग्वेजेस लाइव की एक पहल">A Times Internet Languages Live
           Initiative</p>
@@ -3693,8 +3875,7 @@
           <div class="enq">
             <p data-hi="क्या आप हमारे साथ साझेदारी करना चाहते हैं?">Interested in partnering with us?</p>
             <a class="btn" data-modal="partner"
-              href="mailto:deepika.pawar@timesinternet.in?subject=Partnership%20enquiry%3A%20Grand%20Shaam-e-Awadh"
-              data-hi="अभी पूछताछ करें">Enquire now</a>
+              href="mailto:deepika.pawar@timesinternet.in?subject=Partnership%20enquiry%3A%20Grand%20Shaam-e-Awadh" data-hi="अभी पूछताछ करें">Enquire now</a>
           </div>
         </div>
         <div class="arch">
@@ -3721,8 +3902,7 @@
           <div class="enq">
             <p data-hi="क्या आप हमारे साथ साझेदारी करना चाहते हैं?">Interested in partnering with us?</p>
             <a class="btn" data-modal="partner"
-              href="mailto:deepika.pawar@timesinternet.in?subject=Partnership%20enquiry%3A%20Grand%20Shaam-e-Awadh"
-              data-hi="अभी पूछताछ करें">Enquire now</a>
+              href="mailto:deepika.pawar@timesinternet.in?subject=Partnership%20enquiry%3A%20Grand%20Shaam-e-Awadh" data-hi="अभी पूछताछ करें">Enquire now</a>
           </div>
         </div>
         <div class="arch">
@@ -3740,10 +3920,8 @@
         <p class="eyebrow" data-hi="कार्यक्रम">The programme</p>
         <h2 id="prog-h" data-hi="दो दिन। अनगिनत अनुभव।">Two Days. Countless Experiences.</h2>
         <div class="pnav" role="group" aria-label="Day">
-          <button class="day-btn" type="button" data-day="1" aria-pressed="true" data-hi="दिन 1 – 16 जनवरी 2027">Day 1 –
-            16 January 2027</button>
-          <button class="day-btn" type="button" data-day="2" aria-pressed="false" data-hi="दिन 2 – 17 जनवरी 2027">Day 2
-            – 17 January 2027</button>
+          <button class="day-btn" type="button" data-day="1" aria-pressed="true"><span class="dn" data-hi="दिन 1 · शनिवार">Day 1 · Saturday</span><span data-hi="16 जनवरी 2027">16 January 2027</span></button>
+          <button class="day-btn" type="button" data-day="2" aria-pressed="false"><span class="dn" data-hi="दिन 2 · रविवार">Day 2 · Sunday</span><span data-hi="17 जनवरी 2027">17 January 2027</span></button>
         </div>
         <div class="chips" role="group" aria-label="Filter by category">
           <button class="chip" type="button" data-cat="all" aria-pressed="true" data-hi="सभी">All</button>
@@ -3761,7 +3939,7 @@
         </div>
 
         <div class="evwrap">
-          <h3 class="dayhead">Day 1 – Lucknow Ki Virasat · 16 January 2027</h3>
+          <h3 class="dayhead">Day 1 – Lucknow Ki Virasat<span class="dwk">Saturday · 16 January 2027</span></h3>
           <ol class="evlist" id="d1" data-day="1">
             <li class="ev" data-cat="heritage" data-start="2027-01-16T14:00" data-end="2027-01-16T14:45"><time>2:00 –
                 2:45 pm</time>
@@ -3853,7 +4031,7 @@
             </li>
           </ol>
 
-          <h3 class="dayhead">Day 2 – Lucknow Ka Kal · 17 January 2027</h3>
+          <h3 class="dayhead">Day 2 – Lucknow Ka Kal<span class="dwk">Sunday · 17 January 2027</span></h3>
           <ol class="evlist" id="d2" data-day="2">
             <li class="ev" data-cat="heritage" data-start="2027-01-17T14:00" data-end="2027-01-17T14:15"><time>2:00 –
                 2:15 pm</time>
@@ -4087,8 +4265,7 @@
               <p class="eb" data-hi="1 से 3 पास">1 to 3 Passes</p>
               <h3 data-hi="दो दिन का पास">Two-day Pass</h3>
               <p class="price"><span class="was"><span class="sr" data-hi="मूल क़ीमत ">Original price </span><del>₹999</del></span> <span class="now">₹599</span> <span class="unit" data-hi="/ पास">/ pass</span></p>
-              <p data-hi="दोनों दिन, 16 और 17 जनवरी 2027, दोपहर से रात तक।">Both days, 16 and 17 January 2027, noon to
-                night.</p>
+              <p data-hi="दोनों दिन: शनिवार 16 और रविवार 17 जनवरी 2027, दोपहर से रात तक।">Both days: Saturday 16 and Sunday 17 January 2027, noon to night.</p>
               <p class="lim" data-hi="3 या उससे कम व्यक्तियों के लिए।">For 3 or fewer people.</p>
             </div>
             <div class="pass-act">
@@ -4108,8 +4285,7 @@
               <p class="eb" data-hi="ग्रुप ऑफर · 4+ पास">Group Offer · 4+ Passes</p>
               <h3 data-hi="ग्रुप पास (4 या अधिक)">Group Pass (4 or more)</h3>
               <p class="price"><span class="was"><span class="sr" data-hi="मूल क़ीमत ">Original price </span><del>₹999</del></span> <span class="now">₹499</span> <span class="unit" data-hi="/ पास">/ pass</span></p>
-              <p data-hi="दोनों दिन, 16 और 17 जनवरी 2027, दोपहर से रात तक।">Both days, 16 and 17 January 2027, noon to
-                night.</p>
+              <p data-hi="दोनों दिन: शनिवार 16 और रविवार 17 जनवरी 2027, दोपहर से रात तक।">Both days: Saturday 16 and Sunday 17 January 2027, noon to night.</p>
               <p class="lim" data-hi="4 या अधिक व्यक्तियों के समूह पर विशेष छूट।">Special discounted rate for 4 or more people.</p>
             </div>
             <div class="pass-act">
@@ -4163,7 +4339,7 @@
             </dl>
           </article>
           <article class="tcard">
-            <h4 data-hi="साझेदारी">Partnership</h4>
+            <h4 data-hi="बूथ स्पेस / साझेदारी">Booth Space / Partnership</h4>
             <p class="who">Deepika Pawar</p>
             <dl>
               <dt data-hi="संपर्क">Contact</dt>
@@ -4174,12 +4350,12 @@
           </article>
           <article class="tcard">
             <h4 data-hi="पुरस्कार नामांकन">Award nomination</h4>
-            <p class="who">Simran Singh</p>
+            <p class="who">Sagun Kumari</p>
             <dl>
               <dt data-hi="संपर्क">Contact</dt>
-              <dd><a href="tel:+917838788554">+91 7838788554</a></dd>
+              <dd><a href="tel:+919304412377">+91 9304412377</a></dd>
               <dt data-hi="ईमेल">Email</dt>
-              <dd><a href="mailto:simran1@timesinternet.in">simran1@timesinternet.in</a></dd>
+              <dd><a href="mailto:sagun.kumari@timesinternet.in">sagun.kumari@timesinternet.in</a></dd>
             </dl>
           </article>
           <article class="tcard">
@@ -4194,12 +4370,12 @@
           </article>
           <article class="tcard">
             <h4 data-hi="भागीदारी के अवसर">Participation opportunities</h4>
-            <p class="who">Sagun Kumari</p>
+            <p class="who">Simran Singh</p>
             <dl>
               <dt data-hi="संपर्क">Contact</dt>
-              <dd><a href="tel:+919304412377">+91 9304412377</a></dd>
+              <dd><a href="tel:+917838788554">+91 7838788554</a></dd>
               <dt data-hi="ईमेल">Email</dt>
-              <dd><a href="mailto:sagun.kumari@timesinternet.in">sagun.kumari@timesinternet.in</a></dd>
+              <dd><a href="mailto:simran1@timesinternet.in">simran1@timesinternet.in</a></dd>
             </dl>
           </article>
         </div>
@@ -4218,8 +4394,8 @@
             <summary data-hi="ग्रैंड शाम-ए-अवध कब और कहाँ हो रहा है?">When and where is Grand Shaam-e-Awadh taking
               place?</summary>
             <p
-              data-hi="16 और 17 जनवरी 2027 को लखनऊ, उत्तर प्रदेश में। द्वार लगभग दोपहर 12 बजे खुलेंगे और रात 10 बजे तक परिसर बंद हो जाएगा, अनुमति प्राप्त समय और ध्वनि शर्तों के अधीन। स्थान और पूरा पता पुष्टि होते ही यहाँ प्रकाशित होगा।">
-              On 16 and 17 January 2027 in Lucknow, Uttar Pradesh. Gates open around noon and the site closes by 10
+              data-hi="शनिवार 16 और रविवार 17 जनवरी 2027 को लखनऊ, उत्तर प्रदेश में। द्वार लगभग दोपहर 12 बजे खुलेंगे और रात 10 बजे तक परिसर बंद हो जाएगा, अनुमति प्राप्त समय और ध्वनि शर्तों के अधीन। स्थान और पूरा पता पुष्टि होते ही यहाँ प्रकाशित होगा।">
+              On Saturday 16 and Sunday 17 January 2027 in Lucknow, Uttar Pradesh. Gates open around noon and the site closes by 10
               p.m., subject to the timings and sound conditions the authorities permit. The venue and full address will
               be published here once confirmed.</p>
           </details>
@@ -4233,8 +4409,8 @@
           <details>
             <summary data-hi="क्या मैं सिर्फ़ एक दिन आ सकता/सकती हूँ?">Can I attend on one day only?</summary>
             <p
-              data-hi="नहीं। टिकट सिर्फ़ दो दिन के पास के रूप में मिलते हैं, जो 16 और 17 जनवरी दोनों दिन के लिए मान्य है।">
-              No. Tickets are sold as a two-day pass only, which covers both 16 and 17 January.</p>
+              data-hi="नहीं। टिकट सिर्फ़ दो दिन के पास के रूप में मिलते हैं, जो शनिवार 16 और रविवार 17 जनवरी दोनों दिन के लिए मान्य है।">
+              No. Tickets are sold as a two-day pass only, which covers both Saturday 16 and Sunday 17 January.</p>
           </details>
           <details>
             <summary data-hi="क्या मैं टिकट स्थल पर ख़रीद सकता/सकती हूँ?">Can I purchase tickets at the venue?</summary>
@@ -4429,7 +4605,7 @@
   <div class="sbar" role="region" aria-label="Quick actions">
     <div class="sbar-info">
       <strong data-hi="ग्रैंड शाम-ए-अवध">Grand Shaam-e-Awadh</strong>
-      <span data-hi="16–17 जनवरी 2027 · लखनऊ">16–17 Jan 2027 · Lucknow</span>
+      <span data-hi="शनि–रवि · 16–17 जनवरी 2027">Sat–Sun · 16–17 Jan 2027</span><span class="lk" data-hi=" · लखनऊ"> · Lucknow</span>
     </div>
     <div class="sbar-cta">
       <a class="btn" href="#visit" data-modal="register" data-hi="टिकट खरीदें">Buy Tickets</a>
@@ -4442,7 +4618,7 @@
       <header class="mh">
         <div>
           <h2 id="m-register-t" data-hi="ग्रैंड शाम-ए-अवध के टिकट खरीदें">Buy Tickets for Grand Shaam-e-Awadh</h2>
-          <p class="msub" data-hi="दो दिन का पास · 16–17 जनवरी 2027 · लखनऊ">Two-day pass · 16–17 January 2027 · Lucknow
+          <p class="msub" data-hi="दो दिन का पास · शनि–रवि, 16–17 जनवरी 2027 · लखनऊ">Two-day pass · Sat–Sun, 16–17 January 2027 · Lucknow
           </p>
         </div>
         <button type="button" class="mx" data-close><span aria-hidden="true">×</span><span class="sr"
@@ -4484,43 +4660,47 @@
             WhatsApp.</span></label>
         <div class="hp" aria-hidden="true"><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
         <div class="act"><button type="button" class="btn" data-next data-hi="आगे बढ़ें">Continue</button></div>
+      <p class="mft"><span data-hi="मदद चाहिए? कॉल करें">Need help? Call</span> <a href="tel:+917669138964">Avnish Singh · +91 7669138964</a></p>
       </section>
       <section class="pane" data-pane="2" hidden>
-        <p class="pl" data-hi="आपका विवरण तैयार है। आप आगे कैसे बढ़ना चाहेंगे?">Your details are ready. How would you
-          like to proceed?</p>
-        <div class="choice">
-          <button type="button" class="btn gold" data-pay="now" data-hi="अभी भुगतान करें">Pay now</button>
-          <button type="button" class="btn ghost" data-pay="later" data-hi="बाद में भुगतान करें">Pay later</button>
-        </div>
-        <p class="hint" data-hi="बाद में भुगतान करने पर आपका विवरण सहेज लिया जाता है और हमारी टीम आपसे संपर्क करेगी।">
-          Choosing pay later saves your details and our team will contact you.</p>
-        <div class="act"><button type="button" class="lnk" data-back="1" data-hi="← वापस">← Back</button></div>
-      </section>
-      <section class="pane" data-pane="3" hidden>
-        <h3 class="ph3" data-hi="संख्या चुनें">Select quantity</h3>
-        <div class="prod">
-          <div class="pi"><b data-hi="दो दिन का पास">Two-day pass</b>
-            <p class="pp">₹599 <span data-hi="प्रति पास">per pass</span></p>
+        <h3 class="ph3" data-hi="अपने पास चुनें">Choose your passes</h3>
+        <div class="mcards">
+          <div class="mcard" data-tier="s" data-min="1" data-max="3" data-price="599">
+            <p class="eb" data-hi="1 से 3 पास">1 to 3 Passes</p>
+            <h4 data-hi="दो दिन का पास">Two-day Pass</h4>
+            <p class="mpr"><del><span class="sr" data-hi="मूल क़ीमत ">Original price </span>₹999</del> <b>₹599</b> <span data-hi="/ पास">/ pass</span></p>
+            <p class="mn" data-hi="दोनों दिन: शनिवार 16 और रविवार 17 जनवरी 2027।">Both days, Saturday 16 and Sunday 17 January 2027.</p>
+            <div class="qty" role="group" aria-label="Quantity">
+              <button type="button" data-mq="-1"><span aria-hidden="true">−</span><span class="sr" data-hi="घटाएँ">Decrease</span></button>
+              <output aria-live="polite">1</output>
+              <button type="button" data-mq="1"><span aria-hidden="true">+</span><span class="sr" data-hi="बढ़ाएँ">Increase</span></button>
+            </div>
           </div>
-          <div class="qty" role="group" aria-label="Quantity">
-            <button type="button" data-q="-1"><span aria-hidden="true">−</span><span class="sr"
-                data-hi="घटाएँ">Decrease</span></button>
-            <output aria-live="polite">1</output>
-            <button type="button" data-q="1"><span aria-hidden="true">+</span><span class="sr"
-                data-hi="बढ़ाएँ">Increase</span></button>
+          <div class="mcard" data-tier="g" data-min="4" data-max="9" data-price="499">
+            <p class="eb" data-hi="ग्रुप ऑफर · 4 से 9 पास">Group Offer · 4 to 9 Passes</p>
+            <h4 data-hi="ग्रुप पास">Group Pass</h4>
+            <p class="mpr"><del><span class="sr" data-hi="मूल क़ीमत ">Original price </span>₹999</del> <b>₹499</b> <span data-hi="/ पास">/ pass</span></p>
+            <p class="mn" data-hi="4 या अधिक व्यक्तियों के लिए विशेष दर। एक बार में अधिकतम 9।">Special rate for 4 or more people. Up to 9 per purchase.</p>
+            <div class="qty" role="group" aria-label="Quantity">
+              <button type="button" data-mq="-1"><span aria-hidden="true">−</span><span class="sr" data-hi="घटाएँ">Decrease</span></button>
+              <output aria-live="polite">4</output>
+              <button type="button" data-mq="1"><span aria-hidden="true">+</span><span class="sr" data-hi="बढ़ाएँ">Increase</span></button>
+            </div>
           </div>
         </div>
         <p class="err qty-e" role="alert" hidden></p>
-        <p class="tot"><span data-hi="कुल">Total</span> <b data-total>₹499</b></p>
-        <div class="act"><button type="button" class="lnk" data-back="2" data-hi="← वापस">← Back</button>
+        <p class="tot"><span data-hi="कुल">Total</span> <b data-total>₹599</b></p>
+        <div class="act"><button type="button" class="lnk" data-back="1" data-hi="← वापस">← Back</button>
           <button type="button" class="btn gold" data-checkout data-hi="चेकआउट पर जाएँ">Proceed to checkout</button>
         </div>
-      </section>
+        <p class="hint"><span data-hi="अभी भुगतान नहीं करना?">Not ready to pay?</span> <button type="button" class="lnk" data-pay="later" data-hi="बाद में भुगतान करें">Pay later</button></p>
+        <p class="mft"><span data-hi="मदद चाहिए? कॉल करें">Need help? Call</span> <a href="tel:+917669138964">Avnish Singh · +91 7669138964</a></p></section>
       <section class="pane res" data-pane="res" hidden>
         <div class="tick" aria-hidden="true">✓</div>
         <h3 class="res-t" tabindex="-1"></h3>
         <p class="res-b"></p>
         <p class="res-ref"></p>
+        <p class="res-c"><span data-hi="किसी भी सवाल के लिए कॉल करें:">For any questions, call</span> <a href="tel:+917669138964">Avnish Singh · +91 7669138964</a></p>
         <div class="act"><button type="button" class="btn" data-close data-hi="बंद करें">Close</button></div>
       </section>
       <p class="fail" role="alert" hidden></p>
@@ -4531,7 +4711,7 @@
     <form novalidate>
       <header class="mh">
         <div>
-          <h2 id="m-nominate-t" data-hi="नामांकन के लिए पंजीकरण">Register for Nomination</h2>
+          <h2 id="m-nominate-t" data-hi="नामांकन पूछताछ फ़ॉर्म">Nominee Enquiry Form</h2>
           <p class="msub" data-hi="लखनऊ रत्न सम्मान · लखनऊ को गढ़ने वाले व्यक्तियों, संस्थाओं और उद्यमों का सम्मान।">
             Lucknow Ratna Samman · Recognising individuals, institutions and enterprises that shape Lucknow.</p>
         </div>
@@ -4543,81 +4723,66 @@
         <li><span>2</span><b data-hi="भुगतान">Payment</b></li>
       </ol>
       <section class="pane" data-pane="1">
-        <fieldset>
-          <legend data-hi="आपका विवरण">Your details</legend>
-          <div class="fld"><label for="n_name"><span data-hi="आपका नाम">Your name</span> <i
-                aria-hidden="true">*</i></label>
-            <input id="n_name" name="name" type="text" data-v="req" autocomplete="name">
-            <p class="err" id="n_name-e" hidden></p>
-          </div>
-          <div class="fld"><label for="n_email"><span data-hi="आपका ईमेल">Your email</span> <i
-                aria-hidden="true">*</i></label>
-            <input id="n_email" name="email" type="email" data-v="req email" autocomplete="email">
-            <p class="err" id="n_email-e" hidden></p>
-          </div>
-          <div class="fld"><label for="n_mobile"><span data-hi="आपका मोबाइल नंबर">Your mobile number</span> <i
-                aria-hidden="true">*</i></label>
-            <input id="n_mobile" name="mobile" type="tel" data-v="req tel" autocomplete="tel" inputmode="numeric">
-            <p class="err" id="n_mobile-e" hidden></p>
-          </div>
-          <div class="otp" data-mobile="n_mobile">
-            <button type="button" class="btn ghost sm" data-otp="send" data-hi="ओटीपी भेजें">Send OTP</button>
-            <div class="otp-box" hidden>
-              <label for="n_otp"><span data-hi="4 अंकों का ओटीपी दर्ज करें">Enter the 4-digit OTP</span></label>
-              <div class="otp-row">
-                <input id="n_otp" name="otp_code" type="text" inputmode="numeric" autocomplete="one-time-code"
-                  maxlength="4" pattern="[0-9]*">
-                <button type="button" class="btn sm" data-otp="verify" data-hi="सत्यापित करें">Verify</button>
-              </div>
+        <div class="fld"><label for="n_nominee"><span data-hi="नामांकित का नाम">Nominee name</span> <i
+              aria-hidden="true">*</i></label>
+          <input id="n_nominee" name="nominee_name" type="text" data-v="req">
+          <p class="err" id="n_nominee-e" hidden></p>
+        </div>
+        <div class="fld"><label for="n_email"><span data-hi="संपर्क ईमेल">Contact email</span> <i
+              aria-hidden="true">*</i></label>
+          <input id="n_email" name="email" type="email" data-v="req email" autocomplete="email">
+          <p class="err" id="n_email-e" hidden></p>
+        </div>
+        <div class="fld"><label for="n_mobile"><span data-hi="संपर्क मोबाइल">Contact mobile</span> <i
+              aria-hidden="true">*</i></label>
+          <input id="n_mobile" name="mobile" type="tel" data-v="req tel" autocomplete="tel" inputmode="numeric">
+          <p class="err" id="n_mobile-e" hidden></p>
+        </div>
+        <div class="otp" data-mobile="n_mobile">
+          <button type="button" class="btn ghost sm" data-otp="send" data-hi="ओटीपी भेजें">Send OTP</button>
+          <div class="otp-box" hidden>
+            <label for="n_otp"><span data-hi="4 अंकों का ओटीपी दर्ज करें">Enter the 4-digit OTP</span></label>
+            <div class="otp-row">
+              <input id="n_otp" name="otp_code" type="text" inputmode="numeric" autocomplete="one-time-code"
+                maxlength="4" pattern="[0-9]*">
+              <button type="button" class="btn sm" data-otp="verify" data-hi="सत्यापित करें">Verify</button>
             </div>
-            <p class="otp-msg" role="status" aria-live="polite" hidden></p>
           </div>
-        </fieldset>
-        <fieldset>
-          <legend data-hi="नामांकित व्यक्ति या संस्था">Nominee</legend>
-          <div class="fld"><label for="n_nominee"><span data-hi="नामांकित का नाम">Nominee name</span> <i
-                aria-hidden="true">*</i></label>
-            <input id="n_nominee" name="nominee_name" type="text" data-v="req">
-            <p class="err" id="n_nominee-e" hidden></p>
-          </div>
-          <div class="fld"><label for="n_type"><span data-hi="नामांकित का प्रकार">Nominee type</span> <i
-                aria-hidden="true">*</i></label>
-            <select id="n_type" name="nominee_type" data-v="req">
-              <option value="" data-hi="चुनें…">Select…</option>
-              <option value="Individual" data-hi="व्यक्ति">Individual</option>
-              <option value="Institution" data-hi="संस्था">Institution</option>
-              <option value="Enterprise" data-hi="उद्यम">Enterprise</option>
-            </select>
-            <p class="err" id="n_type-e" hidden></p>
-          </div>
-          <div class="fld"><label for="n_field"><span data-hi="योगदान का क्षेत्र">Field of contribution</span> <i
-                aria-hidden="true">*</i></label>
-            <select id="n_field" name="field" data-v="req">
-              <option value="" data-hi="चुनें…">Select…</option>
-              <option value="Culture" data-hi="संस्कृति">Culture</option>
-              <option value="Literature" data-hi="साहित्य">Literature</option>
-              <option value="Education" data-hi="शिक्षा">Education</option>
-              <option value="Business" data-hi="व्यापार">Business</option>
-              <option value="Entrepreneurship" data-hi="उद्यमिता">Entrepreneurship</option>
-              <option value="Social impact" data-hi="सामाजिक प्रभाव">Social impact</option>
-              <option value="Public service" data-hi="जनसेवा">Public service</option>
-              <option value="Other fields" data-hi="अन्य क्षेत्र">Other fields</option>
-            </select>
-            <p class="err" id="n_field-e" hidden></p>
-          </div>
-          <div class="fld"><label for="n_contact"><span data-hi="नामांकित का ईमेल या मोबाइल">Nominee email or
-                mobile</span> <small data-hi="(वैकल्पिक)">(optional)</small></label>
-            <input id="n_contact" name="nominee_contact" type="text" data-v="contact">
-            <p class="err" id="n_contact-e" hidden></p>
-          </div>
-          <div class="fld"><label for="n_why"><span data-hi="उन्हें सम्मानित क्यों किया जाए?">Why should they be
-                honoured?</span> <i aria-hidden="true">*</i></label>
-            <textarea id="n_why" name="why" rows="4" maxlength="800" data-v="req min20"></textarea>
-            <p class="err" id="n_why-e" hidden></p>
-          </div>
-        </fieldset>
+          <p class="otp-msg" role="status" aria-live="polite" hidden></p>
+        </div>
+        <div class="fld"><label for="n_type"><span data-hi="नामांकित का प्रकार">Nominee type</span> <i
+              aria-hidden="true">*</i></label>
+          <select id="n_type" name="nominee_type" data-v="req">
+            <option value="" data-hi="चुनें…">Select…</option>
+            <option value="Individual" data-hi="व्यक्ति">Individual</option>
+            <option value="Institution" data-hi="संस्था">Institution</option>
+            <option value="Enterprise" data-hi="उद्यम">Enterprise</option>
+          </select>
+          <p class="err" id="n_type-e" hidden></p>
+        </div>
+        <div class="fld"><label for="n_field"><span data-hi="योगदान का क्षेत्र">Field of contribution</span> <i
+              aria-hidden="true">*</i></label>
+          <select id="n_field" name="field" data-v="req">
+            <option value="" data-hi="चुनें…">Select…</option>
+            <option value="Culture" data-hi="संस्कृति">Culture</option>
+            <option value="Literature" data-hi="साहित्य">Literature</option>
+            <option value="Education" data-hi="शिक्षा">Education</option>
+            <option value="Business" data-hi="व्यापार">Business</option>
+            <option value="Entrepreneurship" data-hi="उद्यमिता">Entrepreneurship</option>
+            <option value="Social impact" data-hi="सामाजिक प्रभाव">Social impact</option>
+            <option value="Public service" data-hi="जनसेवा">Public service</option>
+            <option value="Other fields" data-hi="अन्य क्षेत्र">Other fields</option>
+          </select>
+          <p class="err" id="n_field-e" hidden></p>
+        </div>
+        <div class="fld"><label for="n_why"><span data-hi="उन्हें सम्मानित क्यों किया जाए?">Why should they be
+              honoured?</span> <i aria-hidden="true">*</i></label>
+          <textarea id="n_why" name="why" rows="4" data-v="req"></textarea>
+          <p class="err" id="n_why-e" hidden></p>
+        </div>
         <div class="hp" aria-hidden="true"><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
         <div class="act"><button type="button" class="btn" data-next data-hi="आगे बढ़ें">Continue</button></div>
+      <p class="mft"><span data-hi="मदद चाहिए? कॉल करें">Need help? Call</span> <a href="tel:+919304412377">Sagun Kumari · +91 9304412377</a></p>
       </section>
       <section class="pane" data-pane="2" hidden>
         <p class="pl" data-hi="आपका विवरण तैयार है। आप आगे कैसे बढ़ना चाहेंगे?">Your details are ready. How would you
@@ -4629,6 +4794,7 @@
         <p class="hint" data-hi="बाद में भुगतान करने पर आपका विवरण सहेज लिया जाता है और हमारी टीम आपसे संपर्क करेगी।">
           Choosing pay later saves your details and our team will contact you.</p>
         <div class="act"><button type="button" class="lnk" data-back="1" data-hi="← वापस">← Back</button></div>
+      <p class="mft"><span data-hi="मदद चाहिए? कॉल करें">Need help? Call</span> <a href="tel:+919304412377">Sagun Kumari · +91 9304412377</a></p>
       </section>
       <section class="pane" data-pane="3" hidden>
         <h3 class="ph3" data-hi="संख्या चुनें">Select quantity</h3>
@@ -4648,12 +4814,14 @@
         <div class="act"><button type="button" class="lnk" data-back="2" data-hi="← वापस">← Back</button>
           <button type="button" class="btn gold" data-checkout data-hi="चेकआउट पर जाएँ">Proceed to checkout</button>
         </div>
+      <p class="mft"><span data-hi="मदद चाहिए? कॉल करें">Need help? Call</span> <a href="tel:+919304412377">Sagun Kumari · +91 9304412377</a></p>
       </section>
       <section class="pane res" data-pane="res" hidden>
         <div class="tick" aria-hidden="true">✓</div>
         <h3 class="res-t" tabindex="-1"></h3>
         <p class="res-b"></p>
         <p class="res-ref"></p>
+        <p class="res-c"><span data-hi="किसी भी सवाल के लिए कॉल करें:">For any questions, call</span> <a href="tel:+919304412377">Sagun Kumari · +91 9304412377</a></p>
         <div class="act"><button type="button" class="btn" data-close data-hi="बंद करें">Close</button></div>
       </section>
       <p class="fail" role="alert" hidden></p>
@@ -4708,11 +4876,9 @@
               aria-hidden="true">*</i></label>
           <select id="p_interest" name="interest" data-v="req">
             <option value="" data-hi="चुनें…">Select…</option>
-            <option value="Brand partnership" data-hi="ब्रांड साझेदारी">Brand partnership</option>
-            <option value="Category association" data-hi="श्रेणी सहयोग">Category association</option>
             <option value="Sponsorship" data-hi="प्रायोजन">Sponsorship</option>
-            <option value="Exhibition participation" data-hi="प्रदर्शनी में भागीदारी">Exhibition participation</option>
-            <option value="Food-court participation" data-hi="फ़ूड-कोर्ट में भागीदारी">Food-court participation</option>
+            <option value="Exhibition Partner / Booth Space" data-hi="एग्ज़िबिशन पार्टनर / बूथ स्पेस">Exhibition Partner / Booth Space</option>
+            <option value="Food Court Integration" data-hi="फ़ूड कोर्ट इंटीग्रेशन">Food Court Integration</option>
             <option value="Other" data-hi="अन्य">Other</option>
           </select>
           <p class="err" id="p_interest-e" hidden></p>
@@ -4725,12 +4891,14 @@
         <div class="hp" aria-hidden="true"><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
         <div class="act"><button type="button" class="btn gold" data-submit data-hi="पूछताछ भेजें">Submit
             enquiry</button></div>
+      <p class="mft"><span data-hi="मदद चाहिए? कॉल करें">Need help? Call</span> <a href="tel:+919971129087">Deepika Pawar · +91 9971129087</a></p>
       </section>
       <section class="pane res" data-pane="res" hidden>
         <div class="tick" aria-hidden="true">✓</div>
         <h3 class="res-t" tabindex="-1"></h3>
         <p class="res-b"></p>
         <p class="res-ref"></p>
+        <p class="res-c"><span data-hi="किसी भी सवाल के लिए कॉल करें:">For any questions, call</span> <a href="tel:+919971129087">Deepika Pawar · +91 9971129087</a></p>
         <div class="act"><button type="button" class="btn" data-close data-hi="बंद करें">Close</button></div>
       </section>
       <p class="fail" role="alert" hidden></p>
@@ -4886,6 +5054,17 @@
         }
         function renderQty(dlg) {
           var type = dlg.getAttribute('data-type'), st = dlg._s, up = getUnitPrice(type, st.qty);
+          var cards = $('.mcards .mcard', dlg);
+          if (cards.length) {
+            cards.forEach(function (c) {
+              var lo = +c.getAttribute('data-min'), hi = +c.getAttribute('data-max'), sel = st.qty >= lo && st.qty <= hi, bs = $('[data-mq]', c);
+              c.classList.toggle('sel', sel); c.setAttribute('aria-current', sel ? 'true' : 'false');
+              q1('output', c).textContent = sel ? st.qty : lo;
+              bs[0].disabled = !sel || st.qty <= lo;
+              bs[1].disabled = sel && st.qty >= hi && c.getAttribute('data-tier') === 's';
+            });
+            q1('[data-total]', dlg).textContent = totalText(dlg); return
+          }
           q1('.qty output', dlg).textContent = st.qty;
           q1('[data-total]', dlg).textContent = totalText(dlg);
           var ppEl = q1('.prod .pi .pp', dlg);
@@ -4896,7 +5075,7 @@
         }
         function renderRes(dlg) {
           var st = dlg._s; if (!st.res) return;
-          var P = PRODUCTS[dlg.getAttribute('data-type')], pn = q1('.prod .pi b', dlg) ? q1('.prod .pi b', dlg).textContent : '';
+          var P = PRODUCTS[dlg.getAttribute('data-type')], pn = q1('.prod .pi b', dlg) ? q1('.prod .pi b', dlg).textContent : P.name;
           q1('.res-t', dlg).textContent = tx(st.res + 'T');
           q1('.res-b', dlg).textContent = tx(st.res + 'B', { q: st.qty, p: pn });
           q1('.res-ref', dlg).textContent = st.rec ? tx('ref', { n: st.rec.id }) : '';
@@ -5011,7 +5190,16 @@
           var type = dlg.getAttribute('data-type'), P = PRODUCTS[type];
           dlg.addEventListener('click', function (e) {
             if (e.target === dlg) { closeDlg(dlg); return }
-            var b = e.target.closest('button'); if (!b) return; var st = dlg._s;
+            var st = dlg._s, cd = e.target.closest('.mcard'), bq = e.target.closest('[data-mq]');
+            if (cd && !bq && !cd.classList.contains('sel')) { st.qty = +cd.getAttribute('data-min'); var q0 = q1('.qty-e', dlg); if (q0) q0.hidden = true; renderQty(dlg); return }
+            if (bq) {
+              var c = bq.closest('.mcard'), lo = +c.getAttribute('data-min'), hi = +c.getAttribute('data-max'), dl = +bq.getAttribute('data-mq'), qe2 = q1('.qty-e', dlg);
+              if (!c.classList.contains('sel')) st.qty = lo;
+              else if (dl > 0 && st.qty >= hi) { qe2.textContent = tx('maxPass'); qe2.hidden = false; return }
+              else st.qty = Math.max(lo, Math.min(hi, st.qty + dl));
+              qe2.hidden = true; renderQty(dlg); return
+            }
+            var b = e.target.closest('button'); if (!b) return;
             if (b.hasAttribute('data-close')) closeDlg(dlg);
             else if (b.getAttribute('data-otp') === 'send') sendOtp(dlg);
             else if (b.getAttribute('data-otp') === 'verify') verifyOtp(dlg);
@@ -5056,6 +5244,7 @@
           }
           var a = e.target.closest('[data-modal]'); if (!a || !d.getElementById('m-' + a.getAttribute('data-modal'))) return;
           e.preventDefault(); openM(a.getAttribute('data-modal'), a.getAttribute('data-qty'));
+          var iv = a.getAttribute('data-interest'), sel = iv && d.getElementById('p_interest'); if (sel) sel.value = iv;
         });
         window.__onLang = function () {
           if (!openDlg) return; var dlg = openDlg, st = dlg._s; if (!st) return;
