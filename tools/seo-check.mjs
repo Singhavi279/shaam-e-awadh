@@ -14,7 +14,7 @@ if (!title || title.length > 65) errs.push(`title missing or >65 chars (${title?
 if (!desc || desc.length < 70 || desc.length > 160) errs.push(`description length ${desc?.length} not in 70-160`);
 for (const k of ['og:title', 'og:description', 'og:url', 'og:image', 'og:type']) if (!meta(k, 'property')) errs.push(`missing ${k}`);
 if (!/<link rel="canonical"/.test(html)) errs.push('missing canonical');
-if (!/langlive\.png/.test(body)) errs.push('mandatory Times Internet Languages Live logo missing');
+if (!/img\/logo\.webp/.test(body)) errs.push('event logo (img/logo.webp) missing');
 
 const ld = JSON.parse(get(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/));
 const ev = ld['@graph'].find((n) => n['@type'] === 'Event');

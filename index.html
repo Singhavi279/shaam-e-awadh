@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Grand Shaam-e-Awadh 2027: Lucknow Festival, 16–17 Jan</title>
   <meta name="description"
-    content="Two days of Lucknow's music, stories, food, craft and ideas on 16–17 January 2027: qawwali, ghazal, chikankari and the Ratna Samman. Passes from ₹499.">
+    content="Two days of Lucknow's music, stories, food, craft and ideas on 16–17 January 2027: qawwali, ghazal, chikankari and the Ratna Samman. Passes from ₹499 + GST.">
   <meta name="page-type" content="place">
   <meta name="site-kind" content="other">
   <meta name="page-kind" content="place">
@@ -147,7 +147,7 @@
           "name": "What are the ticket categories and prices?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "There is one ticket category: the two-day pass, at ₹599 per pass for 1 to 3 passes and ₹499 per pass for groups of 4 or more, instead of ₹999, for a limited number of passes. Every visitor needs a ticket, including Open Mic performers."
+            "text": "There is one ticket category: the two-day pass, at ₹599 per pass for 1 to 3 passes and ₹499 per pass for groups of 4 or more, plus GST, instead of ₹999, for a limited number of passes. Every visitor needs a ticket, including Open Mic performers."
           }
         },
         {
@@ -384,8 +384,8 @@
     }
 
     .logo img {
-      width: 80px;
-      height: 50px;
+      width: 88px;
+      height: 60px;
       object-fit: contain
     }
 
@@ -589,6 +589,75 @@
       max-width: 16ch
     }
 
+    .hero h1.hlogo {
+      max-width: none;
+      margin: 0
+    }
+
+    .hero h1.hlogo img {
+      display: block;
+      width: clamp(210px, min(34vw, 31svh), 380px);
+      height: auto;
+      filter: drop-shadow(0 6px 22px rgba(0, 0, 0, .55))
+    }
+
+    .hero .ini {
+      margin-top: 16px
+    }
+
+    .hero .ini-l {
+      font: 600 .75rem var(--sans);
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: #e6d9b8;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      max-width: 22rem
+    }
+
+    .hero .ini-l::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(230, 217, 184, .6), transparent)
+    }
+
+    .hero .ini-logos {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      margin-top: 10px;
+      padding: 8px 16px;
+      border-radius: 12px;
+      background: var(--ivory);
+      box-shadow: 0 6px 20px -8px rgba(0, 0, 0, .5)
+    }
+
+    .hero .ini-logos img {
+      height: 44px;
+      width: auto;
+      display: block
+    }
+
+    .hero .ini-logos i {
+      width: 1px;
+      height: 30px;
+      background: var(--line)
+    }
+
+    @media (max-width:600px) {
+      .hero h1.hlogo img {
+        width: clamp(210px, min(64vw, 34svh), 300px)
+      }
+    }
+
+    @media (max-width:420px) {
+      .hero .ini-logos img {
+        height: 38px
+      }
+    }
+
     .hero .ek {
       margin-top: 16px;
       font: italic 600 clamp(1.35rem, 2.8vw, 2rem)/1.3 var(--serif);
@@ -629,13 +698,6 @@
       min-height: 44px;
       display: inline-flex;
       align-items: center
-    }
-
-    .hero .tag-line {
-      margin-top: 22px;
-      font-size: .875rem;
-      color: #d9cfb8;
-      letter-spacing: .04em
     }
 
     [data-enter]>* {
@@ -1373,6 +1435,23 @@
       color: var(--maroon)
     }
 
+    @media (min-width:601px) {
+      .sbar .sbar-info {
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: start;
+        align-items: baseline
+      }
+
+      .sbar .sbar-info strong {
+        grid-column: 1/-1
+      }
+
+      .sbar .sbar-info .lk {
+        margin-left: .35em
+      }
+    }
+
     @media (max-width:600px) {
       .sbar-info .lk {
         display: none
@@ -1474,6 +1553,61 @@
 
     .mdl .hint .lnk {
       display: inline
+    }
+
+    .gst {
+      font: 600 .72rem var(--sans);
+      opacity: .8;
+      letter-spacing: .04em
+    }
+
+    .pass .eb {
+      display: none
+    }
+
+    .pass p.lim {
+      font: 500 .95rem var(--sans);
+      font-weight: 500;
+      color: #f3d98b;
+      margin: 2px 0 0
+    }
+
+    .pass .price {
+      font-size: 2.6rem;
+      margin-top: 10px
+    }
+
+    .pass .was {
+      font-size: 1.15rem
+    }
+
+    .pass .price .unit {
+      font-size: .85rem
+    }
+
+    .pass .dd {
+      font-size: .9rem;
+      opacity: .8;
+      margin-top: 6px
+    }
+
+    .pass .pass-act {
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(243, 233, 210, .22)
+    }
+
+    .pq {
+      margin-bottom: 12px
+    }
+
+    .pq-t {
+      font: 500 .95rem var(--sans)
+    }
+
+    .pq-t b {
+      font-weight: 700;
+      font-size: 1.1rem
     }
 
     .nb {
@@ -1603,8 +1737,8 @@
     }
 
     .ftr .logo img {
-      width: 104px;
-      height: 65px
+      width: 150px;
+      height: 102px
     }
 
     .ftr .name {
@@ -3490,9 +3624,9 @@
 
   <header class="hdr">
     <div class="wrap">
-      <a class="logo" href="https://timeslanguages.in/" aria-label="Times Internet Languages Live">
-        <img src="https://timeslanguages.in/assets/timeslang/assets/langlive.png" width="80" height="50"
-          alt="Times Internet Languages Live" decoding="async">
+      <a class="logo" href="https://timeslanguages.in/" aria-label="Grand Shaam-e-Awadh, Lucknow Edition">
+        <img src="img/logo.webp" width="88" height="60"
+          alt="Grand Shaam-e-Awadh, Lucknow Edition" decoding="async" fetchpriority="high">
       </a>
       <nav class="nav" aria-label="Main">
         <a class="l" href="#about" data-hi="परिचय">About</a>
@@ -3522,18 +3656,24 @@
       <video id="hv" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1" width="1280" height="612"
         disablepictureinpicture disableremoteplayback></video>
       <div class="wrap" data-enter>
-        <h1 id="h1" data-hi="ग्रैंड शाम-ए-अवध">Grand <span class="nb">Shaam-e-Awadh</span></h1>
+        <h1 id="h1" class="hlogo"><img src="img/logo-hero.webp" width="380" height="259" alt="Grand Shaam-e-Awadh, Lucknow Edition" fetchpriority="high" decoding="async"></h1>
         <p class="ek" data-hi="एक शाम, अवध के नाम">Ek Shaam, Awadh ke Naam</p>
         <p class="lede"
           data-hi="दो दिनों का एक उत्सव, जो लखनऊ को लखनऊ बनाने वाले लोगों, विचारों, कला, संगीत, खान-पान, दस्तकारी और महत्वाकांक्षा को एक मंच पर लाता है।">
           A two day festival celebrating Lucknow's people, ideas, art, music, food, craftsmanship and ambition.</p>
         <p class="fact"><span data-hi="16–17 जनवरी 2027 | लखनऊ">16–17 January 2027 | Lucknow</span><span class="dow" role="img" aria-label="Saturday and Sunday"><i data-hi="शनिवार">Saturday</i><i data-hi="रविवार">Sunday</i></span></p>
+        <div class="ini">
+          <p class="ini-l" data-hi="एक पहल:">An initiative by:</p>
+          <div class="ini-logos">
+            <img src="img/logo-nbt.webp" width="108" height="44" alt="Navbharat Times" decoding="async">
+            <i aria-hidden="true"></i>
+            <img src="img/logo-ll.webp" width="78" height="44" alt="Times Internet Languages Live" decoding="async">
+          </div>
+        </div>
         <div class="cta">
           <a class="btn gold" href="#visit" data-modal="register" data-hi="टिकट खरीदें">Buy Tickets</a>
           <a class="btn ghost" href="mailto:deepika.pawar@timesinternet.in?subject=Stall%20enquiry%3A%20Grand%20Shaam-e-Awadh" data-modal="partner" data-interest="Exhibition Partner / Booth Space" data-hi="स्टॉल बुक करें">Book a Stall</a>
         </div>
-        <p class="tag-line" data-hi="टाइम्स इंटरनेट लैंग्वेजेस लाइव की एक पहल">A Times Internet Languages Live
-          Initiative</p>
       </div>
     </section>
 
@@ -3598,7 +3738,7 @@
                 alt="Artisan hand-crafting fine Lucknow Chikankari embroidery on a round wooden hoop" loading="lazy"
                 decoding="async"><span class="n">02</span></div>
             <div class="tx">
-              <h3 data-hi="अवध का हुनर">Awadh ka Hunar</h3>
+              <h3 data-hi="उत्तम हुनर">Uttam Hunar</h3>
               <p class="tg" data-hi="हाथों से गढ़ी परंपरा। बेहद रचनात्मकता।">Tradition made by hand. Creativity without
                 limits.</p>
               <p data-hi="चिकनकारी, ज़रदोज़ी, वस्त्र, हस्तशिल्प, और अवधी दस्तकारी को आगे बढ़ाते कारीगर व डिज़ाइनर।">
@@ -3699,7 +3839,7 @@
     <section id="voices" class="cv dark" aria-labelledby="voi-h">
       <div class="wrap">
         <p class="eyebrow" data-hi="कलाकार और वक्ता">Artists and speakers</p>
-        <h2 id="voi-h" data-hi="अवध के सितारे">Awadh Ke Sitare</h2>
+        <h2 id="voi-h" data-hi="सितारों का संगम">Sitaro ka Sangam</h2>
         <p class="lede"
           data-hi="कलाकार, प्रस्तुतकर्ता, लेखक और विचारक, जो लखनऊ की अनेक अभिव्यक्तियों को जीवंत करते हैं।">Artists,
           performers, writers and thinkers bringing the many expressions of Lucknow to life.</p>
@@ -3865,7 +4005,7 @@
       <div class="wrap split">
         <div class="ftx">
           <p class="eyebrow" data-hi="शिल्प का अनुभव">Craft experience</p>
-          <h2 id="craft-h" data-hi="अवध का हुनर">Awadh ka Hunar</h2>
+          <h2 id="craft-h" data-hi="उत्तम हुनर">Uttam Hunar</h2>
           <p class="tg" data-hi="हाथ से बना। विरासत में रचा-बसा। आज के लिए नए रूप में।">Made by hand. Rooted in
             heritage. Reimagined for today.</p>
           <p class="lede"
@@ -4262,11 +4402,10 @@
         <div class="passes">
           <div class="pass best">
             <div>
-              <p class="eb" data-hi="1 से 3 पास">1 to 3 Passes</p>
               <h3 data-hi="दो दिन का पास">Two-day Pass</h3>
-              <p class="price"><span class="was"><span class="sr" data-hi="मूल क़ीमत ">Original price </span><del>₹999</del></span> <span class="now">₹599</span> <span class="unit" data-hi="/ पास">/ pass</span></p>
-              <p data-hi="दोनों दिन: शनिवार 16 और रविवार 17 जनवरी 2027, दोपहर से रात तक।">Both days: Saturday 16 and Sunday 17 January 2027, noon to night.</p>
-              <p class="lim" data-hi="3 या उससे कम व्यक्तियों के लिए।">For 3 or fewer people.</p>
+              <p class="lim" data-hi="1 से 3 पास के लिए">For 1 to 3 passes</p>
+              <p class="price"><span class="was"><span class="sr" data-hi="मूल क़ीमत ">Original price </span><del>₹999</del></span> <span class="now">₹599</span> <span class="unit" data-hi="/ पास + जीएसटी">/ pass + GST</span></p>
+              <p class="dd" data-hi="शनिवार–रविवार, 16–17 जनवरी 2027">Saturday–Sunday, 16–17 January 2027</p>
             </div>
             <div class="pass-act">
               <div class="pq" data-min="1" data-max="3" data-price="599">
@@ -4275,18 +4414,17 @@
                   <output aria-live="polite">1</output>
                   <button type="button" data-pq="1"><span aria-hidden="true">+</span><span class="sr" data-hi="बढ़ाएँ">Increase</span></button>
                 </div>
-                <p class="pq-t"><span data-hi="कुल">Total</span> <b data-pt>₹599</b></p>
+                <p class="pq-t"><span data-hi="कुल">Total</span> <b data-pt>₹599</b> <small class="gst" data-hi="+ जीएसटी">+ GST</small></p>
               </div>
               <a class="btn gold" href="#visit" data-modal="register" data-qty="1" data-hi="टिकट खरीदें">Buy Tickets</a>
             </div>
           </div>
           <div class="pass best">
             <div>
-              <p class="eb" data-hi="ग्रुप ऑफर · 4+ पास">Group Offer · 4+ Passes</p>
-              <h3 data-hi="ग्रुप पास (4 या अधिक)">Group Pass (4 or more)</h3>
-              <p class="price"><span class="was"><span class="sr" data-hi="मूल क़ीमत ">Original price </span><del>₹999</del></span> <span class="now">₹499</span> <span class="unit" data-hi="/ पास">/ pass</span></p>
-              <p data-hi="दोनों दिन: शनिवार 16 और रविवार 17 जनवरी 2027, दोपहर से रात तक।">Both days: Saturday 16 and Sunday 17 January 2027, noon to night.</p>
-              <p class="lim" data-hi="4 या अधिक व्यक्तियों के समूह पर विशेष छूट।">Special discounted rate for 4 or more people.</p>
+              <h3 data-hi="ग्रुप पास">Group Pass</h3>
+              <p class="lim" data-hi="4 से 9 पास के लिए · विशेष दर">For 4 to 9 passes · special rate</p>
+              <p class="price"><span class="was"><span class="sr" data-hi="मूल क़ीमत ">Original price </span><del>₹999</del></span> <span class="now">₹499</span> <span class="unit" data-hi="/ पास + जीएसटी">/ pass + GST</span></p>
+              <p class="dd" data-hi="शनिवार–रविवार, 16–17 जनवरी 2027">Saturday–Sunday, 16–17 January 2027</p>
             </div>
             <div class="pass-act">
               <div class="pq" data-min="4" data-max="9" data-price="499">
@@ -4295,7 +4433,7 @@
                   <output aria-live="polite">4</output>
                   <button type="button" data-pq="1"><span aria-hidden="true">+</span><span class="sr" data-hi="बढ़ाएँ">Increase</span></button>
                 </div>
-                <p class="pq-t"><span data-hi="कुल">Total</span> <b data-pt>₹1996</b></p>
+                <p class="pq-t"><span data-hi="कुल">Total</span> <b data-pt>₹1,996</b> <small class="gst" data-hi="+ जीएसटी">+ GST</small></p>
                 <p class="err pq-e" role="alert" hidden></p>
               </div>
               <a class="btn gold" href="#visit" data-modal="register" data-qty="4" data-hi="ग्रुप टिकट खरीदें">Buy Group Tickets</a>
@@ -4378,6 +4516,16 @@
               <dd><a href="mailto:simran1@timesinternet.in">simran1@timesinternet.in</a></dd>
             </dl>
           </article>
+          <article class="tcard">
+            <h4 data-hi="प्रोजेक्ट मैनेजमेंट">Project Management</h4>
+            <p class="who">Noopur Praveen</p>
+            <dl>
+              <dt data-hi="संपर्क">Contact</dt>
+              <dd><a href="tel:+919480808811">+91 9480808811</a></dd>
+              <dt data-hi="ईमेल">Email</dt>
+              <dd><a href="mailto:noopur.praveen@timesinternet.in">noopur.praveen@timesinternet.in</a></dd>
+            </dl>
+          </article>
         </div>
       </div>
     </section>
@@ -4403,8 +4551,8 @@
             <summary data-hi="टिकट की श्रेणियाँ और क़ीमतें क्या हैं?">What are the ticket categories and prices?
             </summary>
             <p
-              data-hi="टिकट की एक ही श्रेणी है: दो दिन का पास, ₹999 की जगह 1 से 3 पास के लिए ₹599 प्रति पास और 4 या अधिक के ग्रुप के लिए ₹499 प्रति पास, सीमित संख्या में। हर आगंतुक को टिकट लेना होगा, ओपन माइक कलाकारों को भी।">
-              There is one ticket category: the two-day pass, at ₹599 per pass for 1 to 3 passes and ₹499 per pass for groups of 4 or more, instead of ₹999, for a limited number of passes. Every visitor needs a ticket, including Open Mic performers.</p>
+              data-hi="टिकट की एक ही श्रेणी है: दो दिन का पास, ₹999 की जगह 1 से 3 पास के लिए ₹599 प्रति पास और 4 या अधिक के ग्रुप के लिए ₹499 प्रति पास, जीएसटी अतिरिक्त, सीमित संख्या में। हर आगंतुक को टिकट लेना होगा, ओपन माइक कलाकारों को भी।">
+              There is one ticket category: the two-day pass, at ₹599 per pass for 1 to 3 passes and ₹499 per pass for groups of 4 or more, plus GST, instead of ₹999, for a limited number of passes. Every visitor needs a ticket, including Open Mic performers.</p>
           </details>
           <details>
             <summary data-hi="क्या मैं सिर्फ़ एक दिन आ सकता/सकती हूँ?">Can I attend on one day only?</summary>
@@ -4564,9 +4712,9 @@
   <footer class="ftr">
     <div class="wrap">
       <div>
-        <a class="logo" href="https://timeslanguages.in/" aria-label="Times Internet Languages Live">
-          <img src="https://timeslanguages.in/assets/timeslang/assets/langlive.png" width="104" height="65"
-            alt="Times Internet Languages Live" loading="lazy" decoding="async">
+        <a class="logo" href="https://timeslanguages.in/" aria-label="Grand Shaam-e-Awadh, Lucknow Edition">
+          <img src="img/logo.webp" width="150" height="102"
+            alt="Grand Shaam-e-Awadh, Lucknow Edition" loading="lazy" decoding="async">
         </a>
         <p class="name">Grand Shaam-e-Awadh</p>
         <p
@@ -4668,7 +4816,7 @@
           <div class="mcard" data-tier="s" data-min="1" data-max="3" data-price="599">
             <p class="eb" data-hi="1 से 3 पास">1 to 3 Passes</p>
             <h4 data-hi="दो दिन का पास">Two-day Pass</h4>
-            <p class="mpr"><del><span class="sr" data-hi="मूल क़ीमत ">Original price </span>₹999</del> <b>₹599</b> <span data-hi="/ पास">/ pass</span></p>
+            <p class="mpr"><del><span class="sr" data-hi="मूल क़ीमत ">Original price </span>₹999</del> <b>₹599</b> <span data-hi="/ पास + जीएसटी">/ pass + GST</span></p>
             <p class="mn" data-hi="दोनों दिन: शनिवार 16 और रविवार 17 जनवरी 2027।">Both days, Saturday 16 and Sunday 17 January 2027.</p>
             <div class="qty" role="group" aria-label="Quantity">
               <button type="button" data-mq="-1"><span aria-hidden="true">−</span><span class="sr" data-hi="घटाएँ">Decrease</span></button>
@@ -4679,7 +4827,7 @@
           <div class="mcard" data-tier="g" data-min="4" data-max="9" data-price="499">
             <p class="eb" data-hi="ग्रुप ऑफर · 4 से 9 पास">Group Offer · 4 to 9 Passes</p>
             <h4 data-hi="ग्रुप पास">Group Pass</h4>
-            <p class="mpr"><del><span class="sr" data-hi="मूल क़ीमत ">Original price </span>₹999</del> <b>₹499</b> <span data-hi="/ पास">/ pass</span></p>
+            <p class="mpr"><del><span class="sr" data-hi="मूल क़ीमत ">Original price </span>₹999</del> <b>₹499</b> <span data-hi="/ पास + जीएसटी">/ pass + GST</span></p>
             <p class="mn" data-hi="4 या अधिक व्यक्तियों के लिए विशेष दर। एक बार में अधिकतम 9।">Special rate for 4 or more people. Up to 9 per purchase.</p>
             <div class="qty" role="group" aria-label="Quantity">
               <button type="button" data-mq="-1"><span aria-hidden="true">−</span><span class="sr" data-hi="घटाएँ">Decrease</span></button>
@@ -4689,7 +4837,7 @@
           </div>
         </div>
         <p class="err qty-e" role="alert" hidden></p>
-        <p class="tot"><span data-hi="कुल">Total</span> <b data-total>₹599</b></p>
+        <p class="tot"><span data-hi="कुल">Total</span> <b data-total>₹599</b> <small class="gst" data-hi="+ जीएसटी">+ GST</small></p>
         <div class="act"><button type="button" class="lnk" data-back="1" data-hi="← वापस">← Back</button>
           <button type="button" class="btn gold" data-checkout data-hi="चेकआउट पर जाएँ">Proceed to checkout</button>
         </div>

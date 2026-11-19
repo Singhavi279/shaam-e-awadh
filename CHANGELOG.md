@@ -154,3 +154,24 @@ SEO/AEO (title, meta description, Open Graph, JSON-LD) is re-checked on every co
 - Partnership form dropdown: Sponsorship, Exhibition Partner / Booth Space, Food Court Integration, Other; Book a Stall preselects Exhibition Partner / Booth Space.
 - Contact Us: "Partnership" card renamed "Booth Space / Partnership".
 - Nominee form trimmed to: nominee name, contact email, contact mobile (OTP), nominee type, field of contribution, why honoured. No length limits on the reason (a single "." is accepted); the form is titled "Nominee Enquiry Form".
+
+## 0.9.6 – 2026-11-19 – names, GST, contact
+- "Awadh ka Hunar" is now "Uttam Hunar" and "Awadh Ke Sitare" is now "Sitaro ka Sangam" (EN and HI).
+- Ticket prices say "+ GST" on the pass cards, in the ticket form and on every total; FAQ answer and meta description updated.
+- Contact Us: new Project Management card, Noopur Praveen.
+- **SEO/AEO changed:** meta description ends "Passes from ₹499 + GST."; the ticket FAQ answer says "plus GST" (page and JSON-LD).
+
+## 0.9.7 – 2026-11-19 – new logo
+- Header and footer now use the new Grand Shaam-e-Awadh logo (`img/logo.webp`, 300×204, ~21 KB, transparent). The 2.4 MB source PNG is no longer shipped. Rendered at 88×60 in the header and 150×102 in the footer.
+- `tools/seo-check.mjs` checks for the new logo instead of the Languages Live image. The "A Times Internet Languages Live Initiative" text credit stays in the hero.
+- Fixed the desktop sticky bar: the date line and "Lucknow" now sit on one row instead of wrapping.
+
+## 0.9.8 – 2026-11-19 – hero logo and initiative strip
+- Hero title is now the event logo (`img/logo-hero.webp`, 620×422, ~48 KB; the `<h1>` carries the name as the image alt text). It scales with viewport width and height so the CTAs stay above the sticky bar on laptops.
+- New "An initiative by:" strip above the hero CTAs with the Navbharat Times and Times Internet Languages Live logos at the same height (self-hosted `img/logo-nbt.webp`, `img/logo-ll.webp`, ~15 KB and ~9 KB).
+- Removed the hero line "A Times Internet Languages Live Initiative", now covered by the strip.
+- SEO/AEO unchanged; seo-check passes.
+
+## 0.9.9 – 2026-11-19 – calmer ticket cards
+- Removed the yellow pill on both pass cards. Each card now reads: name, one muted line for the range ("For 1 to 3 passes" / "For 4 to 9 passes · special rate"), price, a single short date line, a divider, then quantity, total and the button. Group card renamed "Group Pass". SEO/AEO unchanged; seo-check passes.
+- Pass card date line simplified to "Saturday–Sunday, 16–17 January 2027".
