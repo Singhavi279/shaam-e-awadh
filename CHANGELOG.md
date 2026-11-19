@@ -175,3 +175,7 @@ SEO/AEO (title, meta description, Open Graph, JSON-LD) is re-checked on every co
 ## 0.9.9 – 2026-11-19 – calmer ticket cards
 - Removed the yellow pill on both pass cards. Each card now reads: name, one muted line for the range ("For 1 to 3 passes" / "For 4 to 9 passes · special rate"), price, a single short date line, a divider, then quantity, total and the button. Group card renamed "Group Pass". SEO/AEO unchanged; seo-check passes.
 - Pass card date line simplified to "Saturday–Sunday, 16–17 January 2027".
+
+## 0.9.10 – 2026-11-19 – contact rows
+- Contact Us redesigned as full-width rows: green line icon and team name on the left, person, phone and email on the right (stacked on phones); general-query line (Avnish Singh) centred underneath. Rows: Sponsorship, Booth Space / Partnership, Award nomination, Participation opportunities, Project Management. SEO/AEO unchanged.
+- Award nomination row now lists Sagun Kumari and Simran Singh side by side; the separate Participation opportunities row is removed.
