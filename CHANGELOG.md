@@ -179,3 +179,6 @@ SEO/AEO (title, meta description, Open Graph, JSON-LD) is re-checked on every co
 ## 0.9.10 – 2026-11-19 – contact rows
 - Contact Us redesigned as full-width rows: green line icon and team name on the left, person, phone and email on the right (stacked on phones); general-query line (Avnish Singh) centred underneath. Rows: Sponsorship, Booth Space / Partnership, Award nomination, Participation opportunities, Project Management. SEO/AEO unchanged.
 - Award nomination row now lists Sagun Kumari and Simran Singh side by side; the separate Participation opportunities row is removed.
+
+## 0.9.11 – 2026-11-20 – nomination form is lead-gen only
+- Nominee Enquiry Form is now a single step: no stepper, no Pay now / Pay later, no quantity or checkout. Submit saves the lead (status `submitted`) and shows "Enquiry submitted" with Sagun's number. SEO/AEO unchanged.
