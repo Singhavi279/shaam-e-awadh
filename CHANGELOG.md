@@ -201,3 +201,6 @@ SEO/AEO (title, meta description, Open Graph, JSON-LD) is re-checked on every co
 
 ## 0.10.3 – 2026-11-23 – artist photos at source
 - Artist photos now load from `/photo/<id>.cms` (the original upload) instead of the resized `/thumb/` copies, which removes the red/yellow edge glitch the resizer introduced. SEO/AEO unchanged.
+
+## 0.10.4 – 2026-11-23 – navbar
+- Added "Artists" (कलाकार) to the navbar, linking to the artists section. SEO/AEO unchanged.
