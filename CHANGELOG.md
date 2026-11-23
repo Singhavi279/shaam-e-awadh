@@ -212,3 +212,7 @@ SEO/AEO (title, meta description, Open Graph, JSON-LD) is re-checked on every co
 ## 0.10.6 – 2026-11-23 – fresh artists, navbar order
 - The artist API answer was cached on the server, so new artists did not appear. The page now asks for `?upcache=<hour>` (a fresh cache key each hour) and the built-in list is updated to the 11 artists the API returns now (Kavita Tiwari and Swayam Srivastava added).
 - Navbar order now follows the page: About, Artists, Awards, Tickets, Partner, Contact Us, FAQ. SEO/AEO unchanged.
+
+## 0.10.7 – 2026-11-23 – hamburger menu
+- Below 1021px the page now has a hamburger button in the header that opens a full-width menu with About, Artists, Awards, Tickets, Partner, Contact Us and FAQ (Hindi supported). It closes on link tap, tap outside, Esc or when the window grows past the breakpoint. SEO/AEO unchanged.
+- Header is now `position: fixed` (the old sticky header scrolled away on some phones, taking the menu button with it), so the hamburger / X stays on screen while the menu is open. Added a "Close menu" button at the bottom of the menu as well.
