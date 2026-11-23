@@ -195,3 +195,6 @@ SEO/AEO (title, meta description, Open Graph, JSON-LD) is re-checked on every co
 - Venue added: Dr. B. R. Ambedkar's Memorial Park, Lucknow. Shown under the date in the hero (map-pin line), in the "When and where" and "How do I reach the venue?" FAQ answers (EN and HI) and as the location name in the Event JSON-LD (event and both days). Other FAQ lines no longer say the venue is unconfirmed.
 - **SEO/AEO changed:** JSON-LD location names; FAQ "When and where" answer (page and JSON-LD).
 - Hero spacing and logo size tightened so the CTAs still sit above the sticky bar on a 1366×768 laptop with the venue line added.
+
+## 0.10.2 – 2026-11-23 – footer policies
+- Footer "Coming with launch" column replaced by "Policies": Terms & Conditions, Privacy Policy and Cancellation Policy, linking to timeslanguages.in (new tab). SEO/AEO unchanged.
