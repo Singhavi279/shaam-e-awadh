@@ -198,3 +198,6 @@ SEO/AEO (title, meta description, Open Graph, JSON-LD) is re-checked on every co
 
 ## 0.10.2 – 2026-11-23 – footer policies
 - Footer "Coming with launch" column replaced by "Policies": Terms & Conditions, Privacy Policy and Cancellation Policy, linking to timeslanguages.in (new tab). SEO/AEO unchanged.
+
+## 0.10.3 – 2026-11-23 – artist photos at source
+- Artist photos now load from `/photo/<id>.cms` (the original upload) instead of the resized `/thumb/` copies, which removes the red/yellow edge glitch the resizer introduced. SEO/AEO unchanged.

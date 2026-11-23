@@ -3996,49 +3996,49 @@
         <!-- Artists come from the event hub API (see the refresh script); this markup is the fallback. Featured first, then the rest in API order. -->
         <ul class="voices vf" id="voices-feat">
           <li class="voice feat">
-            <div class="ph"><img src="https://static.langimg.com/thumb/136090889.cms?width=640&height=640&resizemode=4" width="640" height="640" alt="Arti Singh, Actress" loading="lazy" decoding="async"></div>
+            <div class="ph"><img src="https://static.langimg.com/photo/136090889.cms" width="640" height="640" alt="Arti Singh, Actress" loading="lazy" decoding="async"></div>
             <h3>Arti Singh</h3>
             <p class="role">Actress</p>
           </li>
           <li class="voice feat">
-            <div class="ph"><img src="https://static.langimg.com/thumb/136090855.cms?width=640&height=640&resizemode=4" width="640" height="640" alt="Nizami Brothers, Qawwali Band" loading="lazy" decoding="async"></div>
+            <div class="ph"><img src="https://static.langimg.com/photo/136090855.cms" width="640" height="640" alt="Nizami Brothers, Qawwali Band" loading="lazy" decoding="async"></div>
             <h3>Nizami Brothers</h3>
             <p class="role">Qawwali Band</p>
           </li>
           <li class="voice feat">
-            <div class="ph"><img src="https://static.langimg.com/thumb/136090866.cms?width=640&height=640&resizemode=4" width="640" height="640" alt="Shantanu Moitra, Music Composer/ Singer" loading="lazy" decoding="async"></div>
+            <div class="ph"><img src="https://static.langimg.com/photo/136090866.cms" width="640" height="640" alt="Shantanu Moitra, Music Composer/ Singer" loading="lazy" decoding="async"></div>
             <h3>Shantanu Moitra</h3>
             <p class="role">Music Composer/ Singer</p>
           </li>
         </ul>
         <div class="marq" id="voices-marq"><ul class="voices vn" id="voices-list">
           <li class="voice">
-            <div class="ph"><img src="https://static.langimg.com/thumb/136091011.cms?width=400&height=400&resizemode=4" width="400" height="400" alt="Durgesh, Poet" loading="lazy" decoding="async"></div>
+            <div class="ph"><img src="https://static.langimg.com/photo/136091011.cms" width="400" height="400" alt="Durgesh, Poet" loading="lazy" decoding="async"></div>
             <h3>Durgesh</h3>
             <p class="role">Poet</p>
           </li>
           <li class="voice">
-            <div class="ph"><img src="https://static.langimg.com/thumb/136090990.cms?width=400&height=400&resizemode=4" width="400" height="400" alt="Harshit Singh, Poet" loading="lazy" decoding="async"></div>
+            <div class="ph"><img src="https://static.langimg.com/photo/136090990.cms" width="400" height="400" alt="Harshit Singh, Poet" loading="lazy" decoding="async"></div>
             <h3>Harshit Singh</h3>
             <p class="role">Poet</p>
           </li>
           <li class="voice">
-            <div class="ph"><img src="https://static.langimg.com/thumb/136090975.cms?width=400&height=400&resizemode=4" width="400" height="400" alt="Keshav Jha, Poet" loading="lazy" decoding="async"></div>
+            <div class="ph"><img src="https://static.langimg.com/photo/136090975.cms" width="400" height="400" alt="Keshav Jha, Poet" loading="lazy" decoding="async"></div>
             <h3>Keshav Jha</h3>
             <p class="role">Poet</p>
           </li>
           <li class="voice">
-            <div class="ph"><img src="https://static.langimg.com/thumb/136090954.cms?width=400&height=400&resizemode=4" width="400" height="400" alt="Maroof Umar, Cultural Storyteller" loading="lazy" decoding="async"></div>
+            <div class="ph"><img src="https://static.langimg.com/photo/136090954.cms" width="400" height="400" alt="Maroof Umar, Cultural Storyteller" loading="lazy" decoding="async"></div>
             <h3>Maroof Umar</h3>
             <p class="role">Cultural Storyteller</p>
           </li>
           <li class="voice">
-            <div class="ph"><img src="https://static.langimg.com/thumb/136090984.cms?width=400&height=400&resizemode=4" width="400" height="400" alt="Psycho Shayar, Poet" loading="lazy" decoding="async"></div>
+            <div class="ph"><img src="https://static.langimg.com/photo/136090984.cms" width="400" height="400" alt="Psycho Shayar, Poet" loading="lazy" decoding="async"></div>
             <h3>Psycho Shayar</h3>
             <p class="role">Poet</p>
           </li>
           <li class="voice">
-            <div class="ph"><img src="https://static.langimg.com/thumb/136090999.cms?width=400&height=400&resizemode=4" width="400" height="400" alt="Yash Agarwal, Street Guitarist" loading="lazy" decoding="async"></div>
+            <div class="ph"><img src="https://static.langimg.com/photo/136090999.cms" width="400" height="400" alt="Yash Agarwal, Street Guitarist" loading="lazy" decoding="async"></div>
             <h3>Yash Agarwal</h3>
             <p class="role">Street Guitarist</p>
           </li>
@@ -5170,7 +5170,7 @@
         /* artists: refresh from the event hub API; the markup above stays as the fallback */
         (function () {
           var API = 'https://api.indiatimes.com/eventhub/api/public/events/6abe319413badc345e14a0fb/custom-lists';
-          function thumb(u, w, h) { var m = /\/photo\/(\d+)\.cms/.exec(u || ''); return m ? 'https://static.langimg.com/thumb/' + m[1] + '.cms?width=' + w + '&height=' + h + '&resizemode=4' : u }
+          function thumb(u) { return u }
           function card(a, feat) {
             var w = feat ? 640 : 400, h = w, li = d.createElement('li'), ph = d.createElement('div'), im = d.createElement('img'), n = d.createElement('h3'), r = d.createElement('p');
             li.className = 'voice' + (feat ? ' feat' : '');
