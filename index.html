@@ -1634,10 +1634,17 @@
       gap: 26px
     }
 
+    .marqw {
+      position: relative;
+      margin-top: 18px
+    }
+
     .marq {
-      margin-top: 34px;
       overflow-x: auto;
-      scrollbar-width: none
+      scrollbar-width: none;
+      padding: 34px 0;
+      perspective: 1100px;
+      touch-action: pan-y
     }
 
     .marq::-webkit-scrollbar {
@@ -1647,57 +1654,83 @@
     .voices.vn {
       display: flex;
       width: max-content;
-      gap: 16px;
+      gap: 20px;
       margin: 0;
-      --mw: 210px
+      --mw: 280px;
+      transform-style: preserve-3d
     }
 
     .voices.vn .voice {
       flex: 0 0 var(--mw);
-      width: var(--mw)
+      width: var(--mw);
+      will-change: transform, opacity
     }
 
     .marq.on {
       overflow: hidden;
-      -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
-      mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent)
+      cursor: grab;
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+      mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent)
     }
 
-    .marq.on .voices.vn {
-      animation: vmq var(--dur, 40s) linear infinite
+    .marq.on.drag {
+      cursor: grabbing
     }
 
-    .marq.on:hover .voices.vn,
-    .marq.on:focus-within .voices.vn {
-      animation-play-state: paused
+    .mq-b {
+      position: absolute;
+      top: 50%;
+      z-index: 5;
+      width: 48px;
+      height: 48px;
+      margin-top: -24px;
+      border-radius: 50%;
+      border: 1.5px solid #c9a24e;
+      background: rgba(20, 28, 52, .82);
+      color: #f3d98b;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      transition: background .15s, transform .15s
     }
 
-    @keyframes vmq {
-      to {
-        transform: translateX(calc(-1 * var(--shift, 0px)))
+    .mq-b:hover {
+      background: #c9a24e;
+      color: #1b1406
+    }
+
+    .mq-b.prev {
+      left: 6px
+    }
+
+    .mq-b.next {
+      right: 6px
+    }
+
+    .mq-b[hidden] {
+      display: none
+    }
+
+    @media (max-width:820px) {
+      .voices.vn {
+        --mw: 240px
       }
     }
 
     @media (max-width:560px) {
       .voices.vn {
-        --mw: 160px
-      }
-    }
-
-    @media (prefers-reduced-motion:reduce) {
-      .marq.on {
-        overflow-x: auto;
-        -webkit-mask-image: none;
-        mask-image: none
+        --mw: 210px
       }
 
-      .marq.on .voices.vn {
-        animation: none
+      .mq-b {
+        width: 42px;
+        height: 42px;
+        margin-top: -21px
       }
     }
 
     .voices:not(:has(.voice:not([hidden]))),
-    .marq:not(:has(.voice:not([hidden]))) {
+    .marqw:not(:has(.voice:not([hidden]))) {
       display: none
     }
 
@@ -1731,12 +1764,12 @@
     }
 
     .voices.vn .voice h3 {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       margin-top: 12px
     }
 
     .voices.vn .voice .role {
-      font-size: .875rem
+      font-size: .9rem
     }
 
     .nb {
@@ -3779,8 +3812,8 @@
       <nav class="nav" aria-label="Main">
         <a class="l" href="#about" data-hi="परिचय">About</a>
         <a class="l" href="#voices" data-hi="कलाकार">Artists</a>
-        <a class="l" href="#visit" data-hi="टिकट">Tickets</a>
         <a class="l" href="#samman" data-hi="सम्मान">Awards</a>
+        <a class="l" href="#visit" data-hi="टिकट">Tickets</a>
         <a class="l" href="#partner" data-hi="साझेदार">Partner</a>
         <a class="l" href="#contact" data-hi="संपर्क">Contact Us</a>
         <a class="l" href="#faqs" data-hi="सामान्य प्रश्न">FAQ</a>
@@ -4012,6 +4045,9 @@
             <p class="role">Music Composer/ Singer</p>
           </li>
         </ul>
+        <div class="marqw">
+          <button type="button" class="mq-b prev" hidden><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg><span class="sr" data-hi="पिछले कलाकार">Previous artists</span></button>
+          <button type="button" class="mq-b next" hidden><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg><span class="sr" data-hi="अगले कलाकार">Next artists</span></button>
         <div class="marq" id="voices-marq"><ul class="voices vn" id="voices-list">
           <li class="voice">
             <div class="ph"><img src="https://static.langimg.com/photo/136091011.cms" width="400" height="400" alt="Durgesh, Poet" loading="lazy" decoding="async"></div>
@@ -4021,6 +4057,11 @@
           <li class="voice">
             <div class="ph"><img src="https://static.langimg.com/photo/136090990.cms" width="400" height="400" alt="Harshit Singh, Poet" loading="lazy" decoding="async"></div>
             <h3>Harshit Singh</h3>
+            <p class="role">Poet</p>
+          </li>
+          <li class="voice">
+            <div class="ph"><img src="https://static.langimg.com/photo/136093459.cms" width="400" height="400" alt="Kavita Tiwari, Poet" loading="lazy" decoding="async"></div>
+            <h3>Kavita Tiwari</h3>
             <p class="role">Poet</p>
           </li>
           <li class="voice">
@@ -4039,11 +4080,17 @@
             <p class="role">Poet</p>
           </li>
           <li class="voice">
+            <div class="ph"><img src="https://static.langimg.com/photo/136093470.cms" width="400" height="400" alt="Swayam Srivastava, Poet" loading="lazy" decoding="async"></div>
+            <h3>Swayam Srivastava</h3>
+            <p class="role">Poet</p>
+          </li>
+          <li class="voice">
             <div class="ph"><img src="https://static.langimg.com/photo/136090999.cms" width="400" height="400" alt="Yash Agarwal, Street Guitarist" loading="lazy" decoding="async"></div>
             <h3>Yash Agarwal</h3>
             <p class="role">Street Guitarist</p>
           </li>
         </ul></div>
+        </div>
       </div>
     </section>
 
@@ -5179,19 +5226,63 @@
             n.textContent = a.name; r.className = 'role'; r.textContent = a.role_title || '';
             li.appendChild(ph); li.appendChild(n); li.appendChild(r); return li;
           }
-          function marquee() {
-            var box = d.getElementById('voices-marq'), tr = d.getElementById('voices-list'); if (!box || !tr) return;
-            [].forEach.call(tr.querySelectorAll('.clone'), function (c) { c.remove() });
-            box.classList.remove('on'); tr.style.removeProperty('--shift'); tr.style.removeProperty('--dur');
-            if (!window.matchMedia || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-            var org = [].filter.call(tr.children, function (li) { return !li.hidden }), n = org.length; if (!n) return;
-            var mw = parseFloat(getComputedStyle(tr).getPropertyValue('--mw')) || 210, W = n * (mw + 16), k = Math.max(1, Math.ceil(innerWidth / W));
-            for (var g = 0; g < k; g++) org.forEach(function (li) { var c = li.cloneNode(true); c.className += ' clone'; c.setAttribute('aria-hidden', 'true'); [].forEach.call(c.querySelectorAll('img'), function (im) { im.alt = ''; im.loading = 'lazy' }); tr.appendChild(c) });
-            tr.style.setProperty('--shift', W + 'px'); tr.style.setProperty('--dur', Math.max(20, W / 45).toFixed(1) + 's'); box.classList.add('on');
+          var M = { x: 0, W: 0, step: 0, n: 0, cw: 0, mw: 0, raf: 0, last: 0, tw: null, hover: false, drag: false, vis: true, on: false, items: [], wired: false };
+          function ease(t) { return t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2 }
+          function render() {
+            var tr = d.getElementById('voices-list'), xm = ((M.x % M.W) + M.W) % M.W;
+            tr.style.transform = 'translate3d(' + (-xm) + 'px,0,0)';
+            for (var i = 0; i < M.items.length; i++) {
+              var li = M.items[i], dd = (i * M.step + M.mw / 2 - xm - M.cw / 2) / M.step, ad = Math.abs(dd);
+              if (ad > 3) { if (li._f !== 0) { li.style.transform = ''; li.style.opacity = ''; li._f = 0 } continue }
+              var t = 1 - Math.min(ad, 1); t = t * t * (3 - 2 * t); li._f = 1;
+              var rot = Math.max(-1.4, Math.min(1.4, dd)) * -11;
+              li.style.transform = 'translateZ(' + (70 * t).toFixed(1) + 'px) rotateY(' + rot.toFixed(1) + 'deg) scale(' + (.9 + .22 * t).toFixed(3) + ')';
+              li.style.opacity = (.5 + .5 * t).toFixed(3); li.style.zIndex = Math.round(t * 10);
+            }
           }
-          window.__marq = marquee; var rz; addEventListener('resize', function () { clearTimeout(rz); rz = setTimeout(marquee, 250) });
+          function loop(now) {
+            M.raf = 0; if (!M.on || !M.vis) return;
+            var dt = Math.min(.05, (now - (M.last || now)) / 1000); M.last = now;
+            if (M.tw) { var p = Math.min(1, (now - M.tw.t0) / M.tw.dur); M.x = M.tw.from + (M.tw.to - M.tw.from) * ease(p); if (p >= 1) M.tw = null }
+            else if (!M.hover && !M.drag) M.x += 38 * dt;
+            render(); M.raf = requestAnimationFrame(loop);
+          }
+          function kick() { if (!M.raf && M.on && M.vis) { M.last = 0; M.raf = requestAnimationFrame(loop) } }
+          function go(dir) {
+            var box = d.getElementById('voices-marq');
+            if (!M.on) { box.scrollBy({ left: dir * (M.mw + 20), behavior: 'smooth' }); return }
+            var now = performance.now(); M.tw = { from: M.x, to: (M.tw ? M.tw.to : M.x) + dir * M.step, t0: now, dur: 520 }; kick();
+          }
+          function marquee() {
+            var wrap = d.querySelector('#voices .marqw'), box = d.getElementById('voices-marq'), tr = d.getElementById('voices-list'); if (!box || !tr) return;
+            [].forEach.call(tr.querySelectorAll('.clone'), function (c) { c.remove() });
+            [].forEach.call(tr.children, function (li) { li.style.transform = ''; li.style.opacity = ''; li.style.zIndex = '' });
+            box.classList.remove('on'); tr.style.transform = ''; M.on = false; if (M.raf) { cancelAnimationFrame(M.raf); M.raf = 0 }
+            var org = [].slice.call(tr.children), n = org.length; if (!n) return;
+            wrap.querySelectorAll('.mq-b').forEach(function (b) { b.hidden = n < 2 });
+            if (!M.wired) {
+              M.wired = true;
+              wrap.querySelector('.prev').addEventListener('click', function () { go(-1) }); wrap.querySelector('.next').addEventListener('click', function () { go(1) });
+              wrap.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') M.hover = true });
+              wrap.addEventListener('pointerleave', function () { M.hover = false; kick() });
+              wrap.addEventListener('focusin', function () { M.hover = true }); wrap.addEventListener('focusout', function () { M.hover = false; kick() });
+              var px = 0;
+              box.addEventListener('pointerdown', function (e) { if (!M.on) return; M.drag = true; M.tw = null; px = e.clientX; box.classList.add('drag'); try { box.setPointerCapture(e.pointerId) } catch (x) { } });
+              box.addEventListener('pointermove', function (e) { if (!M.drag) return; M.x -= e.clientX - px; px = e.clientX; render() });
+              var up = function () { if (!M.drag) return; M.drag = false; box.classList.remove('drag'); kick() };
+              box.addEventListener('pointerup', up); box.addEventListener('pointercancel', up);
+              if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { M.vis = es[0].isIntersecting; if (M.vis) kick() }).observe(wrap); else M.vis = true;
+            }
+            if (!window.matchMedia || matchMedia('(prefers-reduced-motion: reduce)').matches) { M.on = false; return }
+            M.mw = parseFloat(getComputedStyle(tr).getPropertyValue('--mw')) || 280; M.step = M.mw + 20; M.W = n * M.step; M.n = n; M.cw = box.clientWidth || innerWidth;
+            var k = Math.max(1, Math.ceil((M.cw + M.step) / M.W));
+            for (var g = 0; g < k; g++) org.forEach(function (li) { var c = li.cloneNode(true); c.className += ' clone'; c.setAttribute('aria-hidden', 'true'); [].forEach.call(c.querySelectorAll('img'), function (im) { im.alt = ''; im.loading = 'lazy' }); tr.appendChild(c) });
+            M.items = [].slice.call(tr.children); M.x = M.W - (M.cw / 2 - M.mw / 2) - (M.step * 0); M.tw = null;
+            box.classList.add('on'); M.on = true; render(); kick();
+          }
+          var rz; addEventListener('resize', function () { clearTimeout(rz); rz = setTimeout(marquee, 250) });
           function run() {
-            fetch(API).then(function (r) { return r.ok ? r.json() : null }).then(function (j) {
+            fetch(API + '?upcache=' + Math.floor(Date.now() / 3600000)).then(function (r) { return r.ok ? r.json() : null }).then(function (j) {
               var ls = (j && j.data) || [], l = ls.filter(function (x) { return x.slug === 'artists' })[0] || ls[0];
               if (!l || !l.items || !l.items.length) return;
               var items = l.items.filter(function (a) { return a && a.name && /^https:\/\//.test(a.image_url || '') });

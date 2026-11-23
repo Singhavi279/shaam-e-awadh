@@ -204,3 +204,11 @@ SEO/AEO (title, meta description, Open Graph, JSON-LD) is re-checked on every co
 
 ## 0.10.4 – 2026-11-23 – navbar
 - Added "Artists" (कलाकार) to the navbar, linking to the artists section. SEO/AEO unchanged.
+
+## 0.10.5 – 2026-11-23 – artist carousel
+- Regular artists are bigger (280px cards; 240px tablet; 210px phone) and now sit in a 3D carousel: the card in the centre zooms and lifts forward, the neighbours shrink, fade and tilt away, and the focus hands over smoothly as the strip drifts.
+- Left and right arrow buttons move it one card at a time; drag or swipe also works. Auto-drift pauses on hover or keyboard focus and when the section is off-screen. With reduced motion it becomes a plain scrollable row driven by the arrows. SEO/AEO unchanged.
+
+## 0.10.6 – 2026-11-23 – fresh artists, navbar order
+- The artist API answer was cached on the server, so new artists did not appear. The page now asks for `?upcache=<hour>` (a fresh cache key each hour) and the built-in list is updated to the 11 artists the API returns now (Kavita Tiwari and Swayam Srivastava added).
+- Navbar order now follows the page: About, Artists, Awards, Tickets, Partner, Contact Us, FAQ. SEO/AEO unchanged.
