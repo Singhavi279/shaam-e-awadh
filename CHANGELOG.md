@@ -182,3 +182,16 @@ SEO/AEO (title, meta description, Open Graph, JSON-LD) is re-checked on every co
 
 ## 0.9.11 – 2026-11-20 – nomination form is lead-gen only
 - Nominee Enquiry Form is now a single step: no stepper, no Pay now / Pay later, no quantity or checkout. Submit saves the lead (status `submitted`) and shows "Enquiry submitted" with Sagun's number. SEO/AEO unchanged.
+
+## 0.10.0 – 2026-11-23 – artists from the event hub
+- "Sitaro ka Sangam" now lists the nine artists from the event hub API (`/events/…/custom-lists`). Featured artists come first as large cards, then the rest in API order as smaller cards. The placeholder cards are gone.
+- The page ships the current list as static markup (works without JS, no layout shift) and refreshes it from the API after load, so new or reordered artists appear without a redeploy. Filter chips with no artists are hidden. Photos load from the Times image CDN at card size.
+- Categories are inferred from each artist's role title (the API has no category field). SEO/AEO unchanged.
+- Removed the placeholder note under the artist cards.
+- Artist photos are square (1:1) and never stretched: rounded-square frames, images requested square (640 featured, 400 regular). Regular artists are larger (210px cards, 160px on phones) and scroll as an endless marquee that pauses on hover/focus, respects reduced-motion (manual scroll instead) and reacts to the category filter. Cloned marquee cards are hidden from screen readers.
+- Removed the category filter chips from the artists section (and the category guessing behind them).
+
+## 0.10.1 – 2026-11-23 – venue
+- Venue added: Dr. B. R. Ambedkar's Memorial Park, Lucknow. Shown under the date in the hero (map-pin line), in the "When and where" and "How do I reach the venue?" FAQ answers (EN and HI) and as the location name in the Event JSON-LD (event and both days). Other FAQ lines no longer say the venue is unconfirmed.
+- **SEO/AEO changed:** JSON-LD location names; FAQ "When and where" answer (page and JSON-LD).
+- Hero spacing and logo size tightened so the CTAs still sit above the sticky bar on a 1366×768 laptop with the venue line added.

@@ -63,7 +63,7 @@
       "url": "https://timeslanguages.in/shaam-e-awadh/",
       "location": {
         "@type": "Place",
-        "name": "Lucknow",
+        "name": "Dr. B. R. Ambedkar's Memorial Park",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Lucknow",
@@ -103,7 +103,7 @@
           "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
           "location": {
             "@type": "Place",
-            "name": "Lucknow",
+            "name": "Dr. B. R. Ambedkar's Memorial Park",
             "address": {
               "@type": "PostalAddress",
               "addressLocality": "Lucknow",
@@ -120,7 +120,7 @@
           "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
           "location": {
             "@type": "Place",
-            "name": "Lucknow",
+            "name": "Dr. B. R. Ambedkar's Memorial Park",
             "address": {
               "@type": "PostalAddress",
               "addressLocality": "Lucknow",
@@ -139,7 +139,7 @@
           "name": "When and where is Grand Shaam-e-Awadh taking place?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "On Saturday 16 and Sunday 17 January 2027 in Lucknow, Uttar Pradesh. Gates open around noon and the site closes by 10 p.m., subject to the timings and sound conditions the authorities permit. The venue and full address will be published here once confirmed."
+            "text": "On Saturday 16 and Sunday 17 January 2027 at Dr. B. R. Ambedkar's Memorial Park, Lucknow, Uttar Pradesh. Gates open around noon and the site closes by 10 p.m., subject to the timings and sound conditions the authorities permit. Directions will be published here once confirmed."
           }
         },
         {
@@ -596,13 +596,28 @@
 
     .hero h1.hlogo img {
       display: block;
-      width: clamp(210px, min(34vw, 31svh), 380px);
+      width: clamp(200px, min(34vw, 27svh), 380px);
       height: auto;
       filter: drop-shadow(0 6px 22px rgba(0, 0, 0, .55))
     }
 
+    .hero .venue {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-top: 8px;
+      font-weight: 500;
+      color: #f1e9d6
+    }
+
+    .hero .venue svg {
+      flex: none;
+      margin-top: 3px;
+      color: var(--gold)
+    }
+
     .hero .ini {
-      margin-top: 16px
+      margin-top: 12px
     }
 
     .hero .ini-l {
@@ -682,7 +697,7 @@
     }
 
     .cta {
-      margin-top: 26px;
+      margin-top: 18px;
       display: flex;
       flex-wrap: wrap;
       align-items: center;
@@ -1608,6 +1623,120 @@
     .pq-t b {
       font-weight: 700;
       font-size: 1.1rem
+    }
+
+    .chip[hidden] {
+      display: none
+    }
+
+    .voices.vf {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 26px
+    }
+
+    .marq {
+      margin-top: 34px;
+      overflow-x: auto;
+      scrollbar-width: none
+    }
+
+    .marq::-webkit-scrollbar {
+      display: none
+    }
+
+    .voices.vn {
+      display: flex;
+      width: max-content;
+      gap: 16px;
+      margin: 0;
+      --mw: 210px
+    }
+
+    .voices.vn .voice {
+      flex: 0 0 var(--mw);
+      width: var(--mw)
+    }
+
+    .marq.on {
+      overflow: hidden;
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+      mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent)
+    }
+
+    .marq.on .voices.vn {
+      animation: vmq var(--dur, 40s) linear infinite
+    }
+
+    .marq.on:hover .voices.vn,
+    .marq.on:focus-within .voices.vn {
+      animation-play-state: paused
+    }
+
+    @keyframes vmq {
+      to {
+        transform: translateX(calc(-1 * var(--shift, 0px)))
+      }
+    }
+
+    @media (max-width:560px) {
+      .voices.vn {
+        --mw: 160px
+      }
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+      .marq.on {
+        overflow-x: auto;
+        -webkit-mask-image: none;
+        mask-image: none
+      }
+
+      .marq.on .voices.vn {
+        animation: none
+      }
+    }
+
+    .voices:not(:has(.voice:not([hidden]))),
+    .marq:not(:has(.voice:not([hidden]))) {
+      display: none
+    }
+
+    .voice.feat {
+      padding: 18px;
+      border-color: #c9a24e66;
+      background: #ffffff0d
+    }
+
+    .voice .ph {
+      aspect-ratio: 1/1;
+      border-radius: 12px
+    }
+
+    .voice .ph img {
+      object-position: 50% 50%
+    }
+
+    .voice.feat h3 {
+      font-size: 1.55rem;
+      margin-top: 18px
+    }
+
+    .voice.feat .role {
+      font-size: 1rem
+    }
+
+    .voices.vn .voice {
+      padding: 10px;
+      border-radius: 14px
+    }
+
+    .voices.vn .voice h3 {
+      font-size: 1.1rem;
+      margin-top: 12px
+    }
+
+    .voices.vn .voice .role {
+      font-size: .875rem
     }
 
     .nb {
@@ -3680,7 +3809,8 @@
         <p class="lede"
           data-hi="दो दिनों का एक उत्सव, जो लखनऊ को लखनऊ बनाने वाले लोगों, विचारों, कला, संगीत, खान-पान, दस्तकारी और महत्वाकांक्षा को एक मंच पर लाता है।">
           A two day festival celebrating Lucknow's people, ideas, art, music, food, craftsmanship and ambition.</p>
-        <p class="fact"><span data-hi="16–17 जनवरी 2027 | लखनऊ">16–17 January 2027 | Lucknow</span><span class="dow" role="img" aria-label="Saturday and Sunday"><i data-hi="शनिवार">Saturday</i><i data-hi="रविवार">Sunday</i></span></p>
+        <p class="fact"><span data-hi="16–17 जनवरी 2027">16–17 January 2027</span><span class="dow" role="img" aria-label="Saturday and Sunday"><i data-hi="शनिवार">Saturday</i><i data-hi="रविवार">Sunday</i></span></p>
+        <p class="venue"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span data-hi="डॉ. बी. आर. अंबेडकर स्मारक पार्क, लखनऊ">Dr. B. R. Ambedkar's Memorial Park, Lucknow</span></p>
         <div class="ini">
           <p class="ini-l" data-hi="एक पहल:">An initiative by:</p>
           <div class="ini-logos">
@@ -3862,97 +3992,57 @@
         <p class="lede"
           data-hi="कलाकार, प्रस्तुतकर्ता, लेखक और विचारक, जो लखनऊ की अनेक अभिव्यक्तियों को जीवंत करते हैं।">Artists,
           performers, writers and thinkers bringing the many expressions of Lucknow to life.</p>
-        <div class="chips" role="group" aria-label="Filter artists by category">
-          <button class="chip" type="button" data-cat="all" aria-pressed="true" data-hi="सभी">All</button>
-          <button class="chip" type="button" data-cat="music" aria-pressed="false" data-hi="संगीत और प्रस्तुति">Music
-            and performance</button>
-          <button class="chip" type="button" data-cat="poetry" aria-pressed="false" data-hi="शायरी और साहित्य">Poetry
-            and literature</button>
-          <button class="chip" type="button" data-cat="theatre" aria-pressed="false" data-hi="रंगमंच और नृत्य">Theatre
-            and dance</button>
-          <button class="chip" type="button" data-cat="food" aria-pressed="false" data-hi="खान-पान और पाक कला">Food and
-            culinary arts</button>
-          <button class="chip" type="button" data-cat="conversations" aria-pressed="false"
-            data-hi="संवाद और विचार">Conversations and ideas</button>
-          <button class="chip" type="button" data-cat="emerging" aria-pressed="false" data-hi="उभरते कलाकार">Emerging
-            artists</button>
-        </div>
-        <!-- Card system: replace a placeholder <li class="voice ghost"> with a real one (drop "ghost"); keep data-cat = music|poetry|theatre|food|conversations|emerging so the filters keep working. The grid reflows, no redesign needed.
-         <li class="voice" data-cat="music"><div class="ph"><img src="img/NAME.jpg" width="480" height="600" alt="Full name" loading="lazy" decoding="async"></div>
-         <h3>Full name</h3><p class="role">Profession or area of work</p><p class="desc">One-line description of their contribution.</p>
-         <p class="sess">Programme or session</p><p class="when">Day, date and time (once confirmed)</p></li> -->
-        <ul class="voices" id="voices-list">
-          <li class="voice ghost" data-cat="music">
-            <div class="ph"><svg viewBox="0 0 64 64" aria-hidden="true">
-                <use href="#mehrab" />
-              </svg></div>
-            <h3 data-hi="कलाकार का नाम">Artist name</h3>
-            <p class="role" data-hi="संगीत और प्रस्तुति">Music and performance</p>
-            <p class="desc" data-hi="उनके योगदान का एक पंक्ति में परिचय।">One-line description of their contribution.
-            </p>
-            <p class="sess" data-hi="कार्यक्रम या सत्र का नाम">Programme or session name</p>
-            <p class="when" data-hi="तारीख़ और समय की पुष्टि होनी बाक़ी है">Date and time to be confirmed</p>
+        
+        <!-- Artists come from the event hub API (see the refresh script); this markup is the fallback. Featured first, then the rest in API order. -->
+        <ul class="voices vf" id="voices-feat">
+          <li class="voice feat">
+            <div class="ph"><img src="https://static.langimg.com/thumb/136090889.cms?width=640&height=640&resizemode=4" width="640" height="640" alt="Arti Singh, Actress" loading="lazy" decoding="async"></div>
+            <h3>Arti Singh</h3>
+            <p class="role">Actress</p>
           </li>
-          <li class="voice ghost" data-cat="poetry">
-            <div class="ph"><svg viewBox="0 0 64 64" aria-hidden="true">
-                <use href="#kitaab" />
-              </svg></div>
-            <h3 data-hi="कलाकार का नाम">Artist name</h3>
-            <p class="role" data-hi="शायरी और साहित्य">Poetry and literature</p>
-            <p class="desc" data-hi="उनके योगदान का एक पंक्ति में परिचय।">One-line description of their contribution.
-            </p>
-            <p class="sess" data-hi="कार्यक्रम या सत्र का नाम">Programme or session name</p>
-            <p class="when" data-hi="तारीख़ और समय की पुष्टि होनी बाक़ी है">Date and time to be confirmed</p>
+          <li class="voice feat">
+            <div class="ph"><img src="https://static.langimg.com/thumb/136090855.cms?width=640&height=640&resizemode=4" width="640" height="640" alt="Nizami Brothers, Qawwali Band" loading="lazy" decoding="async"></div>
+            <h3>Nizami Brothers</h3>
+            <p class="role">Qawwali Band</p>
           </li>
-          <li class="voice ghost" data-cat="theatre">
-            <div class="ph"><svg viewBox="0 0 64 64" aria-hidden="true">
-                <use href="#sitara" />
-              </svg></div>
-            <h3 data-hi="कलाकार का नाम">Artist name</h3>
-            <p class="role" data-hi="रंगमंच और नृत्य">Theatre and dance</p>
-            <p class="desc" data-hi="उनके योगदान का एक पंक्ति में परिचय।">One-line description of their contribution.
-            </p>
-            <p class="sess" data-hi="कार्यक्रम या सत्र का नाम">Programme or session name</p>
-            <p class="when" data-hi="तारीख़ और समय की पुष्टि होनी बाक़ी है">Date and time to be confirmed</p>
-          </li>
-          <li class="voice ghost" data-cat="food">
-            <div class="ph"><svg viewBox="0 0 64 64" aria-hidden="true">
-                <use href="#thaal" />
-              </svg></div>
-            <h3 data-hi="कलाकार का नाम">Artist name</h3>
-            <p class="role" data-hi="खान-पान और पाक कला">Food and culinary arts</p>
-            <p class="desc" data-hi="उनके योगदान का एक पंक्ति में परिचय।">One-line description of their contribution.
-            </p>
-            <p class="sess" data-hi="कार्यक्रम या सत्र का नाम">Programme or session name</p>
-            <p class="when" data-hi="तारीख़ और समय की पुष्टि होनी बाक़ी है">Date and time to be confirmed</p>
-          </li>
-          <li class="voice ghost" data-cat="conversations">
-            <div class="ph"><svg viewBox="0 0 64 64" aria-hidden="true">
-                <use href="#awaaz" />
-              </svg></div>
-            <h3 data-hi="कलाकार का नाम">Artist name</h3>
-            <p class="role" data-hi="संवाद और विचार">Conversations and ideas</p>
-            <p class="desc" data-hi="उनके योगदान का एक पंक्ति में परिचय।">One-line description of their contribution.
-            </p>
-            <p class="sess" data-hi="कार्यक्रम या सत्र का नाम">Programme or session name</p>
-            <p class="when" data-hi="तारीख़ और समय की पुष्टि होनी बाक़ी है">Date and time to be confirmed</p>
-          </li>
-          <li class="voice ghost" data-cat="emerging">
-            <div class="ph"><svg viewBox="0 0 64 64" aria-hidden="true">
-                <use href="#phool" />
-              </svg></div>
-            <h3 data-hi="कलाकार का नाम">Artist name</h3>
-            <p class="role" data-hi="उभरते कलाकार">Emerging artists</p>
-            <p class="desc" data-hi="उनके योगदान का एक पंक्ति में परिचय।">One-line description of their contribution.
-            </p>
-            <p class="sess" data-hi="कार्यक्रम या सत्र का नाम">Programme or session name</p>
-            <p class="when" data-hi="तारीख़ और समय की पुष्टि होनी बाक़ी है">Date and time to be confirmed</p>
+          <li class="voice feat">
+            <div class="ph"><img src="https://static.langimg.com/thumb/136090866.cms?width=640&height=640&resizemode=4" width="640" height="640" alt="Shantanu Moitra, Music Composer/ Singer" loading="lazy" decoding="async"></div>
+            <h3>Shantanu Moitra</h3>
+            <p class="role">Music Composer/ Singer</p>
           </li>
         </ul>
-        <p class="voice-note"
-          data-hi="हर प्रोफ़ाइल में फ़ोटो, पूरा नाम, पेशा या कार्यक्षेत्र, उनके योगदान का एक पंक्ति में परिचय, वे जिस कार्यक्रम या सत्र का हिस्सा हैं, और पुष्टि होने पर तारीख़ व समय होगा।">
-          Each profile will carry a photograph, full name, profession or area of work, a one-line description of their
-          contribution, the programme or session they are part of, and the date and time once confirmed.</p>
+        <div class="marq" id="voices-marq"><ul class="voices vn" id="voices-list">
+          <li class="voice">
+            <div class="ph"><img src="https://static.langimg.com/thumb/136091011.cms?width=400&height=400&resizemode=4" width="400" height="400" alt="Durgesh, Poet" loading="lazy" decoding="async"></div>
+            <h3>Durgesh</h3>
+            <p class="role">Poet</p>
+          </li>
+          <li class="voice">
+            <div class="ph"><img src="https://static.langimg.com/thumb/136090990.cms?width=400&height=400&resizemode=4" width="400" height="400" alt="Harshit Singh, Poet" loading="lazy" decoding="async"></div>
+            <h3>Harshit Singh</h3>
+            <p class="role">Poet</p>
+          </li>
+          <li class="voice">
+            <div class="ph"><img src="https://static.langimg.com/thumb/136090975.cms?width=400&height=400&resizemode=4" width="400" height="400" alt="Keshav Jha, Poet" loading="lazy" decoding="async"></div>
+            <h3>Keshav Jha</h3>
+            <p class="role">Poet</p>
+          </li>
+          <li class="voice">
+            <div class="ph"><img src="https://static.langimg.com/thumb/136090954.cms?width=400&height=400&resizemode=4" width="400" height="400" alt="Maroof Umar, Cultural Storyteller" loading="lazy" decoding="async"></div>
+            <h3>Maroof Umar</h3>
+            <p class="role">Cultural Storyteller</p>
+          </li>
+          <li class="voice">
+            <div class="ph"><img src="https://static.langimg.com/thumb/136090984.cms?width=400&height=400&resizemode=4" width="400" height="400" alt="Psycho Shayar, Poet" loading="lazy" decoding="async"></div>
+            <h3>Psycho Shayar</h3>
+            <p class="role">Poet</p>
+          </li>
+          <li class="voice">
+            <div class="ph"><img src="https://static.langimg.com/thumb/136090999.cms?width=400&height=400&resizemode=4" width="400" height="400" alt="Yash Agarwal, Street Guitarist" loading="lazy" decoding="async"></div>
+            <h3>Yash Agarwal</h3>
+            <p class="role">Street Guitarist</p>
+          </li>
+        </ul></div>
       </div>
     </section>
 
@@ -4559,10 +4649,9 @@
             <summary data-hi="ग्रैंड शाम-ए-अवध कब और कहाँ हो रहा है?">When and where is Grand Shaam-e-Awadh taking
               place?</summary>
             <p
-              data-hi="शनिवार 16 और रविवार 17 जनवरी 2027 को लखनऊ, उत्तर प्रदेश में। द्वार लगभग दोपहर 12 बजे खुलेंगे और रात 10 बजे तक परिसर बंद हो जाएगा, अनुमति प्राप्त समय और ध्वनि शर्तों के अधीन। स्थान और पूरा पता पुष्टि होते ही यहाँ प्रकाशित होगा।">
-              On Saturday 16 and Sunday 17 January 2027 in Lucknow, Uttar Pradesh. Gates open around noon and the site closes by 10
-              p.m., subject to the timings and sound conditions the authorities permit. The venue and full address will
-              be published here once confirmed.</p>
+              data-hi="शनिवार 16 और रविवार 17 जनवरी 2027 को डॉ. बी. आर. अंबेडकर स्मारक पार्क, लखनऊ, उत्तर प्रदेश में। द्वार लगभग दोपहर 12 बजे खुलेंगे और रात 10 बजे तक परिसर बंद हो जाएगा, अनुमति प्राप्त समय और ध्वनि शर्तों के अधीन। दिशा-निर्देश पुष्टि होते ही यहाँ प्रकाशित होंगे।">
+              On Saturday 16 and Sunday 17 January 2027 at Dr. B. R. Ambedkar's Memorial Park, Lucknow, Uttar Pradesh. Gates open around noon and the site closes by 10
+              p.m., subject to the timings and sound conditions the authorities permit. Directions will be published here once confirmed.</p>
           </details>
           <details>
             <summary data-hi="टिकट की श्रेणियाँ और क़ीमतें क्या हैं?">What are the ticket categories and prices?
@@ -4654,8 +4743,7 @@
           <h4 data-hi="स्थान और सुविधाएँ">Venue and facilities</h4>
           <details>
             <summary data-hi="स्थल तक कैसे पहुँचूँ?">How do I reach the venue?</summary>
-            <p data-hi="लखनऊ में स्थल की पुष्टि होना बाक़ी है। पुष्टि होते ही दिशा-निर्देश यहाँ प्रकाशित होंगे।">The
-              venue in Lucknow is yet to be confirmed. Directions will be published here once it is.</p>
+            <p data-hi="स्थल: डॉ. बी. आर. अंबेडकर स्मारक पार्क, लखनऊ। दिशा-निर्देश पुष्टि होते ही यहाँ प्रकाशित होंगे।">The venue is Dr. B. R. Ambedkar's Memorial Park, Lucknow. Directions will be published here once confirmed.</p>
           </details>
           <details>
             <summary data-hi="क्या पार्किंग उपलब्ध है?">Is parking available?</summary>
@@ -4665,8 +4753,7 @@
           <details>
             <summary data-hi="क्या दिव्यांगजनों के लिए सुविधाएँ हैं?">Are there facilities for people with disabilities?
             </summary>
-            <p data-hi="सुगम मार्ग स्थल पर निर्भर हैं। स्थान की पुष्टि होते ही विवरण यहाँ प्रकाशित होंगे।">Accessible
-              routes depend on the site. Details will be published here once the venue is confirmed.</p>
+            <p data-hi="सुगम मार्ग स्थल पर निर्भर हैं। विवरण पुष्टि होते ही यहाँ प्रकाशित होंगे।">Accessible routes depend on the site. Details will be published here once confirmed.</p>
           </details>
           <details>
             <summary data-hi="क्या खाने-पीने की चीज़ें उपलब्ध होंगी?">Will food and beverages be available?</summary>
@@ -4677,8 +4764,8 @@
             <summary data-hi="क्या चिकित्सा और प्राथमिक उपचार की सुविधा है?">Are there medical and first-aid facilities?
             </summary>
             <p
-              data-hi="प्राथमिक उपचार, पेयजल और स्वच्छता की व्यवस्था प्रस्तावित है। स्थान की पुष्टि के बाद विवरण दिए जाएँगे।">
-              First aid, drinking water and sanitation are planned. Details will follow once the venue is confirmed.</p>
+              data-hi="प्राथमिक उपचार, पेयजल और स्वच्छता की व्यवस्था प्रस्तावित है। विवरण पुष्टि के बाद दिए जाएँगे।">
+              First aid, drinking water and sanitation are planned. Details will follow once confirmed.</p>
           </details>
           <details>
             <summary data-hi="परिसर के अंदर किन चीज़ों की अनुमति नहीं है?">What items are not permitted inside?
@@ -5082,14 +5169,47 @@
         });
         render(); first = false;
 
-        /* voices: category filter */
-        $('#voices .chip').forEach(function (b) {
-          b.addEventListener('click', function () {
-            var c = b.getAttribute('data-cat');
-            $('#voices .chip').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)) });
-            $('#voices .voice').forEach(function (li) { li.hidden = !(c === 'all' || li.getAttribute('data-cat') === c) });
-          })
-        });
+        /* artists: refresh from the event hub API; the markup above stays as the fallback */
+        (function () {
+          var API = 'https://api.indiatimes.com/eventhub/api/public/events/6abe319413badc345e14a0fb/custom-lists';
+          function thumb(u, w, h) { var m = /\/photo\/(\d+)\.cms/.exec(u || ''); return m ? 'https://static.langimg.com/thumb/' + m[1] + '.cms?width=' + w + '&height=' + h + '&resizemode=4' : u }
+          function card(a, feat) {
+            var w = feat ? 640 : 400, h = w, li = d.createElement('li'), ph = d.createElement('div'), im = d.createElement('img'), n = d.createElement('h3'), r = d.createElement('p');
+            li.className = 'voice' + (feat ? ' feat' : '');
+            ph.className = 'ph'; im.src = thumb(a.image_url, w, h); im.width = w; im.height = h; im.alt = a.name + ', ' + (a.role_title || ''); im.loading = 'lazy'; im.decoding = 'async'; ph.appendChild(im);
+            n.textContent = a.name; r.className = 'role'; r.textContent = a.role_title || '';
+            li.appendChild(ph); li.appendChild(n); li.appendChild(r); return li;
+          }
+          function marquee() {
+            var box = d.getElementById('voices-marq'), tr = d.getElementById('voices-list'); if (!box || !tr) return;
+            [].forEach.call(tr.querySelectorAll('.clone'), function (c) { c.remove() });
+            box.classList.remove('on'); tr.style.removeProperty('--shift'); tr.style.removeProperty('--dur');
+            if (!window.matchMedia || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            var org = [].filter.call(tr.children, function (li) { return !li.hidden }), n = org.length; if (!n) return;
+            var mw = parseFloat(getComputedStyle(tr).getPropertyValue('--mw')) || 210, W = n * (mw + 16), k = Math.max(1, Math.ceil(innerWidth / W));
+            for (var g = 0; g < k; g++) org.forEach(function (li) { var c = li.cloneNode(true); c.className += ' clone'; c.setAttribute('aria-hidden', 'true'); [].forEach.call(c.querySelectorAll('img'), function (im) { im.alt = ''; im.loading = 'lazy' }); tr.appendChild(c) });
+            tr.style.setProperty('--shift', W + 'px'); tr.style.setProperty('--dur', Math.max(20, W / 45).toFixed(1) + 's'); box.classList.add('on');
+          }
+          window.__marq = marquee; var rz; addEventListener('resize', function () { clearTimeout(rz); rz = setTimeout(marquee, 250) });
+          function run() {
+            fetch(API).then(function (r) { return r.ok ? r.json() : null }).then(function (j) {
+              var ls = (j && j.data) || [], l = ls.filter(function (x) { return x.slug === 'artists' })[0] || ls[0];
+              if (!l || !l.items || !l.items.length) return;
+              var items = l.items.filter(function (a) { return a && a.name && /^https:\/\//.test(a.image_url || '') });
+              if (!items.length) return;
+              var feat = items.filter(function (a) { return a.custom_fields && a.custom_fields.type === 'featured' }), rest = items.filter(function (a) { return feat.indexOf(a) < 0 });
+              var sig = items.map(function (a) { return a.name + '|' + a.image_url + '|' + (feat.indexOf(a) > -1) }).join(), box = d.getElementById('voices');
+              if (box.getAttribute('data-sig') === sig) return; box.setAttribute('data-sig', sig);
+              var f = d.getElementById('voices-feat'), n = d.getElementById('voices-list');
+              if (!box.hasAttribute('data-first')) { box.setAttribute('data-first', '1'); var cur = [].map.call(d.querySelectorAll('#voices .voice h3'), function (h) { return h.textContent }).join(); if (cur === feat.concat(rest).map(function (a) { return a.name }).join()) return }
+              f.textContent = ''; n.textContent = '';
+              feat.forEach(function (a) { f.appendChild(card(a, true)) }); rest.forEach(function (a) { n.appendChild(card(a, false)) });
+              marquee();
+            }).catch(function () { });
+          }
+          marquee();
+          if (window.requestIdleCallback) requestIdleCallback(run, { timeout: 4000 }); else setTimeout(run, 2500);
+        })();
 
         /* add to calendar: downloads an .ics (IST) */
         function stamp(s) { return new Date(s + ':00+05:30').toISOString().replace(/[-:]/g, '').replace(/\.\d+Z/, 'Z') }
