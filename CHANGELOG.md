@@ -229,3 +229,15 @@ SEO/AEO (title, meta description, Open Graph, JSON-LD) is re-checked on every co
 - New dedicated page `awards/index.html` for the Lucknow Ratna Samman: overview, ten award segments, three price packages, Why Nominate, Award FAQs, Nomination Enquiry form (inline, with OTP step ready), Contact Us (Zameer Siddiqui, Simran Singh).
 - All editorial text is verbatim from the editorial brief and is English only (no Hindi toggle on this page until reviewed Hindi copy exists).
 - Same UI, CSS and form engine as the main page. Built by `node tools/build-awards.mjs`. Main page SEO block unchanged.
+
+## 0.13.0 – 2026-11-27 – /openmic page
+- New page `openmic/index.html` (built by `node tools/build-openmic.mjs`): eligibility, application fee, includes / does not include, refund policy, selection process, performance format, stage rules, onboarding, content and rights, guardrails, inline application form, contacts.
+- Internal brief sections (jury weights, deliverable owners, message templates, payment reconciliation) are not published.
+- Form: lead-style. Video, photograph and guardian consent are links (YouTube unlisted / Google Drive); no file upload or payment gateway yet. Guardian fields appear for under-18s, group members for groups, creator credit for adaptations. Under-16 is blocked. Duplicate mobile/email is blocked in this browser only; real dedupe needs the backend.
+- Fee as per brief: Rs 599 solo, Rs 499 per person for groups of 4+, same for everyone, no student fee; entry ticket included. SEO block of the main page unchanged.
+
+## 0.13.1 – 2026-11-27 – Open Mic: 3-step form, card components
+- Application form is now 3 steps: Applicant details, Performance details, Payment and submit. "Save and next" validates the step and saves a draft. Step 3 shows a summary, the fee (Rs 599 solo, Rs 499 per person for groups of 4+, times group size) and consents.
+- Draft is kept in this browser (`sea-om-draft`), restored on return with a "Start over" link, and cleared on submit. There is no login on the site, so per-user drafts across devices need the backend.
+- Text-only sections redesigned as components: eligibility cards, price cards, include/exclude cards, refund callout, selection stage cards, performance-format timeline, rule tiles, onboarding step cards.
+- Group entries now ask for the number of members. SEO block of the main page unchanged.
